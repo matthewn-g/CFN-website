@@ -95,16 +95,18 @@ export default function Navbar() {
                   </Link>
 
                   {link.dropdown && activeDropdown === link.label && (
-                    <div className="absolute top-full left-0 mt-1 w-52 bg-white dark:bg-cfn-dark-bg rounded-xl shadow-card-hover border border-cfn-navy-100 dark:border-white/10 overflow-hidden animate-fade-in">
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="block px-4 py-2.5 text-sm text-cfn-charcoal dark:text-white/80 hover:bg-cfn-navy-100 dark:hover:bg-white/10 hover:text-cfn-navy dark:hover:text-white transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                    <div className="absolute top-full left-0 w-52 pt-1">
+                      <div className="bg-white dark:bg-cfn-dark-bg rounded-xl shadow-card-hover border border-cfn-navy-100 dark:border-white/10 overflow-hidden animate-fade-in">
+                        {link.dropdown.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block px-4 py-2.5 text-sm text-cfn-charcoal dark:text-white/80 hover:bg-cfn-navy-100 dark:hover:bg-white/10 hover:text-cfn-navy dark:hover:text-white transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </li>

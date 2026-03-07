@@ -12,7 +12,7 @@ export const sampleArticles: ArticleFrontmatter[] = [
     publishedAt: "2026-02-15",
     readingTime: 7,
     featured:    true,
-    coverImage:  "/images/articles/etfs-vs-mutual-funds.jpg",
+    coverImage:  "/images/articles/etfs-vs-mutual-funds.svg",
   },
   {
     title:       "How to Build Credit Before You Graduate",
@@ -25,7 +25,7 @@ export const sampleArticles: ArticleFrontmatter[] = [
     publishedAt: "2026-02-08",
     readingTime: 5,
     featured:    true,
-    coverImage:  "/images/articles/credit-building.jpg",
+    coverImage:  "/images/articles/credit-building.svg",
   },
   {
     title:       "What Is a TFSA and How Should You Use It?",
@@ -38,7 +38,7 @@ export const sampleArticles: ArticleFrontmatter[] = [
     publishedAt: "2026-01-28",
     readingTime: 6,
     featured:    true,
-    coverImage:  "/images/articles/tfsa-guide.jpg",
+    coverImage:  "/images/articles/tfsa-guide.svg",
   },
   {
     title:       "Understanding Inflation: Why Your Money Buys Less Over Time",
@@ -51,7 +51,7 @@ export const sampleArticles: ArticleFrontmatter[] = [
     publishedAt: "2026-01-20",
     readingTime: 8,
     featured:    false,
-    coverImage:  "/images/articles/inflation.jpg",
+    coverImage:  "/images/articles/inflation.svg",
   },
   {
     title:       "Crypto for Beginners: What You Actually Need to Know",
@@ -64,7 +64,7 @@ export const sampleArticles: ArticleFrontmatter[] = [
     publishedAt: "2026-01-10",
     readingTime: 9,
     featured:    false,
-    coverImage:  "/images/articles/crypto.jpg",
+    coverImage:  "/images/articles/crypto.svg",
   },
   {
     title:       "Coffee Chats: How to Network Your Way Into Finance",
@@ -77,6 +77,6 @@ export const sampleArticles: ArticleFrontmatter[] = [
     publishedAt: "2025-12-15",
     readingTime: 6,
     featured:    false,
-    coverImage:  "/images/articles/networking.jpg",
+    coverImage:  "/images/articles/networking.svg",
   },
 ];
