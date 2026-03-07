@@ -13,7 +13,7 @@ export const articleCategories: {
   { slug: "etfs",           label: "ETFs",           icon: "BarChart2",  color: "#8B5CF6" },
   { slug: "crypto",         label: "Crypto",         icon: "Bitcoin",    color: "#F59E0B" },
   { slug: "market-rundown", label: "Market Rundown", icon: "Activity",   color: "#EF4444" },
-  { slug: "career-growth",  label: "Career Growth",  icon: "Briefcase",  color: "#0D2B55" },
+  { slug: "career-growth",  label: "Career Growth",  icon: "Briefcase",  color: "#0284C7" },
   { slug: "mindset",        label: "Mindset",        icon: "Brain",      color: "#06B6D4" },
 ];
 

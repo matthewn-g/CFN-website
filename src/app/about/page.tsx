@@ -68,7 +68,7 @@ export default function AboutPage() {
               Finance clubs at Canadian universities have always had a reputation for being exclusive — a place for people who already know the jargon, already have the network, already know someone on the inside. We started CFN because we were tired of feeling like outsiders in a world we were genuinely passionate about.
             </p>
             <p>
-              CFN is the club we wish had existed when we started. We&apos;re building a platform where any student — from UBC to Queen&apos;s — can learn to invest smarter, build technical finance skills, and connect with others who are figuring it out too. No prior knowledge required. No connections necessary. Just curiosity.
+              CFN is the club we wish had existed when we started. We&apos;re building a platform where any student can learn to invest smarter, build technical finance skills, and connect with others who are figuring it out too. No prior knowledge required. No connections necessary. Just curiosity.
             </p>
           </div>
         </div>
