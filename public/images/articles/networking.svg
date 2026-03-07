@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D2B55"/>
+      <stop offset="100%" style="stop-color:#0a1f3f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Network nodes and lines -->
+  <!-- Centre node -->
+  <circle cx="400" cy="225" r="22" fill="#0284C7" opacity="0.9"/>
+  <!-- Outer nodes -->
+  <circle cx="250" cy="145" r="14" fill="#0284C7" opacity="0.6"/>
+  <circle cx="560" cy="145" r="14" fill="#0284C7" opacity="0.6"/>
+  <circle cx="200" cy="310" r="14" fill="#0284C7" opacity="0.6"/>
+  <circle cx="600" cy="310" r="14" fill="#0284C7" opacity="0.6"/>
+  <circle cx="400" cy="360" r="14" fill="#C9A84C" opacity="0.8"/>
+  <!-- Connection lines -->
+  <line x1="400" y1="225" x2="250" y2="145" stroke="#0284C7" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="400" y1="225" x2="560" y2="145" stroke="#0284C7" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="400" y1="225" x2="200" y2="310" stroke="#0284C7" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="400" y1="225" x2="600" y2="310" stroke="#0284C7" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="400" y1="225" x2="400" y2="360" stroke="#C9A84C" stroke-width="1.5" stroke-opacity="0.5"/>
+  <line x1="250" y1="145" x2="560" y2="145" stroke="#0284C7" stroke-width="1" stroke-opacity="0.2"/>
+  <line x1="200" y1="310" x2="600" y2="310" stroke="#0284C7" stroke-width="1" stroke-opacity="0.2"/>
+  <!-- Person icons simplified -->
+  <circle cx="250" cy="136" r="5" fill="white" opacity="0.7"/>
+  <circle cx="560" cy="136" r="5" fill="white" opacity="0.7"/>
+  <circle cx="200" cy="301" r="5" fill="white" opacity="0.7"/>
+  <circle cx="600" cy="301" r="5" fill="white" opacity="0.7"/>
+  <circle cx="400" cy="216" r="7" fill="white" opacity="0.8"/>
+  <!-- Label -->
+  <text x="400" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="bold" fill="#0284C7" opacity="0.9" text-anchor="middle">NETWORKING</text>
+  <text x="400" y="113" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#ffffff" opacity="0.4" text-anchor="middle">Career Growth</text>
+</svg>

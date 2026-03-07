@@ -19,13 +19,20 @@ export default function ModelCard({ model }: ModelCardProps) {
     >
       {/* Cover */}
       <div className="relative aspect-video overflow-hidden bg-cfn-navy">
-        <div className="w-full h-full bg-gradient-to-br from-cfn-navy to-cfn-navy-800 flex items-center justify-center">
-          <div className="text-center">
+        {model.coverImage ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={model.coverImage}
+            alt={model.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-cfn-navy to-cfn-navy-800 flex items-center justify-center">
             <span className="text-cfn-gold/20 text-5xl font-black block">
               {model.category.toUpperCase().slice(0, 3)}
             </span>
           </div>
-        </div>
+        )}
         <div className="absolute top-3 left-3">
           <DifficultyBadge level={model.difficulty} />
         </div>
