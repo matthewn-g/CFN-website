@@ -4,7 +4,7 @@ import type { ModelFrontmatter } from "@/types/model";
 import type { CFNEvent } from "@/types/event";
 import { sampleArticles } from "@/data/articles";
 import { sampleModels } from "@/data/models";
-import { events as sampleEvents } from "@/data/events";
+import type { EventFormat, EventStatus, EventSpeaker } from "@/types/event";
 
 export const revalidate = 3600;
 
@@ -146,20 +146,43 @@ export async function getModelBySlug(slug: string): Promise<ModelFrontmatter & {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function mapPageToEvent(page: any): CFNEvent {
+  const props = page.properties;
+  const speakerName = props["Speaker Name"]?.rich_text?.[0]?.plain_text;
+  const speakerRole = props["Speaker Role"]?.rich_text?.[0]?.plain_text;
+  const speakers: EventSpeaker[] = speakerName
+    ? [{ name: speakerName, role: speakerRole ?? "" }]
+    : [];
+  return {
+    id:           page.id,
+    title:        props.Title?.title?.[0]?.plain_text ?? "",
+    description:  props.Description?.rich_text?.[0]?.plain_text ?? "",
+    date:         props.Date?.date?.start ?? new Date().toISOString(),
+    duration:     props.Duration?.number ?? 60,
+    format:       (props.Format?.select?.name?.toLowerCase() as EventFormat) ?? "webinar",
+    status:       (props.Status?.select?.name?.toLowerCase().replace(" ", "-") as EventStatus) ?? "upcoming",
+    speakers,
+    coverImage:   props["Cover Image URL"]?.url ?? props["Cover Image URL"]?.rich_text?.[0]?.plain_text ?? "",
+    tags:         props.Tags?.multi_select?.map((t: { name: string }) => t.name) ?? [],
+    lumaUrl:      props["Luma URL"]?.url ?? props["Luma URL"]?.rich_text?.[0]?.plain_text,
+    recordingUrl: props["Recording URL"]?.url ?? props["Recording URL"]?.rich_text?.[0]?.plain_text,
+  };
+}
+
 export async function getAllEvents(): Promise<CFNEvent[]> {
   if (!process.env.NOTION_TOKEN || !process.env.NOTION_DB_EVENTS) {
-    return sampleEvents;
+    return [];
   }
   try {
     const db = await notion.databases.query({
       database_id: process.env.NOTION_DB_EVENTS,
       sorts: [{ property: "Date", direction: "descending" }],
     });
-    // Map Notion event pages — simplified for now
-    return db.results.length > 0 ? sampleEvents : sampleEvents;
+    return db.results.map(mapPageToEvent);
   } catch (err) {
     console.error("Notion events fetch failed:", err);
-    return sampleEvents;
+    return [];
   }
 }
 
