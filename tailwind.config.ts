@@ -17,8 +17,8 @@ const config: Config = {
           // RBC-style bright yellow — used as accent only
           gold:         "#FFDF01",
           "gold-light": "#FFE840",
-          cream:        "#F8F6F1",
-          "cream-dark": "#EEE9DF",
+          cream:        "#FFFFFF",       // clean white — matches professional finance sites
+          "cream-dark": "#EEF3FB",       // subtle light-blue for alternating sections
           charcoal:     "#1A1A2E",
           muted:        "#6B7280",
           "dark-bg":    "#0A0F1E",
