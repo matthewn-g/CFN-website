@@ -1,22 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0D2B55"/>
-      <stop offset="100%" style="stop-color:#0a1f3f"/>
+      <stop offset="0%" style="stop-color:#071828"/>
+      <stop offset="100%" style="stop-color:#0D2B55"/>
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <!-- Rising arrow illustration -->
-  <polyline points="100,370 180,350 260,320 340,290 420,245 500,190 580,140 660,85" fill="none" stroke="#EF4444" stroke-width="3.5" stroke-opacity="0.85"/>
-  <!-- Arrow head -->
-  <polygon points="660,85 640,100 648,115 680,90 660,65 648,80" fill="#EF4444" opacity="0.85"/>
-  <!-- Area fill -->
-  <polygon points="100,370 180,350 260,320 340,290 420,245 500,190 580,140 660,85 660,380 100,380" fill="#EF4444" opacity="0.07"/>
-  <!-- Dollar signs -->
-  <text x="200" y="230" font-family="Georgia, serif" font-size="32" fill="#C9A84C" opacity="0.25">$</text>
-  <text x="380" y="180" font-family="Georgia, serif" font-size="32" fill="#C9A84C" opacity="0.25">$</text>
-  <text x="540" y="130" font-family="Georgia, serif" font-size="32" fill="#C9A84C" opacity="0.2">$</text>
-  <!-- Label -->
-  <text x="400" y="85" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-weight="bold" fill="#EF4444" opacity="0.9" text-anchor="middle">INFLATION</text>
-  <text x="400" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#ffffff" opacity="0.4" text-anchor="middle">Market Rundown</text>
+  <rect x="0" y="444" width="800" height="6" fill="#FFDF01" opacity="0.6"/>
+  <text x="52" y="42" font-family="'Courier New',monospace" font-size="10" fill="white" opacity="0.4" letter-spacing="3">FINANCIAL LITERACY · MARKET RUNDOWN</text>
+  <text x="52" y="72" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="bold" fill="white" opacity="0.92">Inflation &amp; Your Purchasing Power</text>
+  <!-- Grid -->
+  <line x1="100" y1="110" x2="740" y2="110" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="100" y1="168" x2="740" y2="168" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="100" y1="226" x2="740" y2="226" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="100" y1="284" x2="740" y2="284" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="100" y1="342" x2="740" y2="342" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
+  <!-- Y-axis labels -->
+  <text x="88" y="114" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">8%</text>
+  <text x="88" y="172" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">6%</text>
+  <text x="88" y="230" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">4%</text>
+  <text x="88" y="288" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">2%</text>
+  <text x="88" y="346" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">0%</text>
+  <!-- 2% target reference line (dashed) -->
+  <line x1="100" y1="284" x2="740" y2="284" stroke="white" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="744" y="287" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.35">TARGET</text>
+  <!-- CPI line: 2020=1.8%, 2021=3.4%, 2022=6.8%, 2023=3.9%, 2024=2.6% -->
+  <!-- Scale: 8%=y110, 0%=y342, 232px/8% = 29px/% -->
+  <!-- 1.8% → y=342-52=290, 3.4% → 342-99=243, 6.8% → 342-198=144, 3.9% → 342-113=229, 2.6% → 342-75=267 -->
+  <polygon points="120,290 280,243 440,144 600,229 720,267 720,342 120,342" fill="white" opacity="0.04"/>
+  <polyline points="120,290 280,243 440,144 600,229 720,267" fill="none" stroke="white" stroke-width="2" stroke-opacity="0.7"/>
+  <!-- Peak annotation -->
+  <circle cx="440" cy="144" r="4" fill="#FFDF01" opacity="0.9"/>
+  <line x1="440" y1="144" x2="440" y2="115" stroke="#FFDF01" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="443" y="112" font-family="'Courier New',monospace" font-size="10" fill="#FFDF01" font-weight="bold">6.8%</text>
+  <!-- X-axis labels -->
+  <text x="120" y="362" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">2020</text>
+  <text x="280" y="362" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">2021</text>
+  <text x="440" y="362" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">2022</text>
+  <text x="600" y="362" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">2023</text>
+  <text x="720" y="362" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">2024</text>
+  <!-- Legend -->
+  <line x1="100" y1="398" x2="125" y2="398" stroke="white" stroke-width="2" stroke-opacity="0.6"/>
+  <text x="130" y="402" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.45">CANADA CPI</text>
+  <line x1="220" y1="398" x2="245" y2="398" stroke="white" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="4 4"/>
+  <text x="250" y="402" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">BoC 2% TARGET</text>
+  <text x="735" y="402" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.22" text-anchor="end">YEAR-OVER-YEAR CHANGE</text>
 </svg>

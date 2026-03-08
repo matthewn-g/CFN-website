@@ -1,12 +1,9 @@
 export type ArticleCategory =
-  | "savings"
-  | "credit-cards"
-  | "investing"
-  | "etfs"
-  | "crypto"
+  | "personal-finance"
+  | "investments"
   | "market-rundown"
   | "career-growth"
-  | "mindset";
+  | "personal-development";
 
 export interface ArticleFrontmatter {
   title:       string;

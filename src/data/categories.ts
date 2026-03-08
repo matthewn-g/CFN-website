@@ -7,14 +7,11 @@ export const articleCategories: {
   icon: string;
   color: string;
 }[] = [
-  { slug: "savings",        label: "Savings",        icon: "PiggyBank",  color: "#10B981" },
-  { slug: "credit-cards",   label: "Credit Cards",   icon: "CreditCard", color: "#3B82F6" },
-  { slug: "investing",      label: "Investing",      icon: "TrendingUp", color: "#C9A84C" },
-  { slug: "etfs",           label: "ETFs",           icon: "BarChart2",  color: "#8B5CF6" },
-  { slug: "crypto",         label: "Crypto",         icon: "Bitcoin",    color: "#F59E0B" },
-  { slug: "market-rundown", label: "Market Rundown", icon: "Activity",   color: "#EF4444" },
-  { slug: "career-growth",  label: "Career Growth",  icon: "Briefcase",  color: "#0284C7" },
-  { slug: "mindset",        label: "Mindset",        icon: "Brain",      color: "#06B6D4" },
+  { slug: "personal-finance",     label: "Personal Finance",     icon: "PiggyBank",  color: "#10B981" },
+  { slug: "investments",          label: "Investments",          icon: "TrendingUp", color: "#8B5CF6" },
+  { slug: "market-rundown",       label: "Market Rundown",       icon: "Activity",   color: "#EF4444" },
+  { slug: "career-growth",        label: "Career Growth",        icon: "Briefcase",  color: "#0284C7" },
+  { slug: "personal-development", label: "Personal Development", icon: "Brain",      color: "#06B6D4" },
 ];
 
 export const modelCategories: {
