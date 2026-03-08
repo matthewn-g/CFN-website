@@ -1,19 +1,13 @@
 import Link from "next/link";
-import {
-  PiggyBank, CreditCard, TrendingUp, BarChart2,
-  Bitcoin, Activity, Briefcase, Brain
-} from "lucide-react";
+import { PiggyBank, TrendingUp, Activity, Briefcase, Brain } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const categories = [
-  { slug: "savings",        label: "Savings",        Icon: PiggyBank,  color: "#10B981" },
-  { slug: "credit-cards",   label: "Credit Cards",   Icon: CreditCard, color: "#3B82F6" },
-  { slug: "investing",      label: "Investing",      Icon: TrendingUp, color: "#C9A84C" },
-  { slug: "etfs",           label: "ETFs",           Icon: BarChart2,  color: "#8B5CF6" },
-  { slug: "crypto",         label: "Crypto",         Icon: Bitcoin,    color: "#F59E0B" },
-  { slug: "market-rundown", label: "Market Rundown", Icon: Activity,   color: "#EF4444" },
-  { slug: "career-growth",  label: "Career Growth",  Icon: Briefcase,  color: "#0284C7" },
-  { slug: "mindset",        label: "Mindset",        Icon: Brain,      color: "#06B6D4" },
+  { slug: "personal-finance",     label: "Personal Finance",     Icon: PiggyBank,  color: "#10B981" },
+  { slug: "investments",          label: "Investments",          Icon: TrendingUp, color: "#8B5CF6" },
+  { slug: "market-rundown",       label: "Market Rundown",       Icon: Activity,   color: "#EF4444" },
+  { slug: "career-growth",        label: "Career Growth",        Icon: Briefcase,  color: "#0284C7" },
+  { slug: "personal-development", label: "Personal Development", Icon: Brain,      color: "#06B6D4" },
 ];
 
 export default function CategoryHighlights() {
