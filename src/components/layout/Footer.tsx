@@ -4,11 +4,11 @@ import CFNLogo from "./CFNLogo";
 
 const footerLinks = {
   "Financial Literacy": [
-    { label: "Personal Finance",     href: "/financial-literacy?category=personal-finance" },
-    { label: "Investments",          href: "/financial-literacy?category=investments" },
-    { label: "Market Rundown",       href: "/financial-literacy?category=market-rundown" },
-    { label: "Career Growth",        href: "/financial-literacy?category=career-growth" },
-    { label: "Personal Development", href: "/financial-literacy?category=personal-development" },
+    { label: "Savings",        href: "/financial-literacy?category=savings" },
+    { label: "Credit Cards",   href: "/financial-literacy?category=credit-cards" },
+    { label: "Investing",      href: "/financial-literacy?category=investing" },
+    { label: "ETFs",           href: "/financial-literacy?category=etfs" },
+    { label: "Market Rundown", href: "/financial-literacy?category=market-rundown" },
   ],
   "Models & Frameworks": [
     { label: "DCF Valuation",        href: "/models-frameworks?category=dcf" },
@@ -84,9 +84,6 @@ export default function Footer() {
             Not financial advice. For educational purposes only.
           </p>
         </div>
-        <p className="mt-4 text-center text-xs text-white/25">
-          Website designed &amp; developed by Matthew Ng.
-        </p>
       </div>
     </footer>
   );
