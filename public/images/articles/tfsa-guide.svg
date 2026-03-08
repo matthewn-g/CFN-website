@@ -1,40 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#071828"/>
-      <stop offset="100%" style="stop-color:#0D2B55"/>
+      <stop offset="0%" style="stop-color:#0D2B55"/>
+      <stop offset="100%" style="stop-color:#0a1f3f"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.9"/>
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <rect x="0" y="444" width="800" height="6" fill="#FFDF01" opacity="0.6"/>
-  <text x="52" y="42" font-family="'Courier New',monospace" font-size="10" fill="white" opacity="0.4" letter-spacing="3">FINANCIAL LITERACY</text>
-  <text x="52" y="72" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="bold" fill="white" opacity="0.92">TFSA: Tax-Free Savings Account</text>
-  <line x1="100" y1="110" x2="740" y2="110" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
-  <line x1="100" y1="170" x2="740" y2="170" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
-  <line x1="100" y1="230" x2="740" y2="230" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
-  <line x1="100" y1="290" x2="740" y2="290" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
-  <line x1="100" y1="342" x2="740" y2="342" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
-  <text x="88" y="114" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$50K</text>
-  <text x="88" y="174" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$40K</text>
-  <text x="88" y="234" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$30K</text>
-  <text x="88" y="294" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$20K</text>
-  <text x="88" y="346" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$10K</text>
-  <rect x="130" y="296" width="72" height="46"  fill="white" opacity="0.2"/>
-  <text x="166" y="290" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.38" text-anchor="middle">$10K</text>
-  <text x="166" y="360" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3"  text-anchor="middle">YR 1</text>
-  <rect x="242" y="272" width="72" height="70"  fill="white" opacity="0.26"/>
-  <text x="278" y="266" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.38" text-anchor="middle">$15K</text>
-  <text x="278" y="360" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3"  text-anchor="middle">YR 2</text>
-  <rect x="354" y="240" width="72" height="102" fill="white" opacity="0.32"/>
-  <text x="390" y="234" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.38" text-anchor="middle">$22K</text>
-  <text x="390" y="360" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3"  text-anchor="middle">YR 3</text>
-  <rect x="466" y="200" width="72" height="142" fill="white" opacity="0.38"/>
-  <text x="502" y="194" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.38" text-anchor="middle">$31K</text>
-  <text x="502" y="360" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3"  text-anchor="middle">YR 4</text>
-  <rect x="578" y="144" width="72" height="198" fill="#FFDF01" opacity="0.15"/>
-  <rect x="578" y="144" width="72" height="3"   fill="#FFDF01" opacity="0.85"/>
-  <text x="614" y="138" font-family="'Courier New',monospace" font-size="9" fill="#FFDF01" opacity="0.9" text-anchor="middle">$43K</text>
-  <text x="614" y="360" font-family="'Courier New',monospace" font-size="9" fill="#FFDF01" opacity="0.7" text-anchor="middle">YR 5</text>
-  <text x="735" y="114" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.25" text-anchor="end">ASSUMED RETURN: 7% / YR</text>
-  <text x="735" y="398" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.22" text-anchor="end">TAX-FREE COMPOUND GROWTH</text>
+  <!-- Growth chart illustration -->
+  <polyline points="120,340 200,310 280,280 360,240 440,190 520,150 600,105 680,80" fill="none" stroke="#10B981" stroke-width="3" stroke-opacity="0.8"/>
+  <!-- Area fill -->
+  <polygon points="120,340 200,310 280,280 360,240 440,190 520,150 600,105 680,80 680,370 120,370" fill="#10B981" opacity="0.08"/>
+  <!-- Dots on line -->
+  <circle cx="120" cy="340" r="5" fill="#10B981" opacity="0.8"/>
+  <circle cx="280" cy="280" r="5" fill="#10B981" opacity="0.8"/>
+  <circle cx="440" cy="190" r="5" fill="#10B981" opacity="0.8"/>
+  <circle cx="600" cy="105" r="5" fill="#10B981" opacity="0.8"/>
+  <circle cx="680" cy="80" r="7" fill="#C9A84C"/>
+  <!-- Label -->
+  <text x="400" y="75" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="bold" fill="#10B981" opacity="0.9" text-anchor="middle">TFSA</text>
+  <text x="400" y="108" font-family="Georgia, 'Times New Roman', serif" font-size="17" fill="#ffffff" opacity="0.45" text-anchor="middle">Tax-Free Savings Account</text>
 </svg>

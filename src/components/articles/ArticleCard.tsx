@@ -34,11 +34,16 @@ export default function ArticleCard({ article, variant = "featured" }: ArticleCa
               <span className="text-cfn-gold/30 text-4xl font-black">CFN</span>
             </div>
           )}
+          <div className="absolute top-3 left-3">
+            <CategoryBadge category={article.category} />
+          </div>
         </div>
       )}
 
       <div className={cn("p-5", variant === "compact" && "p-0 flex-1")}>
-        <CategoryBadge category={article.category} className="mb-2" />
+        {variant === "compact" && (
+          <CategoryBadge category={article.category} className="mb-2" />
+        )}
         <h3 className="font-bold text-cfn-navy dark:text-white text-lg leading-snug group-hover:text-cfn-gold transition-colors line-clamp-2">
           {article.title}
         </h3>
