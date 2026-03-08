@@ -1,30 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0D2B55"/>
-      <stop offset="100%" style="stop-color:#0a1f3f"/>
+      <stop offset="0%" style="stop-color:#071828"/>
+      <stop offset="100%" style="stop-color:#0D2B55"/>
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <!-- Funnel / cash flow illustration -->
-  <!-- Years timeline -->
-  <line x1="120" y1="310" x2="680" y2="310" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
-  <!-- Cash flow bars -->
-  <rect x="140" y="220" width="70" height="90" rx="3" fill="#C9A84C" opacity="0.5"/>
-  <rect x="240" y="200" width="70" height="110" rx="3" fill="#C9A84C" opacity="0.55"/>
-  <rect x="340" y="175" width="70" height="135" rx="3" fill="#C9A84C" opacity="0.65"/>
-  <rect x="440" y="150" width="70" height="160" rx="3" fill="#C9A84C" opacity="0.75"/>
-  <rect x="540" y="125" width="70" height="185" rx="3" fill="#C9A84C" opacity="0.85"/>
-  <!-- Discount arrows -->
-  <line x1="620" y1="220" x2="400" y2="330" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="4 4"/>
-  <line x1="510" y1="220" x2="370" y2="330" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="4 4"/>
-  <!-- Labels -->
-  <text x="175" y="340" font-family="monospace" font-size="11" fill="white" opacity="0.35" text-anchor="middle">Y1</text>
-  <text x="275" y="340" font-family="monospace" font-size="11" fill="white" opacity="0.35" text-anchor="middle">Y2</text>
-  <text x="375" y="340" font-family="monospace" font-size="11" fill="white" opacity="0.35" text-anchor="middle">Y3</text>
-  <text x="475" y="340" font-family="monospace" font-size="11" fill="white" opacity="0.35" text-anchor="middle">Y4</text>
-  <text x="575" y="340" font-family="monospace" font-size="11" fill="white" opacity="0.35" text-anchor="middle">TV</text>
-  <!-- Title -->
-  <text x="400" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="bold" fill="#C9A84C" opacity="0.9" text-anchor="middle">DCF</text>
-  <text x="400" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#ffffff" opacity="0.4" text-anchor="middle">Discounted Cash Flow</text>
+  <rect x="0" y="444" width="800" height="6" fill="#FFDF01" opacity="0.6"/>
+  <text x="52" y="42" font-family="'Courier New',monospace" font-size="10" fill="white" opacity="0.4" letter-spacing="3">MODELS &amp; FRAMEWORKS</text>
+  <text x="52" y="72" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="bold" fill="white" opacity="0.92">Discounted Cash Flow (DCF)</text>
+  <!-- Grid -->
+  <line x1="100" y1="110" x2="740" y2="110" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="100" y1="170" x2="740" y2="170" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="100" y1="230" x2="740" y2="230" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="100" y1="290" x2="740" y2="290" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="100" y1="342" x2="740" y2="342" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
+  <!-- Y-axis -->
+  <text x="88" y="114" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$500M</text>
+  <text x="88" y="174" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$400M</text>
+  <text x="88" y="234" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$300M</text>
+  <text x="88" y="294" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$200M</text>
+  <text x="88" y="346" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$100M</text>
+  <!-- FCF bars — growing projection years (scale: $500M=y110, $100M=y342, 232px/$400M) -->
+  <!-- Y1 $120M: h=13.9 → 342-14=328 -->
+  <rect x="105" y="328" width="55" height="14" fill="white" opacity="0.22"/>
+  <text x="132" y="322" font-family="'Courier New',monospace" font-size="8" fill="white" opacity="0.35" text-anchor="middle">$120M</text>
+  <text x="132" y="360" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">Y1</text>
+  <!-- Y2 $145M: h=26.6 → 342-27=315 -->
+  <rect x="188" y="315" width="55" height="27" fill="white" opacity="0.27"/>
+  <text x="215" y="309" font-family="'Courier New',monospace" font-size="8" fill="white" opacity="0.35" text-anchor="middle">$145M</text>
+  <text x="215" y="360" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">Y2</text>
+  <!-- Y3 $175M: h=43.5 → 342-44=298 -->
+  <rect x="271" y="298" width="55" height="44" fill="white" opacity="0.32"/>
+  <text x="298" y="292" font-family="'Courier New',monospace" font-size="8" fill="white" opacity="0.35" text-anchor="middle">$175M</text>
+  <text x="298" y="360" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">Y3</text>
+  <!-- Y4 $210M: h=63.8 → 342-64=278 -->
+  <rect x="354" y="278" width="55" height="64" fill="white" opacity="0.37"/>
+  <text x="381" y="272" font-family="'Courier New',monospace" font-size="8" fill="white" opacity="0.35" text-anchor="middle">$210M</text>
+  <text x="381" y="360" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">Y4</text>
+  <!-- Y5 $250M: h=87 → 342-87=255 -->
+  <rect x="437" y="255" width="55" height="87" fill="white" opacity="0.42"/>
+  <text x="464" y="249" font-family="'Courier New',monospace" font-size="8" fill="white" opacity="0.35" text-anchor="middle">$250M</text>
+  <text x="464" y="360" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="middle">Y5</text>
+  <!-- Terminal Value bar — gold highlight -->
+  <rect x="540" y="110" width="80" height="232" fill="#FFDF01" opacity="0.1"/>
+  <rect x="540" y="110" width="80" height="3" fill="#FFDF01" opacity="0.8"/>
+  <text x="580" y="104" font-family="'Courier New',monospace" font-size="8" fill="#FFDF01" opacity="0.9" text-anchor="middle">$1.82B</text>
+  <text x="580" y="360" font-family="'Courier New',monospace" font-size="9" fill="#FFDF01" opacity="0.7" text-anchor="middle">TV</text>
+  <!-- Discount arrow + NPV label -->
+  <line x1="620" y1="226" x2="680" y2="226" stroke="white" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="685" y="218" font-family="'Courier New',monospace" font-size="8" fill="white" opacity="0.3">NPV =</text>
+  <text x="685" y="232" font-family="'Courier New',monospace" font-size="10" fill="white" opacity="0.6" font-weight="bold">$2.4B</text>
+  <!-- WACC note -->
+  <text x="735" y="398" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.2" text-anchor="end">WACC: 9.5%  |  TERMINAL GROWTH: 2.5%</text>
 </svg>

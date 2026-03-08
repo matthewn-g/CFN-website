@@ -1,28 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0D2B55"/>
-      <stop offset="100%" style="stop-color:#0a1f3f"/>
+      <stop offset="0%" style="stop-color:#071828"/>
+      <stop offset="100%" style="stop-color:#0D2B55"/>
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <!-- Bitcoin symbol -->
-  <circle cx="400" cy="235" r="110" fill="none" stroke="#F59E0B" stroke-width="2" stroke-opacity="0.2"/>
-  <circle cx="400" cy="235" r="85" fill="#F59E0B" opacity="0.08"/>
-  <!-- B letter stylised -->
-  <text x="400" y="290" font-family="Georgia, serif" font-size="130" font-weight="bold" fill="#F59E0B" opacity="0.55" text-anchor="middle">₿</text>
-  <!-- Candlestick hints -->
-  <rect x="110" y="260" width="14" height="70" rx="2" fill="#10B981" opacity="0.5"/>
-  <line x1="117" y1="240" x2="117" y2="260" stroke="#10B981" stroke-width="2" stroke-opacity="0.5"/>
-  <line x1="117" y1="330" x2="117" y2="350" stroke="#10B981" stroke-width="2" stroke-opacity="0.5"/>
-  <rect x="148" y="240" width="14" height="90" rx="2" fill="#EF4444" opacity="0.5"/>
-  <line x1="155" y1="220" x2="155" y2="240" stroke="#EF4444" stroke-width="2" stroke-opacity="0.5"/>
-  <line x1="155" y1="330" x2="155" y2="355" stroke="#EF4444" stroke-width="2" stroke-opacity="0.5"/>
-  <rect x="628" y="250" width="14" height="80" rx="2" fill="#10B981" opacity="0.5"/>
-  <line x1="635" y1="225" x2="635" y2="250" stroke="#10B981" stroke-width="2" stroke-opacity="0.5"/>
-  <rect x="662" y="230" width="14" height="100" rx="2" fill="#EF4444" opacity="0.5"/>
-  <line x1="669" y1="205" x2="669" y2="230" stroke="#EF4444" stroke-width="2" stroke-opacity="0.5"/>
-  <!-- Label -->
-  <text x="400" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="50" font-weight="bold" fill="#F59E0B" opacity="0.9" text-anchor="middle">CRYPTO</text>
-  <text x="400" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#ffffff" opacity="0.4" text-anchor="middle">For Beginners</text>
+  <rect x="0" y="444" width="800" height="6" fill="#FFDF01" opacity="0.6"/>
+  <text x="52" y="42" font-family="'Courier New',monospace" font-size="10" fill="white" opacity="0.4" letter-spacing="3">FINANCIAL LITERACY</text>
+  <text x="52" y="72" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="bold" fill="white" opacity="0.92">Cryptocurrency: A Beginner's Guide</text>
+  <!-- Grid -->
+  <line x1="100" y1="110" x2="740" y2="110" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="100" y1="168" x2="740" y2="168" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="100" y1="226" x2="740" y2="226" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="100" y1="284" x2="740" y2="284" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="100" y1="342" x2="740" y2="342" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
+  <!-- Y-axis labels (BTC price) -->
+  <text x="88" y="114" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$70K</text>
+  <text x="88" y="172" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$55K</text>
+  <text x="88" y="230" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$40K</text>
+  <text x="88" y="288" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$25K</text>
+  <text x="88" y="346" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3" text-anchor="end">$10K</text>
+  <!-- BTC/USD candlesticks — 7 candles, scale: $70K=y110, $10K=y342, 232px/$60K = 0.00387px/$ -->
+  <!-- Candle 1: O=$28K H=$32K L=$25K C=$30K → bearish (O>C, red) -->
+  <!-- O=28K: y=342-(28-10)/60*232=342-69.6=272, H=32K:y=342-85.5=256, L=25K:y=342-57.7=284, C=30K:y=342-77.3=265 -->
+  <line x1="140" y1="256" x2="140" y2="284" stroke="white" stroke-opacity="0.4" stroke-width="1"/>
+  <rect x="128" y="265" width="24" height="8"  fill="white" opacity="0.25"/>
+  <!-- Candle 2: O=$30K H=$35K L=$29K C=$34K → bullish (C>O) -->
+  <line x1="220" y1="242" x2="220" y2="272" stroke="white" stroke-opacity="0.4" stroke-width="1"/>
+  <rect x="208" y="249" width="24" height="19" fill="white" opacity="0.5"/>
+  <!-- Candle 3: O=$34K H=$42K L=$33K C=$40K → bullish -->
+  <line x1="300" y1="219" x2="300" y2="261" stroke="white" stroke-opacity="0.4" stroke-width="1"/>
+  <rect x="288" y="226" width="24" height="23" fill="white" opacity="0.5"/>
+  <!-- Candle 4: O=$40K H=$45K L=$38K C=$38K → bearish (peak, then red) -->
+  <line x1="380" y1="204" x2="380" y2="234" stroke="white" stroke-opacity="0.35" stroke-width="1"/>
+  <rect x="368" y="219" width="24" height="8"  fill="white" opacity="0.25"/>
+  <!-- Candle 5: O=$38K H=$39K L=$30K C=$32K → bearish -->
+  <line x1="460" y1="226" x2="460" y2="272" stroke="white" stroke-opacity="0.35" stroke-width="1"/>
+  <rect x="448" y="234" width="24" height="19" fill="white" opacity="0.25"/>
+  <!-- Candle 6: O=$32K H=$36K L=$31K C=$36K → bullish -->
+  <line x1="540" y1="226" x2="540" y2="265" stroke="white" stroke-opacity="0.4" stroke-width="1"/>
+  <rect x="528" y="234" width="24" height="15" fill="white" opacity="0.5"/>
+  <!-- Candle 7: O=$36K H=$68K L=$35K C=$67K → strong bullish, highlighted gold -->
+  <line x1="620" y1="114" x2="620" y2="234" stroke="#FFDF01" stroke-opacity="0.7" stroke-width="1"/>
+  <rect x="608" y="118" width="24" height="116" fill="#FFDF01" opacity="0.25"/>
+  <rect x="608" y="118" width="24" height="3"   fill="#FFDF01" opacity="0.9"/>
+  <text x="623" y="112" font-family="'Courier New',monospace" font-size="9" fill="#FFDF01" font-weight="bold">$67K</text>
+  <!-- Volume bars (below) -->
+  <text x="88" y="380" font-family="'Courier New',monospace" font-size="8" fill="white" opacity="0.2" text-anchor="end">VOL</text>
+  <rect x="128" y="365" width="24" height="18" fill="white" opacity="0.1"/>
+  <rect x="208" y="360" width="24" height="23" fill="white" opacity="0.12"/>
+  <rect x="288" y="355" width="24" height="28" fill="white" opacity="0.12"/>
+  <rect x="368" y="350" width="24" height="33" fill="white" opacity="0.1"/>
+  <rect x="448" y="358" width="24" height="25" fill="white" opacity="0.1"/>
+  <rect x="528" y="362" width="24" height="21" fill="white" opacity="0.12"/>
+  <rect x="608" y="345" width="24" height="38" fill="#FFDF01" opacity="0.18"/>
+  <!-- X-axis labels -->
+  <text x="140" y="410" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.28" text-anchor="middle">JAN</text>
+  <text x="300" y="410" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.28" text-anchor="middle">MAR</text>
+  <text x="460" y="410" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.28" text-anchor="middle">MAY</text>
+  <text x="620" y="410" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.28" text-anchor="middle">JUL</text>
+  <text x="735" y="410" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.2" text-anchor="end">BTC / USD</text>
 </svg>
