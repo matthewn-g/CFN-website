@@ -33,6 +33,9 @@ export default function ModelCard({ model }: ModelCardProps) {
             </span>
           </div>
         )}
+        <div className="absolute top-3 left-3">
+          <DifficultyBadge level={model.difficulty} />
+        </div>
         {model.hasTemplate && (
           <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 bg-cfn-gold/90 text-cfn-navy text-xs font-bold rounded-full">
             <Download className="w-3 h-3" />
@@ -42,8 +45,7 @@ export default function ModelCard({ model }: ModelCardProps) {
       </div>
 
       <div className="p-5">
-        <DifficultyBadge level={model.difficulty} />
-        <h3 className="font-bold text-cfn-navy dark:text-white text-lg leading-snug group-hover:text-cfn-gold transition-colors line-clamp-2 mt-2 mb-2">
+        <h3 className="font-bold text-cfn-navy dark:text-white text-lg leading-snug group-hover:text-cfn-gold transition-colors line-clamp-2 mb-2">
           {model.title}
         </h3>
         <p className="text-sm text-cfn-muted dark:text-cfn-dark-muted line-clamp-2 leading-relaxed mb-4">

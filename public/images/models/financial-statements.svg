@@ -1,99 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#071828"/>
-      <stop offset="100%" style="stop-color:#0D2B55"/>
+      <stop offset="0%" style="stop-color:#0D2B55"/>
+      <stop offset="100%" style="stop-color:#0a1f3f"/>
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <rect x="0" y="444" width="800" height="6" fill="#FFDF01" opacity="0.6"/>
-  <text x="52" y="42" font-family="'Courier New',monospace" font-size="10" fill="white" opacity="0.4" letter-spacing="3">MODELS &amp; FRAMEWORKS</text>
-  <text x="52" y="72" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="bold" fill="white" opacity="0.92">Reading Financial Statements</text>
-
-  <!-- Income Statement box -->
-  <rect x="52" y="100" width="198" height="290" rx="3" fill="white" opacity="0.04" stroke="white" stroke-opacity="0.12" stroke-width="1"/>
-  <rect x="52" y="100" width="198" height="3"   rx="0" fill="white" opacity="0.4"/>
-  <text x="151" y="122" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.5" text-anchor="middle" letter-spacing="2">INCOME STMT</text>
-  <line x1="68" y1="130" x2="234" y2="130" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
-  <text x="68"  y="150" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.35">Revenue</text>
-  <text x="234" y="150" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.45" text-anchor="end">$1,240M</text>
-  <text x="68"  y="168" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.28">– COGS</text>
-  <text x="234" y="168" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.35" text-anchor="end">(580M)</text>
-  <line x1="68" y1="175" x2="234" y2="175" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
-  <text x="68"  y="192" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.35">Gross Profit</text>
-  <text x="234" y="192" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.45" text-anchor="end">$660M</text>
-  <text x="68"  y="210" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.28">– OpEx</text>
-  <text x="234" y="210" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.35" text-anchor="end">(320M)</text>
-  <text x="68"  y="228" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.28">– D&amp;A</text>
-  <text x="234" y="228" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.35" text-anchor="end">(42M)</text>
-  <line x1="68" y1="235" x2="234" y2="235" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
-  <text x="68"  y="252" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.35">EBIT</text>
-  <text x="234" y="252" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.45" text-anchor="end">$298M</text>
-  <text x="68"  y="270" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.28">– Interest</text>
-  <text x="234" y="270" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.35" text-anchor="end">(24M)</text>
-  <text x="68"  y="288" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.28">– Tax</text>
-  <text x="234" y="288" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.35" text-anchor="end">(68M)</text>
-  <line x1="68" y1="295" x2="234" y2="295" stroke="white" stroke-opacity="0.15" stroke-width="1.5"/>
-  <text x="68"  y="312" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.55" font-weight="bold">Net Income</text>
-  <text x="234" y="312" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.65" text-anchor="end" font-weight="bold">$206M</text>
-
-  <!-- Balance Sheet box (gold top border — the key statement) -->
-  <rect x="301" y="100" width="198" height="290" rx="3" fill="#FFDF01" opacity="0.03" stroke="#FFDF01" stroke-opacity="0.2" stroke-width="1"/>
-  <rect x="301" y="100" width="198" height="3"   rx="0" fill="#FFDF01" opacity="0.6"/>
-  <text x="400" y="122" font-family="'Courier New',monospace" font-size="9" fill="#FFDF01" opacity="0.7" text-anchor="middle" letter-spacing="2">BALANCE SHEET</text>
-  <line x1="317" y1="130" x2="483" y2="130" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
-  <text x="317" y="148" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" letter-spacing="1">ASSETS</text>
-  <text x="317" y="166" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">Current Assets</text>
-  <text x="483" y="166" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" text-anchor="end">$420M</text>
-  <text x="317" y="184" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">PP&amp;E</text>
-  <text x="483" y="184" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" text-anchor="end">$680M</text>
-  <line x1="317" y1="192" x2="483" y2="192" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
-  <text x="317" y="210" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" font-weight="bold">Total Assets</text>
-  <text x="483" y="210" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.5" text-anchor="end" font-weight="bold">$1,100M</text>
-  <line x1="317" y1="220" x2="483" y2="220" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
-  <text x="317" y="238" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" letter-spacing="1">LIABILITIES</text>
-  <text x="317" y="256" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">Current Liab.</text>
-  <text x="483" y="256" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" text-anchor="end">$210M</text>
-  <text x="317" y="274" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">Long-term Debt</text>
-  <text x="483" y="274" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" text-anchor="end">$340M</text>
-  <line x1="317" y1="282" x2="483" y2="282" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
-  <text x="317" y="300" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" letter-spacing="1">EQUITY</text>
-  <text x="317" y="318" font-family="'Courier New',monospace" font-size="9" fill="#FFDF01" opacity="0.7" font-weight="bold">Shareholders</text>
-  <text x="483" y="318" font-family="'Courier New',monospace" font-size="9" fill="#FFDF01" opacity="0.7" text-anchor="end" font-weight="bold">$550M</text>
-
-  <!-- Cash Flow Statement box -->
-  <rect x="550" y="100" width="198" height="290" rx="3" fill="white" opacity="0.04" stroke="white" stroke-opacity="0.12" stroke-width="1"/>
-  <rect x="550" y="100" width="198" height="3"   rx="0" fill="white" opacity="0.4"/>
-  <text x="649" y="122" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.5" text-anchor="middle" letter-spacing="2">CASH FLOWS</text>
-  <line x1="566" y1="130" x2="732" y2="130" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
-  <text x="566" y="148" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" letter-spacing="1">OPERATING</text>
-  <text x="566" y="166" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">Net Income</text>
-  <text x="732" y="166" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" text-anchor="end">$206M</text>
-  <text x="566" y="184" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">+ D&amp;A</text>
-  <text x="732" y="184" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" text-anchor="end">42M</text>
-  <text x="566" y="202" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">Δ Working Cap</text>
-  <text x="732" y="202" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" text-anchor="end">(18M)</text>
-  <text x="566" y="220" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.45" font-weight="bold">CFO</text>
-  <text x="732" y="220" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.5" text-anchor="end" font-weight="bold">$230M</text>
-  <line x1="566" y1="228" x2="732" y2="228" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
-  <text x="566" y="246" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" letter-spacing="1">INVESTING</text>
-  <text x="566" y="264" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">CapEx</text>
-  <text x="732" y="264" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" text-anchor="end">(95M)</text>
-  <text x="566" y="282" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.45" font-weight="bold">CFI</text>
-  <text x="732" y="282" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.5" text-anchor="end" font-weight="bold">($95M)</text>
-  <line x1="566" y1="290" x2="732" y2="290" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
-  <text x="566" y="308" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" letter-spacing="1">FINANCING</text>
-  <text x="566" y="326" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.3">Dividends</text>
-  <text x="732" y="326" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.4" text-anchor="end">(40M)</text>
-  <text x="566" y="344" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.45" font-weight="bold">CFF</text>
-  <text x="732" y="344" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.5" text-anchor="end" font-weight="bold">($40M)</text>
-
-  <!-- Connecting arrows between statements -->
-  <line x1="250" y1="310" x2="301" y2="310" stroke="white" stroke-opacity="0.18" stroke-width="1"/>
-  <polygon points="301,310 294,306 294,314" fill="white" opacity="0.18"/>
-  <line x1="499" y1="210" x2="550" y2="210" stroke="white" stroke-opacity="0.18" stroke-width="1"/>
-  <polygon points="550,210 543,206 543,214" fill="white" opacity="0.18"/>
-
-  <!-- Bottom note -->
-  <text x="400" y="415" font-family="'Courier New',monospace" font-size="9" fill="white" opacity="0.2" text-anchor="middle">THE THREE STATEMENTS ARE INTERCONNECTED — CHANGES IN ONE FLOW INTO THE OTHERS</text>
+  <!-- Three statement boxes -->
+  <!-- Income Statement -->
+  <rect x="90" y="145" width="175" height="220" rx="8" fill="#10B981" opacity="0.1" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="178" y="170" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#10B981" opacity="0.85" text-anchor="middle">INCOME STMT</text>
+  <line x1="105" y1="178" x2="250" y2="178" stroke="#10B981" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="178" y="200" font-family="monospace" font-size="10" fill="white" opacity="0.4" text-anchor="middle">Revenue</text>
+  <text x="178" y="220" font-family="monospace" font-size="10" fill="white" opacity="0.4" text-anchor="middle">– COGS</text>
+  <text x="178" y="240" font-family="monospace" font-size="10" fill="white" opacity="0.4" text-anchor="middle">= Gross Profit</text>
+  <text x="178" y="260" font-family="monospace" font-size="10" fill="white" opacity="0.4" text-anchor="middle">– OpEx</text>
+  <text x="178" y="280" font-family="monospace" font-size="10" fill="#10B981" opacity="0.7" text-anchor="middle">= Net Income</text>
+  <!-- Balance Sheet -->
+  <rect x="313" y="145" width="175" height="220" rx="8" fill="#C9A84C" opacity="0.1" stroke="#C9A84C" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="401" y="170" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#C9A84C" opacity="0.85" text-anchor="middle">BALANCE SHEET</text>
+  <line x1="328" y1="178" x2="473" y2="178" stroke="#C9A84C" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="401" y="200" font-family="monospace" font-size="10" fill="white" opacity="0.4" text-anchor="middle">Assets</text>
+  <text x="401" y="220" font-family="monospace" font-size="10" fill="white" opacity="0.4" text-anchor="middle">= Liabilities</text>
+  <text x="401" y="240" font-family="monospace" font-size="10" fill="#C9A84C" opacity="0.7" text-anchor="middle">+ Equity</text>
+  <!-- CF Statement -->
+  <rect x="536" y="145" width="175" height="220" rx="8" fill="#8B5CF6" opacity="0.1" stroke="#8B5CF6" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="624" y="170" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#8B5CF6" opacity="0.85" text-anchor="middle">CASH FLOWS</text>
+  <line x1="551" y1="178" x2="696" y2="178" stroke="#8B5CF6" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="624" y="200" font-family="monospace" font-size="10" fill="white" opacity="0.4" text-anchor="middle">Operating</text>
+  <text x="624" y="220" font-family="monospace" font-size="10" fill="white" opacity="0.4" text-anchor="middle">Investing</text>
+  <text x="624" y="240" font-family="monospace" font-size="10" fill="#8B5CF6" opacity="0.7" text-anchor="middle">Financing</text>
+  <!-- Arrows connecting them -->
+  <line x1="265" y1="255" x2="313" y2="255" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="313,255 304,250 304,260" fill="white" opacity="0.2"/>
+  <line x1="488" y1="255" x2="536" y2="255" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="536,255 527,250 527,260" fill="white" opacity="0.2"/>
+  <!-- Title -->
+  <text x="400" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="bold" fill="#10B981" opacity="0.9" text-anchor="middle">FINANCIAL STATEMENTS</text>
+  <text x="400" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#ffffff" opacity="0.4" text-anchor="middle">The Beginner's Roadmap</text>
 </svg>
