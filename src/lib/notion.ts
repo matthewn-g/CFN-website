@@ -155,7 +155,6 @@ export async function getAllEvents(): Promise<CFNEvent[]> {
   try {
     const db = await notion.databases.query({
       database_id: process.env.NOTION_DB_EVENTS,
-      filter: { property: "Title", title: { is_not_empty: true } },
       sorts: [{ property: "Date", direction: "descending" }],
     });
     return db.results.map(mapPageToEvent);
