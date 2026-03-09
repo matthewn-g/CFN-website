@@ -33,4 +33,12 @@ export const teamMembers: TeamMember[] = [
     photo:    "/images/team/placeholder.jpg",
     school:   "Queen's University",
   },
+  {
+    id:       "carolyn",
+    name:     "Carolyn Han",
+    role:     "VP Operations",
+    bio:      "Keeping CFN running behind the scenes — from coordinating events and partnerships to ensuring our growing team stays aligned and moving forward.",
+    photo:    "/images/team/placeholder.jpg",
+    school:   "University of British Columbia",
+  },
 ];
