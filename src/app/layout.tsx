@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/images/logo/bull.png",
+  },
 };
 
 export default function RootLayout({
