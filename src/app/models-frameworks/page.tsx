@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getAllModels } from "@/lib/notion";
 import ModelGrid from "@/components/models/ModelGrid";
 import DifficultyFilter from "@/components/models/DifficultyFilter";
@@ -45,8 +46,18 @@ export default function ModelsPage({ searchParams }: PageProps) {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <div className="bg-cfn-navy py-16">
-        <div className="section-container">
+      <div className="relative overflow-hidden bg-cfn-navy py-16">
+        <div className="absolute inset-0 animate-kb-1">
+          <Image
+            src="/images/models/wallstreet-bull.webp"
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-cfn-navy/75" />
+        <div className="section-container relative z-10">
           <p className="text-cfn-gold text-sm font-bold uppercase tracking-widest mb-3">
             Technical Skills
           </p>
