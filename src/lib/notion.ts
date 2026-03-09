@@ -134,17 +134,17 @@ function mapPageToEvent(page: any): CFNEvent {
     : [];
   return {
     id:           page.id,
-    title:        props.Title?.title?.[0]?.plain_text ?? "",
+    title:        props["CFN Events"]?.title?.[0]?.plain_text ?? "",
     description:  props.Description?.rich_text?.[0]?.plain_text ?? "",
     date:         props.Date?.date?.start ?? new Date().toISOString(),
     duration:     props.Duration?.number ?? 60,
     format:       (props.Format?.select?.name?.toLowerCase() as EventFormat) ?? "webinar",
     status:       (props.Status?.select?.name?.toLowerCase().replace(" ", "-") as EventStatus) ?? "upcoming",
     speakers,
-    coverImage:   props["Cover Image URL"]?.url ?? props["Cover Image URL"]?.rich_text?.[0]?.plain_text ?? "",
+    coverImage:   props["Cover Image URL"]?.rich_text?.[0]?.plain_text ?? "",
     tags:         props.Tags?.multi_select?.map((t: { name: string }) => t.name) ?? [],
-    lumaUrl:      props["Luma URL"]?.url ?? props["Luma URL"]?.rich_text?.[0]?.plain_text,
-    recordingUrl: props["Recording URL"]?.url ?? props["Recording URL"]?.rich_text?.[0]?.plain_text,
+    lumaUrl:      props["Registration URL"]?.url ?? undefined,
+    recordingUrl: props["Recording URL"]?.files?.[0]?.file?.url ?? props["Recording URL"]?.files?.[0]?.external?.url ?? undefined,
   };
 }
 
@@ -155,6 +155,7 @@ export async function getAllEvents(): Promise<CFNEvent[]> {
   try {
     const db = await notion.databases.query({
       database_id: process.env.NOTION_DB_EVENTS,
+      filter: { property: "CFN Events", title: { is_not_empty: true } },
       sorts: [{ property: "Date", direction: "descending" }],
     });
     return db.results.map(mapPageToEvent);
