@@ -13,11 +13,22 @@ function getProperty(page: any, name: string): any {
   return page.properties?.[name];
 }
 
+// Finds the title property regardless of what the column is named in Notion
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getTitleValue(props: any): string {
+  for (const key of Object.keys(props)) {
+    if (props[key]?.type === "title") {
+      return props[key].title?.[0]?.plain_text ?? "";
+    }
+  }
+  return "";
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapPageToArticle(page: any): ArticleFrontmatter {
   const props = page.properties;
   return {
-    title:       props.Title?.title?.[0]?.plain_text ?? "",
+    title:       getTitleValue(props),
     slug:        props.Slug?.rich_text?.[0]?.plain_text ?? page.id,
     excerpt:     props.Excerpt?.rich_text?.[0]?.plain_text ?? "",
     category:    props.Category?.select?.name?.toLowerCase().replace(/ /g, "-") ?? "personal-finance",
@@ -35,7 +46,7 @@ function mapPageToArticle(page: any): ArticleFrontmatter {
 function mapPageToModel(page: any): ModelFrontmatter {
   const props = page.properties;
   return {
-    title:        props.Title?.title?.[0]?.plain_text ?? "",
+    title:        getTitleValue(props),
     slug:         props.Slug?.rich_text?.[0]?.plain_text ?? page.id,
     excerpt:      props.Excerpt?.rich_text?.[0]?.plain_text ?? "",
     category:     props.Category?.select?.name?.toLowerCase().replace(" ", "-") ?? "valuation",
@@ -86,8 +97,13 @@ export async function getArticleBySlug(slug: string): Promise<ArticleFrontmatter
   if (!pages.results.length) throw new Error(`Article not found: ${slug}`);
   const page = pages.results[0];
   const article = mapPageToArticle(page);
-  const blocks = await notion.blocks.children.list({ block_id: page.id });
-  const content = renderBlocksToHtml(blocks.results);
+  let content = "";
+  try {
+    const blocks = await notion.blocks.children.list({ block_id: page.id });
+    content = renderBlocksToHtml(blocks.results);
+  } catch (err) {
+    console.error(`Failed to fetch blocks for article "${slug}":`, err);
+  }
   return { ...article, content };
 }
 
@@ -119,8 +135,13 @@ export async function getModelBySlug(slug: string): Promise<ModelFrontmatter & {
   if (!pages.results.length) throw new Error(`Model not found: ${slug}`);
   const page = pages.results[0];
   const model = mapPageToModel(page);
-  const blocks = await notion.blocks.children.list({ block_id: page.id });
-  const content = renderBlocksToHtml(blocks.results);
+  let content = "";
+  try {
+    const blocks = await notion.blocks.children.list({ block_id: page.id });
+    content = renderBlocksToHtml(blocks.results);
+  } catch (err) {
+    console.error(`Failed to fetch blocks for model "${slug}":`, err);
+  }
   return { ...model, content };
 }
 
