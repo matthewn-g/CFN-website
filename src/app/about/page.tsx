@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Users, Target, Heart, Star, Shield } from "lucide-react";
 import { teamMembers } from "@/data/team";
 import CommunityBanner from "@/components/ui/CommunityBanner";
@@ -45,8 +46,18 @@ export default function AboutPage() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <div className="bg-cfn-navy py-20">
-        <div className="section-container text-center">
+      <div className="relative overflow-hidden bg-cfn-navy py-20">
+        <div className="absolute inset-0 animate-kb-1">
+          <Image
+            src="/images/team/clubs.jpg"
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-cfn-navy/75" />
+        <div className="section-container relative z-10 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6">
             Finance Shouldn&apos;t Be Gatekept.
           </h1>
@@ -123,7 +134,7 @@ export default function AboutPage() {
               Meet the Team
             </h2>
             <p className="text-cfn-muted dark:text-cfn-dark-muted text-lg">
-              Built by students from UBC and Queen&apos;s University.
+              Built by students from universities across Canada.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -148,10 +159,10 @@ export default function AboutPage() {
       </section>
 
       {/* Community + Join Us */}
-      <section className="py-20 bg-cfn-cream-dark dark:bg-cfn-dark-bg">
+      <section id="join-cfn-community" className="py-20 bg-cfn-cream-dark dark:bg-cfn-dark-bg">
         <div className="section-container max-w-[700px] mx-auto space-y-8">
           <CommunityBanner variant="section" />
-          <div className="bg-cfn-gold rounded-2xl p-8 text-center">
+          <div id="want-to-write" className="bg-cfn-gold rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-black text-cfn-navy mb-3">Want to Write for CFN?</h3>
             <p className="text-cfn-navy/70 mb-6">
               We&apos;re always looking for passionate students to join the team — whether you write articles, build models, or create content.

@@ -15,6 +15,7 @@ const footerLinks = {
     { label: "LBO Modeling",         href: "/models-frameworks?category=lbo" },
     { label: "Comps Analysis",       href: "/models-frameworks?category=comparable-analysis" },
     { label: "Financial Statements", href: "/models-frameworks?category=financial-statements" },
+    { label: "Merger Model",         href: "/models-frameworks?category=merger-model" },
   ],
   "Company": [
     { label: "About CFN", href: "/about" },
@@ -84,9 +85,6 @@ export default function Footer() {
             Not financial advice. For educational purposes only.
           </p>
         </div>
-        <p className="mt-4 text-center text-xs text-white/25">
-          Website designed &amp; developed by Matthew Ng.
-        </p>
       </div>
     </footer>
   );

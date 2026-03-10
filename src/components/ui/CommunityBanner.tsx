@@ -30,7 +30,7 @@ export default function CommunityBanner({ variant = "chip" }: CommunityBannerPro
       </div>
       <h3 className="text-xl font-bold mb-2">Join the CFN Community</h3>
       <p className="text-white/70 mb-4 max-w-md mx-auto">
-        Connect with finance students from UBC to Queen&apos;s. Ask questions, share resources, and find your people.
+        Connect with finance students across Canada. Ask questions, share resources, and find your people.
       </p>
       <Link
         href={discordUrl}

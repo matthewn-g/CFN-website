@@ -5,7 +5,7 @@ export const teamMembers: TeamMember[] = [
     id:       "matthew",
     name:     "Matthew Ng",
     role:     "Co-Founder & President",
-    bio:      "Passionate about making finance accessible to every Canadian student. Matthew also built and oversees the technology behind CFN — from the website to the content platform.",
+    bio:      "Passionate about making finance accessible to every Canadian student. Matthew designed and built the CFN website from the ground up — including the content platform, article pipeline, and everything you see here.",
     photo:    "/images/team/placeholder.jpg",
     school:   "University of British Columbia",
   },

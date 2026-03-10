@@ -28,6 +28,7 @@ const navLinks = [
       { label: "LBO Modeling",         href: "/models-frameworks?category=lbo" },
       { label: "Comps Analysis",       href: "/models-frameworks?category=comparable-analysis" },
       { label: "Financial Statements", href: "/models-frameworks?category=financial-statements" },
+      { label: "Merger Model",         href: "/models-frameworks?category=merger-model" },
     ],
   },
   { label: "Events",   href: "/events"   },
@@ -113,7 +114,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-2">
               <ThemeToggle />
               <Link
-                href="/events"
+                href="/about#join-cfn-community"
                 className="ml-2 bg-cfn-gold text-cfn-navy font-semibold px-5 py-2 rounded-lg text-sm hover:bg-cfn-gold-light transition-colors"
               >
                 Join CFN
@@ -210,7 +211,7 @@ export default function Navbar() {
         {/* Drawer footer CTA */}
         <div className="p-4 border-t border-cfn-navy-100 dark:border-white/10">
           <Link
-            href="/events"
+            href="/about#join-cfn-community"
             onClick={() => setMobileOpen(false)}
             className="block w-full text-center bg-cfn-gold text-cfn-navy font-semibold px-6 py-3 rounded-lg hover:bg-cfn-gold-light transition-colors"
           >
