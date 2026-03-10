@@ -23,7 +23,6 @@ export const modelCategories: {
   { slug: "comparable-analysis",  label: "Comps Analysis"        },
   { slug: "financial-statements", label: "Financial Statements"  },
   { slug: "merger-model",         label: "Merger Models"         },
-  { slug: "credit-analysis",      label: "Credit Analysis"       },
 ];
 
 export const difficultyLevels: {

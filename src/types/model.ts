@@ -4,8 +4,7 @@ export type ModelCategory =
   | "lbo"
   | "comparable-analysis"
   | "financial-statements"
-  | "merger-model"
-  | "credit-analysis";
+  | "merger-model";
 
 export type DifficultyLevel = "Beginner" | "Intermediate" | "Advanced";
 
