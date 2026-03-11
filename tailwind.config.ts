@@ -79,8 +79,8 @@ const config: Config = {
           "100%": { transform: "scale(1.18) translate(-2%,  -1%)" },
         },
         kenBurns2: {
-          "0%":   { transform: "scale(1.1)  translate(1%,    1%)" },
-          "100%": { transform: "scale(1.0)  translate(-1%,  -2%)" },
+          "0%":   { transform: "scale(1.04) translate(1%,    0%)" },
+          "100%": { transform: "scale(1.18) translate(-1%,  -2%)" },
         },
         kenBurns3: {
           "0%":   { transform: "scale(1.04) translate(-1%,   1%)" },

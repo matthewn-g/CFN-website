@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const SLIDES = [
-  { src: "/images/hero/ubc.jpg",       alt: "University of British Columbia" },
-  { src: "/images/hero/queens.jpeg",   alt: "Queen's University" },
-  { src: "/images/hero/toronto.jpeg",  alt: "University of Toronto" },
+  { src: "/images/hero/ubc.jpg",       alt: "University of British Columbia", pos: "object-center" },
+  { src: "/images/hero/queens.jpeg",   alt: "Queen's University",             pos: "object-center" },
+  { src: "/images/hero/toronto.jpeg",  alt: "University of Toronto",          pos: "object-top"    },
 ];
 
 // Alternate Ken Burns direction per slide for a natural flyover feel
@@ -40,7 +40,7 @@ export default function HeroSlideshow() {
           src={SLIDES[prev].src}
           alt=""
           fill
-          className="object-cover object-center"
+          className={`object-cover ${SLIDES[prev].pos}`}
           priority
         />
       </div>
@@ -52,7 +52,7 @@ export default function HeroSlideshow() {
             src={SLIDES[cur].src}
             alt={SLIDES[cur].alt}
             fill
-            className="object-cover object-center"
+            className={`object-cover ${SLIDES[cur].pos}`}
             priority
           />
         </div>
