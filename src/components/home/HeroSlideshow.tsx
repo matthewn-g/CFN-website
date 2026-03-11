@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const SLIDES = [
-  { src: "/images/hero/ubc.jpg",     alt: "University of British Columbia" },
-  { src: "/images/hero/queens.jpg",  alt: "Queen's University" },
-  { src: "/images/hero/toronto.jpg", alt: "University of Toronto" },
+  { src: "/images/hero/ubc.jpg",       alt: "University of British Columbia" },
+  { src: "/images/hero/queens.jpeg",   alt: "Queen's University" },
+  { src: "/images/hero/toronto.jpeg",  alt: "University of Toronto" },
 ];
 
 // Alternate Ken Burns direction per slide for a natural flyover feel
