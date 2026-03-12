@@ -6,8 +6,8 @@ import DualCTABanner from "@/components/home/DualCTABanner";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import FeaturedModels from "@/components/home/FeaturedModels";
 import { SkeletonGrid } from "@/components/ui/SkeletonCard";
-import { getFeaturedArticles } from "@/lib/notion";
-import { getAllModels } from "@/lib/notion";
+import { getFeaturedArticles, getAllModels } from "@/lib/notion";
+import { STATIC_MODELS } from "@/data/staticModels";
 
 export const revalidate = 3600;
 
@@ -17,7 +17,13 @@ async function ArticlesSection() {
 }
 
 async function ModelsSection() {
-  const models = (await getAllModels()).filter((m) => m.featured).slice(0, 3);
+  const notionModels = await getAllModels();
+  const staticSlugs  = new Set(STATIC_MODELS.map((m) => m.slug));
+  const all = [
+    ...STATIC_MODELS,
+    ...notionModels.filter((m) => !staticSlugs.has(m.slug)),
+  ];
+  const models = all.filter((m) => m.featured).slice(0, 3);
   return <FeaturedModels models={models} />;
 }
 

@@ -111,7 +111,7 @@ const TOC = [
   { href: "#worked-example", label: "Worked Example" },
   { href: "#calculator",     label: "Live Calculator" },
   { href: "#verdict",        label: "What To Do" },
-  { href: "#sensitivity",    label: "Sensitivity Analysis" },
+  { href: "#tips",           label: "Tips" },
 ];
 
 /* ─── Page ───────────────────────────────────────────────────────────────── */
@@ -487,8 +487,8 @@ export default function DCFValuationPage() {
               </div>
             </section>
 
-            {/* Sensitivity Tips */}
-            <section>
+            {/* Tips */}
+            <section id="tips">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-1 h-10 bg-cfn-gold rounded-full flex-shrink-0" />
                 <h2 className="text-2xl sm:text-3xl font-black text-cfn-navy dark:text-white">
