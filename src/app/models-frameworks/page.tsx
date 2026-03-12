@@ -6,9 +6,30 @@ import ModelGrid from "@/components/models/ModelGrid";
 import DifficultyFilter from "@/components/models/DifficultyFilter";
 import ContentEmptyState from "@/components/ui/ContentEmptyState";
 import { SkeletonGrid } from "@/components/ui/SkeletonCard";
-import type { DifficultyLevel } from "@/types/model";
+import type { DifficultyLevel, ModelFrontmatter } from "@/types/model";
 
 export const revalidate = 3600;
+
+/* ─── Static hardcoded card ──────────────────────────────────────────────── */
+/* This card always shows regardless of Notion content and links to the
+   fully-interactive DCF page at /models-frameworks/dcf-valuation.
+   It is deduped against any Notion entry sharing the same slug.            */
+const DCF_STATIC: ModelFrontmatter = {
+  title:       "DCF Valuation",
+  slug:        "dcf-valuation",
+  excerpt:     "Master the most foundational valuation method in finance. Project free cash flows, choose a discount rate, and calculate intrinsic value per share — then run it live with our interactive calculator.",
+  category:    "dcf",
+  difficulty:  "Intermediate",
+  tags:        ["Valuation", "DCF", "Free Cash Flow"],
+  author:      "CFN",
+  publishedAt: "2024-01-01T00:00:00.000Z",
+  readingTime: 10,
+  featured:    true,
+  coverImage:  "",
+  hasTemplate: false,
+  steps:       5,
+  prerequisites: [],
+};
 
 export const metadata: Metadata = {
   title: "Models & Frameworks",
@@ -21,7 +42,14 @@ interface PageProps {
 }
 
 async function Models({ difficulty, category }: { difficulty?: string; category?: string }) {
-  const all = await getAllModels();
+  const notionModels = await getAllModels();
+
+  // Prepend the static DCF card first; strip any Notion duplicate with the same slug
+  const all = [
+    DCF_STATIC,
+    ...notionModels.filter((m) => m.slug !== DCF_STATIC.slug),
+  ];
+
   let filtered = all;
   if (difficulty) filtered = filtered.filter((m) => m.difficulty === difficulty);
   if (category)   filtered = filtered.filter((m) => m.category === category);
