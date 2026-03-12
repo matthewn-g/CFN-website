@@ -209,10 +209,10 @@ export default function DCFCalculator() {
 
   const verdict = results
     ? results.upside > 5
-      ? { label: "BUY SIGNAL",      emoji: "🟢", bg: "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-400", text: "text-emerald-700 dark:text-emerald-300", head: "text-emerald-700 dark:text-emerald-400" }
+      ? { label: "BUY SIGNAL",    dot: "bg-emerald-500", bg: "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-400", text: "text-emerald-700 dark:text-emerald-300", head: "text-emerald-700 dark:text-emerald-400" }
       : results.upside < -5
-      ? { label: "SELL SIGNAL",     emoji: "🔴", bg: "bg-red-50 dark:bg-red-900/20 border-red-400",            text: "text-red-700 dark:text-red-300",         head: "text-red-700 dark:text-red-400"         }
-      : { label: "FAIRLY VALUED",   emoji: "🟡", bg: "bg-cfn-gold/10 border-cfn-gold",                         text: "text-cfn-navy/80 dark:text-white/70",    head: "text-cfn-navy dark:text-cfn-gold"       }
+      ? { label: "SELL SIGNAL",   dot: "bg-red-500",     bg: "bg-red-50 dark:bg-red-900/20 border-red-400",            text: "text-red-700 dark:text-red-300",         head: "text-red-700 dark:text-red-400"         }
+      : { label: "FAIRLY VALUED", dot: "bg-amber-500",   bg: "bg-cfn-gold/10 border-cfn-gold",                         text: "text-cfn-navy/80 dark:text-white/70",    head: "text-cfn-navy dark:text-cfn-gold"       }
     : null;
 
   return (
@@ -298,8 +298,9 @@ export default function DCFCalculator() {
 
           {/* Verdict */}
           <div className={`${verdict.bg} border-2 rounded-2xl p-6 text-center`}>
-            <p className={`text-2xl font-black mb-2 ${verdict.head}`}>
-              {verdict.emoji} {verdict.label}
+            <p className={`flex items-center justify-center gap-2.5 text-2xl font-black mb-2 ${verdict.head}`}>
+              <span className={`w-3 h-3 rounded-full flex-shrink-0 ${verdict.dot}`} />
+              {verdict.label}
             </p>
             <p className={verdict.text}>
               Intrinsic value{" "}

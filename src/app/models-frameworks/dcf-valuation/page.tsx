@@ -444,32 +444,35 @@ export default function DCFValuationPage() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 {[
                   {
-                    sig:   "BUY",
-                    emoji: "🟢",
-                    cond:  "Intrinsic value > market price by &gt;5%",
-                    body:  "Your model suggests the stock is undervalued — the market hasn't yet priced in your projected cash flows. Validate with comps before acting.",
-                    bg:    "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800",
-                    head:  "text-emerald-700 dark:text-emerald-300",
+                    sig:  "BUY",
+                    dot:  "bg-emerald-500",
+                    cond: "Intrinsic value > market price by &gt;5%",
+                    body: "Your model suggests the stock is undervalued — the market hasn't yet priced in your projected cash flows. Validate with comps before acting.",
+                    bg:   "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800",
+                    head: "text-emerald-700 dark:text-emerald-300",
                   },
                   {
-                    sig:   "HOLD",
-                    emoji: "🟡",
-                    cond:  "Within ±5% of market price",
-                    body:  "The market is roughly pricing in what your model projects. Monitor for changes in assumptions, management guidance, or macro conditions.",
-                    bg:    "bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800",
-                    head:  "text-amber-700 dark:text-amber-300",
+                    sig:  "HOLD",
+                    dot:  "bg-amber-500",
+                    cond: "Within ±5% of market price",
+                    body: "The market is roughly pricing in what your model projects. Monitor for changes in assumptions, management guidance, or macro conditions.",
+                    bg:   "bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800",
+                    head: "text-amber-700 dark:text-amber-300",
                   },
                   {
-                    sig:   "SELL",
-                    emoji: "🔴",
-                    cond:  "Intrinsic value &lt; market price by &gt;5%",
-                    body:  "The stock appears overvalued relative to your fair value estimate. The market is pricing in more growth than your model projects.",
-                    bg:    "bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800",
-                    head:  "text-red-700 dark:text-red-300",
+                    sig:  "SELL",
+                    dot:  "bg-red-500",
+                    cond: "Intrinsic value &lt; market price by &gt;5%",
+                    body: "The stock appears overvalued relative to your fair value estimate. The market is pricing in more growth than your model projects.",
+                    bg:   "bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800",
+                    head: "text-red-700 dark:text-red-300",
                   },
-                ].map(({ sig, emoji, cond, body, bg, head }) => (
+                ].map(({ sig, dot, cond, body, bg, head }) => (
                   <div key={sig} className={`rounded-2xl p-5 border ${bg}`}>
-                    <p className={`text-xl font-black mb-1 ${head}`}>{emoji} {sig}</p>
+                    <p className={`flex items-center gap-2 text-xl font-black mb-1 ${head}`}>
+                      <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${dot}`} />
+                      {sig}
+                    </p>
                     <p className={`text-xs font-semibold mb-3 ${head} opacity-80`} dangerouslySetInnerHTML={{ __html: cond }} />
                     <p className="text-sm text-cfn-charcoal dark:text-cfn-dark-text leading-relaxed">{body}</p>
                   </div>

@@ -17,7 +17,7 @@ export const STATIC_MODELS: ModelFrontmatter[] = [
     publishedAt: "2024-01-01T00:00:00.000Z",
     readingTime: 10,
     featured:    true,
-    coverImage:  "",
+    coverImage:  "/images/models/DCF.jpg",
     hasTemplate: false,
     steps:       5,
     prerequisites: [],
