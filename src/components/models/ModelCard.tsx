@@ -13,7 +13,7 @@ export default function ModelCard({ model }: ModelCardProps) {
     <Link
       href={`/models-frameworks/${model.slug}`}
       className={cn(
-        "group block bg-white rounded-card overflow-hidden transition-all duration-200",
+        "group block bg-cfn-cream rounded-card overflow-hidden transition-all duration-200",
         "shadow-card hover:shadow-card-hover hover:-translate-y-1"
       )}
     >
@@ -28,13 +28,13 @@ export default function ModelCard({ model }: ModelCardProps) {
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-cfn-navy to-cfn-navy-800 flex items-center justify-center">
-            <span className="text-cfn-gold/20 text-5xl font-black block">
+            <span className="text-cfn-cream/20 text-5xl font-black font-serif block">
               {model.category.toUpperCase().slice(0, 3)}
             </span>
           </div>
         )}
         {model.hasTemplate && (
-          <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 bg-cfn-gold/90 text-cfn-navy text-xs font-bold rounded-full">
+          <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 bg-cfn-cream/90 text-cfn-navy text-xs font-bold rounded-full">
             <Download className="w-3 h-3" />
             Template
           </div>
@@ -43,7 +43,7 @@ export default function ModelCard({ model }: ModelCardProps) {
 
       <div className="p-5">
         <DifficultyBadge level={model.difficulty} />
-        <h3 className="font-bold text-cfn-navy text-lg leading-snug group-hover:text-cfn-gold transition-colors line-clamp-2 mt-2 mb-2">
+        <h3 className="font-bold text-cfn-navy text-lg leading-snug group-hover:text-cfn-navy-800 transition-colors line-clamp-2 mt-2 mb-2">
           {model.title}
         </h3>
         <p className="text-sm text-cfn-muted line-clamp-2 leading-relaxed mb-4">
@@ -67,7 +67,7 @@ export default function ModelCard({ model }: ModelCardProps) {
             <Clock className="w-3 h-3" />
             {model.readingTime} min · {model.steps} steps
           </span>
-          <span className="flex items-center gap-0.5 text-cfn-gold font-semibold group-hover:gap-1.5 transition-all">
+          <span className="flex items-center gap-0.5 text-cfn-navy font-semibold group-hover:gap-1.5 transition-all">
             Start <ChevronRight className="w-3 h-3" />
           </span>
         </div>

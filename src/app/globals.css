@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --color-primary: #0D2B55;
-    --color-accent:  #FFDF01;
-    --color-bg:      #FFFFFF;
+    --color-primary: #091E3A;
+    --color-accent:  #C8D8F0;
+    --color-bg:      #F8F6F1;
   }
 
   html {
@@ -14,7 +14,12 @@
   }
 
   body {
-    @apply bg-cfn-cream text-cfn-charcoal font-sans antialiased;
+    @apply bg-cfn-cream text-cfn-navy font-sans antialiased;
+  }
+
+  /* Times New Roman for all headings */
+  h1, h2, h3, h4 {
+    @apply font-serif;
   }
 }
 
@@ -25,14 +30,15 @@
 
   /* Fallback hero bg - photo slideshow renders on top of this */
   .hero-bg {
-    background-color: #0D2B55;
+    background-color: #091E3A;
   }
 
   .prose-cfn {
     @apply prose prose-lg max-w-none;
-    @apply prose-headings:text-cfn-navy;
-    @apply prose-a:text-cfn-gold prose-a:no-underline hover:prose-a:underline;
-    @apply prose-blockquote:border-l-cfn-gold;
+    font-family: "Times New Roman", Times, serif;
+    @apply prose-headings:text-cfn-navy prose-headings:font-serif;
+    @apply prose-a:text-[#4A6080] prose-a:underline hover:prose-a:text-[#1C3A5E];
+    @apply prose-blockquote:border-l-cfn-navy;
     @apply prose-code:text-cfn-navy prose-code:bg-cfn-navy-100;
     @apply prose-strong:text-cfn-navy;
   }

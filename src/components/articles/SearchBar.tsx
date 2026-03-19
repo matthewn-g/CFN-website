@@ -66,7 +66,7 @@ export default function SearchBar({ articles, models }: SearchBarProps) {
           onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
           onFocus={() => setOpen(true)}
           placeholder="Search articles and models..."
-          className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-cfn-navy-100 bg-white text-cfn-charcoal placeholder:text-cfn-muted focus:outline-none focus:border-cfn-gold focus:ring-1 focus:ring-cfn-gold transition-colors text-sm"
+          className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-cfn-navy-100 bg-cfn-cream text-cfn-charcoal placeholder:text-cfn-muted focus:outline-none focus:border-cfn-navy focus:ring-1 focus:ring-cfn-navy/30 transition-colors text-sm"
         />
         {query && (
           <button
@@ -79,7 +79,7 @@ export default function SearchBar({ articles, models }: SearchBarProps) {
       </div>
 
       {open && query && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-cfn-navy-100 rounded-xl shadow-card-hover z-20 overflow-hidden">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-cfn-cream border border-cfn-navy-100 rounded-xl shadow-card-hover z-20 overflow-hidden">
           <div className="p-2">
             <p className="text-xs text-cfn-muted px-2 py-1 mb-1">
               {results.length} result{results.length !== 1 ? "s" : ""} for &quot;{query}&quot;
@@ -112,7 +112,7 @@ export default function SearchBar({ articles, models }: SearchBarProps) {
       )}
 
       {open && query && results.length === 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-cfn-navy-100 rounded-xl shadow-card-hover z-20 p-4 text-center">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-cfn-cream border border-cfn-navy-100 rounded-xl shadow-card-hover z-20 p-4 text-center">
           <p className="text-sm text-cfn-muted">
             No results for &quot;{query}&quot;
           </p>

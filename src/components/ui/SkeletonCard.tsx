@@ -1,6 +1,6 @@
 export default function SkeletonCard() {
   return (
-    <div className="bg-white rounded-card overflow-hidden shadow-card">
+    <div className="bg-cfn-cream rounded-card overflow-hidden shadow-card">
       <div className="skeleton aspect-video w-full" />
       <div className="p-5 space-y-3">
         <div className="skeleton h-4 w-20 rounded" />

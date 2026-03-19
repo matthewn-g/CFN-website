@@ -10,30 +10,31 @@ const config: Config = {
     extend: {
       colors: {
         cfn: {
-          navy:         "#0D2B55",
-          "navy-800":   "#0A2244",
-          "navy-100":   "#E8EDF5",
-          // RBC-style bright yellow — used as accent only
-          gold:         "#FFDF01",
-          "gold-light": "#FFE840",
-          cream:        "#FFFFFF",       // clean white — matches professional finance sites
-          "cream-dark": "#EEF3FB",       // subtle light-blue for alternating sections
-          charcoal:     "#1A1A2E",
-          muted:        "#6B7280",
-          "dark-bg":    "#0A0F1E",
-          "dark-text":  "#E8EDF5",
-          "dark-muted": "#9CA3AF",
+          // ── Primary palette ──────────────────────────────────────────────
+          navy:         "#091E3A",       // PRIMARY DARK — deep navy
+          "navy-800":   "#071529",       // darker navy — hover states
+          "navy-100":   "#E8EDF5",       // very light navy — borders / subtle bg
+          mid:          "#1C3A5E",       // mid navy — pill/badge backgrounds
+          cream:        "#F8F6F1",       // PRIMARY LIGHT — page backgrounds
+          "cream-dark": "#EEF3FB",       // subtle blue-tinted cream — alternating sections
+          // ── Text & accents ───────────────────────────────────────────────
+          charcoal:     "#091E3A",       // same as navy (consolidated)
+          muted:        "#4D6E95",       // muted navy-family — secondary text
+          "blue-text":  "#C8D8F0",       // light desaturated navy — text on dark backgrounds
         },
       },
       fontFamily: {
-        sans:  ['"Times New Roman"', "Times", "Georgia", "serif"],
-        serif: ['"Times New Roman"', "Times", "Georgia", "serif"],
-        mono:  ["var(--font-jetbrains)", "monospace"],
+        // Primary: Nunito (loaded via Google Fonts / CSS var)
+        sans:    ["var(--font-nunito)", '"Avenir Next"', "Avenir", "system-ui", "sans-serif"],
+        // Secondary / brand: Times New Roman — for "CFN" and "Canadian Financial Network"
+        serif:   ['"Times New Roman"', "Times", "serif"],
+        display: ["var(--font-nunito)", '"Avenir Next"', "Avenir", "system-ui", "sans-serif"],
+        mono:    ["var(--font-jetbrains)", "monospace"],
       },
       boxShadow: {
-        card:        "0 2px 8px rgba(13, 43, 85, 0.08)",
-        "card-hover":"0 8px 24px rgba(13, 43, 85, 0.18)",
-        nav:         "0 1px 0 rgba(13, 43, 85, 0.1)",
+        card:        "0 2px 8px rgba(9, 30, 58, 0.08)",
+        "card-hover":"0 8px 24px rgba(9, 30, 58, 0.18)",
+        nav:         "0 1px 0 rgba(9, 30, 58, 0.1)",
       },
       borderRadius: {
         card: "12px",
@@ -48,7 +49,6 @@ const config: Config = {
         "fade-in":    "fadeIn 0.4s ease-out",
         "slide-up":   "slideUp 0.4s ease-out",
         "pulse-slow": "pulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
-        // Hero slideshow
         "hero-fade":  "heroFade 1.5s ease-out forwards",
         "kb-1":       "kenBurns1 8s ease-out forwards",
         "kb-2":       "kenBurns2 8s ease-out forwards",
@@ -67,12 +67,10 @@ const config: Config = {
           "0%":   { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        // Hero photo crossfade
         heroFade: {
           "0%":   { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        // Ken Burns directions — slow zoom + gentle pan
         kenBurns1: {
           "0%":   { transform: "scale(1.04) translate(0%,    0%)" },
           "100%": { transform: "scale(1.18) translate(-2%,  -1%)" },

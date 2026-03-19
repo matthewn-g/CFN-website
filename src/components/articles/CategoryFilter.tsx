@@ -31,7 +31,7 @@ export default function CategoryFilter({ basePath = "/financial-literacy" }: Cat
             className={cn(
               "flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors",
               !active
-                ? "bg-cfn-navy text-white"
+                ? "bg-cfn-navy text-cfn-cream"
                 : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
             )}
           >
@@ -44,12 +44,12 @@ export default function CategoryFilter({ basePath = "/financial-literacy" }: Cat
               className={cn(
                 "flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors whitespace-nowrap",
                 active === cat.slug
-                  ? "text-white"
+                  ? ""
                   : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
               )}
               style={
                 active === cat.slug
-                  ? { backgroundColor: cat.color }
+                  ? { backgroundColor: "#1C3A5E", color: "#C8D8F0" }
                   : {}
               }
             >

@@ -124,31 +124,31 @@ export default function DCFValuationPage() {
       <div className="bg-cfn-navy py-14">
         <div className="section-container max-w-[1100px] mx-auto">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-1.5 text-white/50 text-sm mb-6">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <nav className="flex items-center gap-1.5 text-cfn-cream/50 text-sm mb-6">
+            <Link href="/" className="hover:text-cfn-cream transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <Link href="/models-frameworks" className="hover:text-white transition-colors">Models &amp; Frameworks</Link>
+            <Link href="/models-frameworks" className="hover:text-cfn-cream transition-colors">Models &amp; Frameworks</Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-cfn-gold">DCF Valuation</span>
+            <span className="text-cfn-blue-text">DCF Valuation</span>
           </nav>
 
           <div className="flex flex-wrap items-start gap-3 mb-4">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cfn-gold/15 text-cfn-gold">
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cfn-navy-100 text-cfn-navy">
               Valuation
             </span>
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/15 text-amber-400">
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-cfn-navy-100 text-cfn-navy">
               Intermediate
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-cfn-cream leading-tight mb-4">
             DCF Valuation
           </h1>
-          <p className="text-white/70 text-lg max-w-2xl leading-relaxed mb-6">
+          <p className="text-cfn-cream/70 text-lg max-w-2xl leading-relaxed mb-6">
             Learn the most foundational valuation method in finance, then run one live. Input your own assumptions
             and see intrinsic value calculate in real time.
           </p>
-          <div className="flex flex-wrap items-center gap-5 text-white/50 text-sm">
+          <div className="flex flex-wrap items-center gap-5 text-cfn-cream/50 text-sm">
             <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />~10 min read</span>
             <span className="flex items-center gap-1.5"><BookOpen className="w-4 h-4" />5 steps</span>
             <span className="flex items-center gap-1.5"><TrendingUp className="w-4 h-4" />Interactive calculator</span>
@@ -166,7 +166,7 @@ export default function DCFValuationPage() {
             {/* Section 1 — What is a DCF */}
             <section id="what-is-dcf">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-10 bg-cfn-gold rounded-full flex-shrink-0" />
+                <div className="w-1 h-10 bg-cfn-navy-100 rounded-full flex-shrink-0" />
                 <h2 className="text-2xl sm:text-3xl font-black text-cfn-navy">
                   What is a DCF &amp; Why Use It?
                 </h2>
@@ -192,9 +192,9 @@ export default function DCFValuationPage() {
                   { Icon: Target,     title: "M&A Analysis",       body: "Price a private acquisition target where no market price exists; the DCF gives you an independent fair value anchor." },
                   { Icon: BookOpen,   title: "Capital Budgeting",  body: "Decide whether a new project or investment clears your required rate of return before committing capital." },
                 ].map(({ Icon, title, body }) => (
-                  <div key={title} className="bg-white rounded-2xl p-5 border border-cfn-navy-100 shadow-card">
-                    <div className="w-10 h-10 rounded-xl bg-cfn-gold/15 flex items-center justify-center mb-3">
-                      <Icon className="w-5 h-5 text-cfn-gold" />
+                  <div key={title} className="bg-cfn-cream rounded-2xl p-5 border border-cfn-navy-100 shadow-card">
+                    <div className="w-10 h-10 rounded-xl bg-cfn-cream/10 flex items-center justify-center mb-3">
+                      <Icon className="w-5 h-5 text-cfn-blue-text" />
                     </div>
                     <h3 className="font-bold text-cfn-navy mb-1">{title}</h3>
                     <p className="text-sm text-cfn-muted leading-relaxed">{body}</p>
@@ -206,7 +206,7 @@ export default function DCFValuationPage() {
             {/* Section 2 — Key Terms */}
             <section id="key-terms">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-10 bg-cfn-gold rounded-full flex-shrink-0" />
+                <div className="w-1 h-10 bg-cfn-navy-100 rounded-full flex-shrink-0" />
                 <h2 className="text-2xl sm:text-3xl font-black text-cfn-navy">
                   Key Terms Explained
                 </h2>
@@ -216,8 +216,8 @@ export default function DCFValuationPage() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {KEY_TERMS.map(({ term, def }) => (
-                  <div key={term} className="bg-white rounded-xl p-5 border border-cfn-navy-100 shadow-card">
-                    <p className="text-xs font-bold text-cfn-gold font-mono uppercase tracking-wider mb-2">{term}</p>
+                  <div key={term} className="bg-cfn-cream rounded-xl p-5 border border-cfn-navy-100 shadow-card">
+                    <p className="text-xs font-bold text-cfn-blue-text font-mono uppercase tracking-wider mb-2">{term}</p>
                     <p className="text-sm text-cfn-muted leading-relaxed">{def}</p>
                   </div>
                 ))}
@@ -227,7 +227,7 @@ export default function DCFValuationPage() {
             {/* Section 3 — The 5 Steps */}
             <section id="five-steps">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-10 bg-cfn-gold rounded-full flex-shrink-0" />
+                <div className="w-1 h-10 bg-cfn-navy-100 rounded-full flex-shrink-0" />
                 <h2 className="text-2xl sm:text-3xl font-black text-cfn-navy">
                   The 5 Steps of a DCF
                 </h2>
@@ -240,7 +240,7 @@ export default function DCFValuationPage() {
                   <div key={num} className="flex gap-5">
                     {/* Number badge */}
                     <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cfn-navy flex items-center justify-center">
-                      <span className="text-cfn-gold font-black text-sm">{num}</span>
+                      <span className="text-cfn-blue-text font-black text-sm">{num}</span>
                     </div>
                     {/* Content */}
                     <div className="flex-1 min-w-0">
@@ -249,7 +249,7 @@ export default function DCFValuationPage() {
 
                       {/* Formula block — uses HTML for subscripts/superscripts */}
                       <pre
-                        className="bg-cfn-navy text-cfn-gold text-xs font-mono px-4 py-3 rounded-xl overflow-x-auto leading-6 whitespace-pre-wrap"
+                        className="bg-cfn-navy-800 text-cfn-blue-text text-xs font-mono px-4 py-3 rounded-xl overflow-x-auto leading-6 whitespace-pre-wrap"
                         dangerouslySetInnerHTML={{ __html: formulaHtml }}
                       />
 
@@ -276,7 +276,7 @@ export default function DCFValuationPage() {
             {/* Section 4 — Worked Example */}
             <section id="worked-example">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-10 bg-cfn-gold rounded-full flex-shrink-0" />
+                <div className="w-1 h-10 bg-cfn-navy-100 rounded-full flex-shrink-0" />
                 <h2 className="text-2xl sm:text-3xl font-black text-cfn-navy">
                   Worked Example
                 </h2>
@@ -287,13 +287,13 @@ export default function DCFValuationPage() {
               </p>
               <p className="text-cfn-muted text-sm mb-6">All figures in $M unless noted.</p>
 
-              <div className="bg-white rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden">
+              <div className="bg-cfn-cream rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="bg-cfn-navy text-white">
+                      <tr className="bg-cfn-navy text-cfn-cream">
                         <th className="text-left px-4 py-3 font-semibold">Line Item</th>
-                        <th className="text-right px-4 py-3 font-semibold text-white/70">Base Y0</th>
+                        <th className="text-right px-4 py-3 font-semibold text-cfn-cream/70">Base Y0</th>
                         <th className="text-right px-4 py-3 font-semibold">Year 1</th>
                         <th className="text-right px-4 py-3 font-semibold">Year 2</th>
                         <th className="text-right px-4 py-3 font-semibold">Year 3</th>
@@ -301,8 +301,8 @@ export default function DCFValuationPage() {
                     </thead>
                     <tbody className="divide-y divide-cfn-navy-100 font-mono">
                       {/* Revenue build */}
-                      <tr className="bg-cfn-gold/5">
-                        <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-gold font-sans">Revenue Build</td>
+                      <tr className="bg-cfn-navy/5">
+                        <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-navy font-sans">Revenue Build</td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-sans text-cfn-navy">Sales</td>
@@ -326,8 +326,8 @@ export default function DCFValuationPage() {
                         <td className="px-4 py-3 text-right text-cfn-muted">{EX.y3.nopat}</td>
                       </tr>
                       {/* FCF build */}
-                      <tr className="bg-cfn-gold/5">
-                        <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-gold font-sans">FCF Build</td>
+                      <tr className="bg-cfn-navy/5">
+                        <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-navy font-sans">FCF Build</td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 pl-8 font-sans text-cfn-navy">+ D&amp;A</td>
@@ -351,11 +351,11 @@ export default function DCFValuationPage() {
                         <td className="px-4 py-3 text-right text-cfn-navy">{EX.y3.dnwc}</td>
                       </tr>
                       <tr className="bg-cfn-navy font-bold">
-                        <td className="px-4 py-3 font-sans text-white">= Free Cash Flow</td>
+                        <td className="px-4 py-3 font-sans text-cfn-cream">= Free Cash Flow</td>
                         <td className="px-4 py-3 text-right text-cfn-muted">—</td>
-                        <td className="px-4 py-3 text-right text-cfn-gold">{EX.y1.fcf}</td>
-                        <td className="px-4 py-3 text-right text-cfn-gold">{EX.y2.fcf}</td>
-                        <td className="px-4 py-3 text-right text-cfn-gold">{EX.y3.fcf}</td>
+                        <td className="px-4 py-3 text-right text-cfn-navy font-semibold">{EX.y1.fcf}</td>
+                        <td className="px-4 py-3 text-right text-cfn-navy font-semibold">{EX.y2.fcf}</td>
+                        <td className="px-4 py-3 text-right text-cfn-navy font-semibold">{EX.y3.fcf}</td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 pl-8 font-sans text-cfn-muted text-xs">PV of FCF (@ 8%)</td>
@@ -365,8 +365,8 @@ export default function DCFValuationPage() {
                         <td className="px-4 py-3 text-right text-cfn-muted">{EX.y3.pv}</td>
                       </tr>
                       {/* Valuation bridge */}
-                      <tr className="bg-cfn-gold/5">
-                        <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-gold font-sans">Valuation Bridge</td>
+                      <tr className="bg-cfn-navy/5">
+                        <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-navy font-sans">Valuation Bridge</td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-sans text-cfn-navy">Σ PV of FCFs</td>
@@ -392,7 +392,7 @@ export default function DCFValuationPage() {
                         <td className="px-4 py-3 pl-8 font-sans text-cfn-muted text-xs">÷ Shares Outstanding</td>
                         <td colSpan={4} className="px-4 py-3 text-right text-cfn-muted">10.00M</td>
                       </tr>
-                      <tr className="bg-cfn-gold font-black">
+                      <tr className="bg-cfn-navy text-cfn-cream font-black">
                         <td className="px-4 py-4 font-sans text-cfn-navy">= Intrinsic Value per Share</td>
                         <td colSpan={4} className="px-4 py-4 text-right text-cfn-navy text-xl">{EX.pps}</td>
                       </tr>
@@ -402,7 +402,7 @@ export default function DCFValuationPage() {
               </div>
 
               {/* Interpretive callout */}
-              <div className="mt-4 p-5 bg-cfn-navy/5 border-l-4 border-cfn-gold rounded-r-xl">
+              <div className="mt-4 p-5 bg-cfn-navy/5 border-l-4 border-cfn-navy rounded-r-xl">
                 <p className="text-sm text-cfn-charcoal leading-relaxed">
                   <span className="font-bold text-cfn-navy">Reading the output:</span>{" "}
                   {EX.pps} is the model&apos;s estimate of intrinsic value. If shares trade at $6.50, the stock
@@ -415,7 +415,7 @@ export default function DCFValuationPage() {
             {/* Section 5 — Calculator */}
             <section>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-10 bg-cfn-gold rounded-full flex-shrink-0" />
+                <div className="w-1 h-10 bg-cfn-navy-100 rounded-full flex-shrink-0" />
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-black text-cfn-navy">
                     Live DCF Calculator
@@ -431,7 +431,7 @@ export default function DCFValuationPage() {
             {/* Section 6 — What To Do */}
             <section id="verdict">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-10 bg-cfn-gold rounded-full flex-shrink-0" />
+                <div className="w-1 h-10 bg-cfn-navy-100 rounded-full flex-shrink-0" />
                 <h2 className="text-2xl sm:text-3xl font-black text-cfn-navy">
                   What To Do With Your Number
                 </h2>
@@ -453,11 +453,11 @@ export default function DCFValuationPage() {
                   },
                   {
                     sig:  "HOLD",
-                    dot:  "bg-amber-500",
+                    dot:  "bg-cfn-navy",
                     cond: "Within ±5% of market price",
                     body: "The market is roughly pricing in what your model projects. Monitor for changes in assumptions, management guidance, or macro conditions.",
-                    bg:   "bg-amber-50 border-amber-200",
-                    head: "text-amber-700",
+                    bg:   "bg-cfn-navy-100 border-cfn-navy-100",
+                    head: "text-cfn-navy",
                   },
                   {
                     sig:  "SELL",
@@ -481,8 +481,8 @@ export default function DCFValuationPage() {
 
               {/* Caveat */}
               <div className="p-5 bg-cfn-navy rounded-2xl">
-                <p className="text-cfn-gold font-bold text-sm mb-2">⚠️ Important caveat</p>
-                <p className="text-white/80 text-sm leading-relaxed">
+                <p className="text-cfn-navy font-bold text-sm mb-2">⚠️ Important caveat</p>
+                <p className="text-cfn-cream/80 text-sm leading-relaxed">
                   A DCF is only as good as its inputs. Never treat your output as definitive. Always run a
                   sensitivity analysis, use conservative estimates, and triangulate with other methods like
                   Comparable Company Analysis (comps). The model is a thinking tool, not an oracle.
@@ -493,7 +493,7 @@ export default function DCFValuationPage() {
             {/* Tips */}
             <section id="tips">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-10 bg-cfn-gold rounded-full flex-shrink-0" />
+                <div className="w-1 h-10 bg-cfn-navy-100 rounded-full flex-shrink-0" />
                 <h2 className="text-2xl sm:text-3xl font-black text-cfn-navy">
                   Tips for a Better DCF
                 </h2>
@@ -514,7 +514,7 @@ export default function DCFValuationPage() {
                   "Never forget to subtract net debt (and add cash) when bridging to equity value.",
                 ].map((tip, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-cfn-charcoal">
-                    <span className="w-5 h-5 rounded-full bg-cfn-gold/20 text-cfn-navy text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-5 h-5 rounded-full bg-cfn-navy-100 text-cfn-navy text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
                       {i + 1}
                     </span>
                     {tip}
@@ -529,8 +529,8 @@ export default function DCFValuationPage() {
           <aside className="hidden lg:block space-y-6 sticky top-24">
 
             {/* Table of Contents */}
-            <div className="bg-white rounded-2xl border border-cfn-navy-100 shadow-card p-5">
-              <p className="text-xs font-bold uppercase tracking-widest text-cfn-gold mb-4">On This Page</p>
+            <div className="bg-cfn-cream rounded-2xl border border-cfn-navy-100 shadow-card p-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-cfn-blue-text mb-4">On This Page</p>
               <nav className="space-y-1">
                 {TOC.map(({ href, label }) => (
                   <a
@@ -545,8 +545,8 @@ export default function DCFValuationPage() {
             </div>
 
             {/* Model Stats */}
-            <div className="bg-cfn-navy rounded-2xl p-5 text-white">
-              <p className="text-xs font-bold uppercase tracking-widest text-cfn-gold mb-4">Model Stats</p>
+            <div className="bg-cfn-navy rounded-2xl p-5 text-cfn-cream">
+              <p className="text-xs font-bold uppercase tracking-widest text-cfn-blue-text mb-4">Model Stats</p>
               <dl className="space-y-3 text-sm">
                 {[
                   { dt: "Category",    dd: "Valuation" },
@@ -557,7 +557,7 @@ export default function DCFValuationPage() {
                   { dt: "Outputs",     dd: "Price per share + sensitivity" },
                 ].map(({ dt, dd }) => (
                   <div key={dt} className="flex justify-between gap-2">
-                    <dt className="text-white/50">{dt}</dt>
+                    <dt className="text-cfn-cream/50">{dt}</dt>
                     <dd className="font-semibold text-right">{dd}</dd>
                   </div>
                 ))}
@@ -565,8 +565,8 @@ export default function DCFValuationPage() {
             </div>
 
             {/* Related Models */}
-            <div className="bg-white rounded-2xl border border-cfn-navy-100 shadow-card p-5">
-              <p className="text-xs font-bold uppercase tracking-widest text-cfn-gold mb-4">Related Models</p>
+            <div className="bg-cfn-cream rounded-2xl border border-cfn-navy-100 shadow-card p-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-cfn-blue-text mb-4">Related Models</p>
               <div className="space-y-2">
                 {[
                   { label: "Comps Analysis",    href: "/models-frameworks?category=comparable-analysis" },
@@ -577,10 +577,10 @@ export default function DCFValuationPage() {
                   <Link
                     key={label}
                     href={href}
-                    className="flex items-center justify-between text-sm text-cfn-navy hover:text-cfn-gold transition-colors py-1 group"
+                    className="flex items-center justify-between text-sm text-cfn-navy hover:text-cfn-navy-800 transition-colors py-1 group"
                   >
                     {label}
-                    <ChevronRight className="w-3.5 h-3.5 text-cfn-muted group-hover:text-cfn-gold transition-colors" />
+                    <ChevronRight className="w-3.5 h-3.5 text-cfn-muted group-hover:text-cfn-navy transition-colors" />
                   </Link>
                 ))}
               </div>

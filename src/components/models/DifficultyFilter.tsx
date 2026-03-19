@@ -6,11 +6,6 @@ import type { DifficultyLevel } from "@/types/model";
 import { modelCategories } from "@/data/categories";
 
 const difficulties: DifficultyLevel[] = ["Beginner", "Intermediate", "Advanced"];
-const difficultyColors: Record<DifficultyLevel, string> = {
-  Beginner:     "bg-emerald-100 text-emerald-700",
-  Intermediate: "bg-amber-100 text-amber-700",
-  Advanced:     "bg-red-100 text-red-700",
-};
 
 export default function DifficultyFilter() {
   const router = useRouter();
@@ -38,7 +33,7 @@ export default function DifficultyFilter() {
           className={cn(
             "px-3 py-1 rounded-full text-sm font-semibold transition-colors",
             !activeDiff
-              ? "bg-cfn-navy text-white"
+              ? "bg-cfn-navy text-cfn-cream"
               : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
           )}
         >
@@ -51,7 +46,7 @@ export default function DifficultyFilter() {
             className={cn(
               "px-3 py-1 rounded-full text-sm font-semibold transition-colors",
               activeDiff === d
-                ? difficultyColors[d]
+                ? "bg-cfn-mid text-cfn-cream"
                 : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
             )}
           >
@@ -70,7 +65,7 @@ export default function DifficultyFilter() {
           className={cn(
             "px-3 py-1 rounded-full text-sm font-semibold transition-colors",
             !activeCat
-              ? "bg-cfn-navy text-white"
+              ? "bg-cfn-navy text-cfn-cream"
               : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
           )}
         >
@@ -83,7 +78,7 @@ export default function DifficultyFilter() {
             className={cn(
               "px-3 py-1 rounded-full text-sm font-semibold transition-colors",
               activeCat === c.slug
-                ? "bg-cfn-navy text-white"
+                ? "bg-cfn-navy text-cfn-cream"
                 : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
             )}
           >

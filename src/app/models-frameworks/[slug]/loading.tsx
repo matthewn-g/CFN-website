@@ -3,9 +3,9 @@ export default function LoadingModel() {
     <div className="pt-16">
       <div className="bg-cfn-navy py-16">
         <div className="section-container">
-          <div className="skeleton h-6 w-24 rounded-full mb-4 bg-white/20" />
-          <div className="skeleton h-10 w-3/4 rounded mb-3 bg-white/20" />
-          <div className="skeleton h-6 w-2/4 rounded bg-white/10" />
+          <div className="skeleton h-6 w-24 rounded-full mb-4 bg-cfn-cream/20" />
+          <div className="skeleton h-10 w-3/4 rounded mb-3 bg-cfn-cream/20" />
+          <div className="skeleton h-6 w-2/4 rounded bg-cfn-cream/10" />
         </div>
       </div>
       <div className="section-container py-12">

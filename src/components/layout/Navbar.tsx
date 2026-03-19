@@ -83,8 +83,8 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={cn(
-                      "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-colors",
-                      pathname.startsWith(link.href) && "text-white bg-white/10"
+                      "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-semibold text-cfn-cream/80 hover:text-cfn-cream hover:bg-cfn-cream/10 transition-colors",
+                      pathname.startsWith(link.href) && "text-cfn-cream bg-cfn-cream/10"
                     )}
                   >
                     {link.label}
@@ -93,7 +93,7 @@ export default function Navbar() {
 
                   {link.dropdown && activeDropdown === link.label && (
                     <div className="absolute top-full left-0 w-52 pt-1">
-                      <div className="bg-white rounded-xl shadow-card-hover border border-cfn-navy-100 overflow-hidden animate-fade-in">
+                      <div className="bg-cfn-cream rounded-xl shadow-card-hover border border-cfn-navy-100 overflow-hidden animate-fade-in">
                         {link.dropdown.map((item) => (
                           <Link
                             key={item.href}
@@ -113,7 +113,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-2">
               <Link
                 href="/about#join-cfn-community"
-                className="ml-2 bg-cfn-gold text-cfn-navy font-semibold px-5 py-2 rounded-lg text-sm hover:bg-cfn-gold-light transition-colors"
+                className="ml-2 bg-cfn-cream text-cfn-navy font-semibold px-5 py-2 rounded-lg text-sm hover:bg-cfn-cream-dark transition-colors"
               >
                 Join CFN
               </Link>
@@ -124,7 +124,7 @@ export default function Navbar() {
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Toggle menu"
-                className="w-9 h-9 flex items-center justify-center rounded-lg text-white hover:bg-white/10 transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-lg text-cfn-cream hover:bg-cfn-cream/10 transition-colors"
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -210,7 +210,7 @@ export default function Navbar() {
           <Link
             href="/about#join-cfn-community"
             onClick={() => setMobileOpen(false)}
-            className="block w-full text-center bg-cfn-gold text-cfn-navy font-semibold px-6 py-3 rounded-lg hover:bg-cfn-gold-light transition-colors"
+            className="block w-full text-center bg-cfn-navy text-cfn-cream font-semibold px-6 py-3 rounded-lg hover:bg-cfn-navy-800 transition-colors"
           >
             Join CFN
           </Link>

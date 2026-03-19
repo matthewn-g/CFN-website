@@ -16,7 +16,7 @@ export default function StepProgress({ current, total }: StepProgressProps) {
             className={cn(
               "w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0",
               i + 1 <= current
-                ? "bg-cfn-gold text-cfn-navy"
+                ? "bg-cfn-navy text-cfn-cream"
                 : i + 1 === current + 1
                 ? "bg-cfn-navy-100 text-cfn-navy border-2 border-cfn-navy"
                 : "bg-cfn-navy-100 text-cfn-muted"
@@ -28,7 +28,7 @@ export default function StepProgress({ current, total }: StepProgressProps) {
             <div
               className={cn(
                 "flex-1 h-0.5",
-                i + 1 < current ? "bg-cfn-gold" : "bg-cfn-navy-100"
+                i + 1 < current ? "bg-cfn-navy" : "bg-cfn-navy-100"
               )}
             />
           )}

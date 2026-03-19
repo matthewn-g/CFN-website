@@ -19,13 +19,13 @@ interface ButtonProps {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-cfn-gold text-cfn-navy font-semibold hover:bg-cfn-gold-light transition-colors duration-200",
+    "bg-cfn-navy text-cfn-cream font-semibold hover:bg-cfn-navy-800 transition-colors duration-200",
   secondary:
-    "bg-transparent text-cfn-navy border-2 border-cfn-navy font-semibold hover:bg-cfn-navy hover:text-white transition-colors duration-200",
+    "bg-transparent text-cfn-navy border-2 border-cfn-navy font-semibold hover:bg-cfn-navy hover:text-cfn-cream transition-colors duration-200",
   ghost:
-    "bg-transparent text-cfn-gold font-semibold hover:text-cfn-gold-light underline-offset-4 hover:underline transition-colors duration-200",
+    "bg-transparent text-cfn-navy font-semibold hover:text-cfn-navy-800 underline-offset-4 hover:underline transition-colors duration-200",
   "outline-white":
-    "bg-transparent text-white border-2 border-white font-semibold hover:bg-white hover:text-cfn-navy transition-colors duration-200",
+    "bg-transparent text-cfn-cream border-2 border-cfn-cream font-semibold hover:bg-cfn-cream hover:text-cfn-navy transition-colors duration-200",
 };
 
 const sizes: Record<Size, string> = {

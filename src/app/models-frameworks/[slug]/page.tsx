@@ -47,13 +47,13 @@ export default async function ModelPage({ params }: PageProps) {
             <div className="flex flex-wrap items-start justify-between gap-6">
               <div className="flex-1 min-w-0">
                 <DifficultyBadge level={model.difficulty} className="mb-4" />
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-cfn-cream leading-tight mb-4">
                   {model.title}
                 </h1>
-                <p className="text-white/70 text-lg leading-relaxed mb-6 max-w-2xl">
+                <p className="text-cfn-cream/70 text-lg leading-relaxed mb-6 max-w-2xl">
                   {model.excerpt}
                 </p>
-                <div className="flex flex-wrap items-center gap-4 text-white/60 text-sm">
+                <div className="flex flex-wrap items-center gap-4 text-cfn-cream/60 text-sm">
                   <span className="flex items-center gap-1.5">
                     <Clock className="w-4 h-4" />
                     {model.readingTime} min · {model.steps} steps
@@ -126,9 +126,9 @@ export default async function ModelPage({ params }: PageProps) {
 
           {/* Template CTA at bottom */}
           {model.hasTemplate && model.templateUrl && (
-            <div className="mt-12 p-6 bg-cfn-gold/10 border border-cfn-gold/30 rounded-2xl flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-cfn-gold/20 flex items-center justify-center flex-shrink-0">
-                <Download className="w-5 h-5 text-cfn-gold" />
+            <div className="mt-12 p-6 bg-cfn-navy-100 border border-cfn-navy-100 rounded-2xl flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-cfn-navy flex items-center justify-center flex-shrink-0">
+                <Download className="w-5 h-5 text-cfn-cream" />
               </div>
               <div>
                 <p className="font-bold text-cfn-navy mb-1">

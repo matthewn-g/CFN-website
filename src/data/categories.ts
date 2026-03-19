@@ -1,17 +1,20 @@
 import type { ArticleCategory } from "@/types/article";
 import type { ModelCategory, DifficultyLevel } from "@/types/model";
 
+// All categories use the navy-family palette: #1C3A5E bg / #C8D8F0 text
+const CFN_MID = "#1C3A5E";
+
 export const articleCategories: {
   slug: ArticleCategory;
   label: string;
   icon: string;
   color: string;
 }[] = [
-  { slug: "personal-finance",     label: "Personal Finance",     icon: "PiggyBank",  color: "#10B981" },
-  { slug: "investments",          label: "Investments",          icon: "TrendingUp", color: "#8B5CF6" },
-  { slug: "market-rundown",       label: "Market Rundown",       icon: "Activity",   color: "#EF4444" },
-  { slug: "career-growth",        label: "Career Growth",        icon: "Briefcase",  color: "#0284C7" },
-  { slug: "personal-development", label: "Personal Development", icon: "Brain",      color: "#06B6D4" },
+  { slug: "personal-finance",     label: "Personal Finance",     icon: "PiggyBank",  color: CFN_MID },
+  { slug: "investments",          label: "Investments",          icon: "TrendingUp", color: CFN_MID },
+  { slug: "market-rundown",       label: "Market Rundown",       icon: "Activity",   color: CFN_MID },
+  { slug: "career-growth",        label: "Career Growth",        icon: "Briefcase",  color: CFN_MID },
+  { slug: "personal-development", label: "Personal Development", icon: "Brain",      color: CFN_MID },
 ];
 
 export const modelCategories: {
@@ -25,12 +28,13 @@ export const modelCategories: {
   { slug: "merger-model",         label: "Merger Models"         },
 ];
 
+// Difficulty levels use navy-family only
 export const difficultyLevels: {
   level: DifficultyLevel;
   color: string;
   bg: string;
 }[] = [
-  { level: "Beginner",     color: "#059669", bg: "#D1FAE5" },
-  { level: "Intermediate", color: "#D97706", bg: "#FEF3C7" },
-  { level: "Advanced",     color: "#DC2626", bg: "#FEE2E2" },
+  { level: "Beginner",     color: "#C8D8F0", bg: "#1C3A5E" },
+  { level: "Intermediate", color: "#C8D8F0", bg: "#1C3A5E" },
+  { level: "Advanced",     color: "#C8D8F0", bg: "#1C3A5E" },
 ];

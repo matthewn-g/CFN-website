@@ -11,7 +11,7 @@ interface FeaturedArticlesProps {
 
 export default function FeaturedArticles({ articles }: FeaturedArticlesProps) {
   return (
-    <section className="py-20 bg-cfn-cream">
+    <section className="py-20 bg-cfn-cream-dark">
       <div className="section-container">
         <SectionHeader
           title="Featured Articles"
@@ -19,7 +19,7 @@ export default function FeaturedArticles({ articles }: FeaturedArticlesProps) {
           action={
             <Link
               href="/financial-literacy"
-              className="flex items-center gap-1 text-cfn-gold font-semibold text-sm hover:text-cfn-gold-light transition-colors group"
+              className="flex items-center gap-1 text-cfn-navy font-semibold text-sm hover:text-cfn-navy-800 transition-colors group"
             >
               View all
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

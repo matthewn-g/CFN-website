@@ -26,13 +26,13 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-cfn-navy text-white">
+    <footer className="bg-cfn-navy text-cfn-cream">
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <CFNLogo variant="light" />
-            <p className="mt-4 text-white/60 text-sm leading-relaxed max-w-xs">
+            <p className="mt-4 text-cfn-cream/60 text-sm leading-relaxed max-w-xs">
               Built by students. For every student. Financial literacy and technical finance skills for the next generation of Canadian investors and professionals.
             </p>
             <div className="flex items-center gap-3 mt-6">
@@ -41,14 +41,14 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                className="w-9 h-9 rounded-lg bg-cfn-cream/10 flex items-center justify-center hover:bg-cfn-cream/20 transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </Link>
               <Link
                 href="mailto:thecanadianfinancialnetwork@gmail.com"
                 aria-label="Email"
-                className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                className="w-9 h-9 rounded-lg bg-cfn-cream/10 flex items-center justify-center hover:bg-cfn-cream/20 transition-colors"
               >
                 <Mail className="w-4 h-4" />
               </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([heading, links]) => (
             <div key={heading}>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-cfn-gold mb-4">
+              <h4 className="text-sm font-bold uppercase tracking-widest text-cfn-cream/60 mb-4">
                 {heading}
               </h4>
               <ul className="space-y-2.5">
@@ -66,7 +66,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 hover:text-white transition-colors"
+                      className="text-sm text-cfn-cream/60 hover:text-cfn-cream transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -77,11 +77,11 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/40">
+        <div className="mt-12 pt-8 border-t border-cfn-cream/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-cfn-cream/40">
             © {new Date().getFullYear()} Canadian Financial Network. All rights reserved.
           </p>
-          <p className="text-sm text-white/40">
+          <p className="text-sm text-cfn-cream/40">
             Not financial advice. For educational purposes only.
           </p>
         </div>

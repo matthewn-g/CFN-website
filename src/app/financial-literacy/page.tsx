@@ -57,11 +57,11 @@ export default function FinancialLiteracyPage({ searchParams }: PageProps) {
         </div>
         <div className="absolute inset-0 bg-cfn-navy/75" />
         <div className="section-container relative z-10">
-          <p className="text-cfn-gold text-sm font-bold uppercase tracking-widest mb-3">Learn</p>
-          <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">
+          <p className="text-cfn-blue-text text-sm font-bold uppercase tracking-widest mb-3">Learn</p>
+          <h1 className="text-4xl sm:text-5xl font-black text-cfn-cream mb-4">
             Financial Literacy
           </h1>
-          <p className="text-white/70 text-lg max-w-xl">
+          <p className="text-cfn-cream/70 text-lg max-w-xl">
             Real talk about money. No jargon, no fluff, just practical knowledge for every stage of your financial journey.
           </p>
         </div>

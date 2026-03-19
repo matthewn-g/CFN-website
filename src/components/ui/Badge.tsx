@@ -2,14 +2,18 @@ import { cn } from "@/lib/utils";
 import type { ArticleCategory } from "@/types/article";
 import { articleCategories } from "@/data/categories";
 
+// Navy-family pill: #1C3A5E bg, #C8D8F0 text — consistent across all categories
+const PILL_BG   = "#1C3A5E";
+const PILL_TEXT = "#C8D8F0";
+
 interface BadgeProps {
   label: string;
-  color?: string;
+  color?: string;  // kept for API compat but ignored — always navy-family
   className?: string;
   size?: "sm" | "md";
 }
 
-export default function Badge({ label, color, className, size = "sm" }: BadgeProps) {
+export default function Badge({ label, className, size = "sm" }: BadgeProps) {
   return (
     <span
       className={cn(
@@ -17,11 +21,7 @@ export default function Badge({ label, color, className, size = "sm" }: BadgePro
         size === "sm" ? "px-2.5 py-1 text-xs" : "px-3 py-1.5 text-sm",
         className
       )}
-      style={
-        color
-          ? { backgroundColor: `${color}20`, color }
-          : { backgroundColor: "#0D2B5520", color: "#0D2B55" }
-      }
+      style={{ backgroundColor: PILL_BG, color: PILL_TEXT }}
     >
       {label}
     </span>
@@ -39,7 +39,6 @@ export function CategoryBadge({
   return (
     <Badge
       label={cat?.label ?? category}
-      color={cat?.color}
       className={className}
     />
   );

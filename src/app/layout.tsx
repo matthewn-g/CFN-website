@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
+import { Nunito } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+
+// Primary font: Nunito (Avenir-like; Times New Roman is system font, no import needed)
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://canadianfinancialnetwork.ca"),
@@ -38,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="font-serif antialiased">
+    <html lang="en" className={nunito.variable}>
+      <body className="font-sans antialiased">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

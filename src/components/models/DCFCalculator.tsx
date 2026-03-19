@@ -67,7 +67,7 @@ const WACC_COLS = [6, 7, 8, 9, 10];
 const HEAT = [
   "bg-red-100       text-red-800   ",
   "bg-orange-50  text-orange-800",
-  "bg-amber-50    text-amber-800 ",
+  "bg-cfn-navy-100 text-cfn-navy  ",
   "bg-emerald-50 text-emerald-800",
   "bg-emerald-100 text-emerald-800",
 ];
@@ -212,23 +212,23 @@ export default function DCFCalculator() {
       ? { label: "BUY SIGNAL",    dot: "bg-emerald-500", bg: "bg-emerald-50 border-emerald-400", text: "text-emerald-700", head: "text-emerald-700" }
       : results.upside < -5
       ? { label: "SELL SIGNAL",   dot: "bg-red-500",     bg: "bg-red-50 border-red-400",            text: "text-red-700",         head: "text-red-700"         }
-      : { label: "FAIRLY VALUED", dot: "bg-amber-500",   bg: "bg-cfn-gold/10 border-cfn-gold",                         text: "text-cfn-navy/80",    head: "text-cfn-navy"       }
+      : { label: "FAIRLY VALUED", dot: "bg-cfn-navy",    bg: "bg-cfn-navy-100 border-cfn-navy-100",                    text: "text-cfn-navy/80",    head: "text-cfn-navy"       }
     : null;
 
   return (
     <div className="space-y-6" id="calculator">
 
       {/* ── Inputs ── */}
-      <div className="bg-white rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden">
+      <div className="bg-cfn-cream rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden">
         <div className="bg-cfn-navy px-6 py-4">
-          <h3 className="text-white font-bold text-lg">Enter Your Assumptions</h3>
-          <p className="text-white/60 text-sm mt-0.5">Change any value and hit Calculate. The model does the rest.</p>
+          <h3 className="text-cfn-cream font-bold text-lg">Enter Your Assumptions</h3>
+          <p className="text-cfn-cream/60 text-sm mt-0.5">Change any value and hit Calculate. The model does the rest.</p>
         </div>
 
         <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {INPUT_GROUPS.map(group => (
             <div key={group.title} className="space-y-4">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-cfn-gold border-b border-cfn-gold/30 pb-1">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-cfn-navy border-b border-cfn-navy-100 pb-1">
                 {group.title}
               </p>
               {group.fields.map(({ label, key, step, hint }) => (
@@ -239,7 +239,7 @@ export default function DCFCalculator() {
                     value={rawInp[key]}
                     onChange={handleChange(key)}
                     step={step}
-                    className="w-full px-3 py-2 text-sm font-mono bg-cfn-cream-dark border border-cfn-navy-100 rounded-lg text-cfn-navy focus:outline-none focus:ring-2 focus:ring-cfn-gold/50"
+                    className="w-full px-3 py-2 text-sm font-mono bg-cfn-cream-dark border border-cfn-navy-100 rounded-lg text-cfn-navy focus:outline-none focus:ring-2 focus:ring-cfn-navy/30"
                   />
                   <p className="text-[10px] text-cfn-muted mt-1">{hint}</p>
                 </div>
@@ -257,7 +257,7 @@ export default function DCFCalculator() {
         <div className="px-6 pb-6">
           <button
             onClick={handleCalculate}
-            className="w-full sm:w-auto bg-cfn-gold text-cfn-navy font-black px-10 py-3 rounded-xl hover:bg-cfn-gold-light transition-colors text-sm uppercase tracking-wider"
+            className="w-full sm:w-auto bg-cfn-navy text-cfn-cream font-black px-10 py-3 rounded-xl hover:bg-cfn-navy-800 transition-colors text-sm uppercase tracking-wider"
           >
             Calculate My DCF →
           </button>
@@ -286,10 +286,10 @@ export default function DCFCalculator() {
                     : "bg-cfn-cream-dark border border-cfn-navy-100"
                 }`}
               >
-                <p className={`text-[10px] font-bold uppercase tracking-wider mb-1 ${highlight ? "text-cfn-gold" : "text-cfn-muted"}`}>
+                <p className={`text-[10px] font-bold uppercase tracking-wider mb-1 ${highlight ? "text-cfn-cream/70" : "text-cfn-muted"}`}>
                   {label}
                 </p>
-                <p className={`text-2xl font-black font-mono ${highlight ? "text-cfn-gold" : "text-cfn-navy"}`}>
+                <p className={`text-2xl font-black font-mono ${highlight ? "text-cfn-cream" : "text-cfn-navy"}`}>
                   {value}
                 </p>
               </div>
@@ -313,10 +313,10 @@ export default function DCFCalculator() {
           </div>
 
           {/* Step-by-step breakdown table */}
-          <div className="bg-white rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden">
+          <div className="bg-cfn-cream rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden">
             <div className="bg-cfn-navy px-6 py-4">
-              <h3 className="text-white font-bold">Step-by-Step Breakdown</h3>
-              <p className="text-white/60 text-sm">All figures in $M unless noted</p>
+              <h3 className="text-cfn-cream font-bold">Step-by-Step Breakdown</h3>
+              <p className="text-cfn-cream/60 text-sm">All figures in $M unless noted</p>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -332,8 +332,8 @@ export default function DCFCalculator() {
                 <tbody className="divide-y divide-cfn-navy-100">
 
                   {/* Section header */}
-                  <tr className="bg-cfn-gold/5">
-                    <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-gold">Revenue Build</td>
+                  <tr className="bg-cfn-navy/5">
+                    <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-navy">Revenue Build</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3 text-cfn-navy">Sales</td>
@@ -352,8 +352,8 @@ export default function DCFCalculator() {
                   </tr>
 
                   {/* FCF Build */}
-                  <tr className="bg-cfn-gold/5">
-                    <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-gold">FCF Build</td>
+                  <tr className="bg-cfn-navy/5">
+                    <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-navy">FCF Build</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3 pl-7 text-cfn-navy">+ D&amp;A</td>
@@ -371,9 +371,9 @@ export default function DCFCalculator() {
                     {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy">({f2(y.dnwc)})</td>)}
                   </tr>
                   <tr className="bg-cfn-navy font-bold">
-                    <td className="px-4 py-3 text-white">= Free Cash Flow</td>
+                    <td className="px-4 py-3 text-cfn-cream">= Free Cash Flow</td>
                     <td className="px-4 py-3 text-right font-mono text-cfn-muted">—</td>
-                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-gold">{f2(y.fcf)}</td>)}
+                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-cream">{f2(y.fcf)}</td>)}
                   </tr>
                   <tr>
                     <td className="px-4 py-3 pl-7 text-cfn-muted text-xs">PV of FCF</td>
@@ -382,8 +382,8 @@ export default function DCFCalculator() {
                   </tr>
 
                   {/* Valuation bridge */}
-                  <tr className="bg-cfn-gold/5">
-                    <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-gold">Valuation Bridge</td>
+                  <tr className="bg-cfn-navy/5">
+                    <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-navy">Valuation Bridge</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3 text-cfn-navy">Σ PV of FCFs</td>
@@ -409,9 +409,9 @@ export default function DCFCalculator() {
                     <td className="px-4 py-3 pl-7 text-cfn-muted text-xs">÷ Shares Outstanding</td>
                     <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-muted">{f2(inp.shares)}M</td>
                   </tr>
-                  <tr className="bg-cfn-gold font-black">
-                    <td className="px-4 py-4 text-cfn-navy">= Intrinsic Value per Share</td>
-                    <td colSpan={4} className="px-4 py-4 text-right font-mono text-cfn-navy text-xl">{fP(results.pricePerShare)}</td>
+                  <tr className="bg-cfn-navy font-black">
+                    <td className="px-4 py-4 text-cfn-cream">= Intrinsic Value per Share</td>
+                    <td colSpan={4} className="px-4 py-4 text-right font-mono text-cfn-cream text-xl">{fP(results.pricePerShare)}</td>
                   </tr>
                 </tbody>
               </table>
@@ -420,10 +420,10 @@ export default function DCFCalculator() {
 
           {/* Sensitivity table */}
           {sensitivityMatrix && (
-            <div className="bg-white rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden" id="sensitivity">
+            <div className="bg-cfn-cream rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden" id="sensitivity">
               <div className="bg-cfn-navy px-6 py-4">
-                <h3 className="text-white font-bold">Sensitivity Analysis: Price per Share</h3>
-                <p className="text-white/60 text-sm mt-0.5">
+                <h3 className="text-cfn-cream font-bold">Sensitivity Analysis: Price per Share</h3>
+                <p className="text-cfn-cream/60 text-sm mt-0.5">
                   Varies WACC and perpetual growth rate across your current assumptions. Base case marked ★.
                 </p>
               </div>
@@ -453,7 +453,7 @@ export default function DCFCalculator() {
                               key={w}
                               className={`px-3 py-2 text-center rounded text-xs
                                 ${heatClass(val, sensitivityMatrix.min, sensitivityMatrix.max)}
-                                ${isBase ? "ring-2 ring-cfn-gold font-bold" : ""}
+                                ${isBase ? "ring-2 ring-cfn-navy font-bold" : ""}
                               `}
                             >
                               {isNaN(val) ? "—" : `$${val.toFixed(2)}`}
@@ -470,10 +470,10 @@ export default function DCFCalculator() {
               <div className="px-6 pb-4 flex flex-wrap gap-4 text-xs text-cfn-muted border-t border-cfn-navy-100 pt-3">
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-red-100 border border-red-200 inline-block" />Low</span>
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-orange-50 border border-orange-200 inline-block" />Below base</span>
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-50 border border-amber-200 inline-block" />Mid</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-cfn-navy-100 border border-cfn-navy-100 inline-block" />Mid</span>
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-50 border border-emerald-200 inline-block" />Above base</span>
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-100 border border-emerald-200 inline-block" />High</span>
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded ring-2 ring-cfn-gold inline-block" />Base case</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded ring-2 ring-cfn-navy inline-block" />Base case</span>
               </div>
             </div>
           )}

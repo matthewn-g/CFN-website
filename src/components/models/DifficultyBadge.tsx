@@ -7,9 +7,9 @@ interface DifficultyBadgeProps {
 }
 
 const styles: Record<DifficultyLevel, string> = {
-  Beginner:     "bg-emerald-100 text-emerald-700",
-  Intermediate: "bg-amber-100 text-amber-700",
-  Advanced:     "bg-red-100 text-red-700",
+  Beginner:     "bg-cfn-mid text-cfn-blue-text",
+  Intermediate: "bg-cfn-mid text-cfn-blue-text",
+  Advanced:     "bg-cfn-mid text-cfn-blue-text",
 };
 
 export default function DifficultyBadge({ level, className }: DifficultyBadgeProps) {

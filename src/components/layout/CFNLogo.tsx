@@ -9,8 +9,6 @@ interface CFNLogoProps {
 }
 
 export default function CFNLogo({ variant = "dark", className, showText = true }: CFNLogoProps) {
-  const gold = "#C9A84C";
-
   return (
     <Link href="/" className={cn("flex items-center gap-3 group", className)}>
       {/* Bull Image */}
@@ -35,13 +33,19 @@ export default function CFNLogo({ variant = "dark", className, showText = true }
         <div className="flex flex-col leading-none">
           <span
             className="text-2xl font-black tracking-tight"
-            style={{ color: variant === "light" ? "#FFFFFF" : "#0D2B55" }}
+            style={{
+              color: variant === "light" ? "#F8F6F1" : "#091E3A",
+              fontFamily: '"Times New Roman", Times, serif',
+            }}
           >
             CFN
           </span>
           <span
             className="text-xs font-semibold tracking-widest uppercase"
-            style={{ color: variant === "light" ? "rgba(255,255,255,0.7)" : gold }}
+            style={{
+              color: variant === "light" ? "rgba(248,246,241,0.7)" : "#4D6E95",
+              fontFamily: '"Times New Roman", Times, serif',
+            }}
           >
             Canadian Financial Network
           </span>

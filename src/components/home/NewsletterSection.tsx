@@ -34,13 +34,13 @@ export default function NewsletterSection() {
     <section className="bg-cfn-navy py-20">
       <div className="section-container">
         <div className="max-w-xl mx-auto text-center">
-          <div className="w-14 h-14 rounded-2xl bg-cfn-gold/20 flex items-center justify-center mx-auto mb-6">
-            <Mail className="w-7 h-7 text-cfn-gold" />
+          <div className="w-14 h-14 rounded-2xl bg-cfn-cream/10 flex items-center justify-center mx-auto mb-6">
+            <Mail className="w-7 h-7 text-cfn-cream" />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
+          <h2 className="text-3xl sm:text-4xl font-black text-cfn-cream mb-3">
             Stay Ahead of the Market
           </h2>
-          <p className="text-white/70 text-lg mb-8">
+          <p className="text-cfn-cream/70 text-lg mb-8">
             Weekly roundups, new models, and networking events straight to your inbox.
           </p>
 
@@ -57,12 +57,12 @@ export default function NewsletterSection() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
                 required
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-cfn-gold focus:ring-1 focus:ring-cfn-gold transition-colors"
+                className="flex-1 px-4 py-3 rounded-lg bg-cfn-cream/10 border border-cfn-cream/20 text-cfn-cream placeholder:text-cfn-cream/40 focus:outline-none focus:border-cfn-cream/60 focus:ring-1 focus:ring-white/30 transition-colors"
               />
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="px-7 py-3 bg-cfn-gold text-cfn-navy font-bold rounded-lg hover:bg-cfn-gold-light transition-colors disabled:opacity-60 whitespace-nowrap"
+                className="px-7 py-3 bg-cfn-cream text-cfn-navy font-bold rounded-lg hover:bg-cfn-cream-dark transition-colors disabled:opacity-60 whitespace-nowrap"
               >
                 {status === "loading" ? "Subscribing..." : "Subscribe"}
               </button>
@@ -76,7 +76,7 @@ export default function NewsletterSection() {
             </p>
           )}
 
-          <p className="mt-4 text-white/40 text-xs">
+          <p className="mt-4 text-cfn-cream/40 text-xs">
             By subscribing you consent to receive emails from CFN. Unsubscribe anytime.
           </p>
         </div>

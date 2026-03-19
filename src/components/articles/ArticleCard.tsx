@@ -15,7 +15,7 @@ export default function ArticleCard({ article, variant = "featured" }: ArticleCa
     <Link
       href={`/financial-literacy/${article.slug}`}
       className={cn(
-        "group block bg-white rounded-card overflow-hidden transition-all duration-200",
+        "group block bg-cfn-cream rounded-card overflow-hidden transition-all duration-200",
         "shadow-card hover:shadow-card-hover hover:-translate-y-1",
         variant === "compact" && "flex gap-4 p-4"
       )}
@@ -31,7 +31,7 @@ export default function ArticleCard({ article, variant = "featured" }: ArticleCa
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-cfn-navy to-cfn-navy-800 flex items-center justify-center">
-              <span className="text-cfn-gold/30 text-4xl font-black">CFN</span>
+              <span className="text-cfn-cream/30 text-4xl font-black font-serif">CFN</span>
             </div>
           )}
         </div>
@@ -39,7 +39,7 @@ export default function ArticleCard({ article, variant = "featured" }: ArticleCa
 
       <div className={cn("p-5", variant === "compact" && "p-0 flex-1")}>
         <CategoryBadge category={article.category} className="mb-2" />
-        <h3 className="font-bold text-cfn-navy text-lg leading-snug group-hover:text-cfn-gold transition-colors line-clamp-2">
+        <h3 className="font-bold text-cfn-navy text-lg leading-snug group-hover:text-cfn-navy-800 transition-colors line-clamp-2">
           {article.title}
         </h3>
         {variant === "featured" && (

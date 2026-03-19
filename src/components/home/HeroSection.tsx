@@ -12,20 +12,20 @@ export default function HeroSection() {
       {/* ── Hero content — sits above slideshow + overlay ── */}
       <div className="section-container relative z-10 py-32 text-center">
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cfn-gold/20 border border-cfn-gold/40 text-cfn-gold text-sm font-semibold mb-8 animate-fade-in">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cfn-cream/15 border border-cfn-cream/30 text-cfn-cream text-sm font-semibold mb-8 animate-fade-in">
           <TrendingUp className="w-4 h-4" />
-          <span>Canadian Financial Network</span>
+          <span className="font-serif">Canadian Financial Network</span>
         </div>
 
         {/* Headline */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight max-w-4xl mx-auto text-balance animate-slide-up">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-cfn-cream leading-tight tracking-tight max-w-4xl mx-auto text-balance animate-slide-up">
           Built by Students.
           <br />
-          <span className="text-cfn-gold">For Every Student.</span>
+          <span className="text-cfn-cream">For Every Student.</span>
         </h1>
 
         {/* Subheading */}
-        <p className="mt-6 text-lg sm:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed animate-slide-up">
+        <p className="mt-6 text-lg sm:text-xl text-cfn-cream/75 max-w-2xl mx-auto leading-relaxed animate-slide-up">
           Finance is for everyone. Whether you&apos;re opening your first TFSA or building
           your first DCF model, CFN gives you the tools, the knowledge, and the community
           to grow. No gatekeeping required.
@@ -36,14 +36,14 @@ export default function HeroSection() {
           {/* Solid white — primary action */}
           <Link
             href="/financial-literacy"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-xl bg-white text-cfn-navy font-semibold hover:bg-white/90 transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-xl bg-cfn-cream text-cfn-navy font-semibold hover:bg-cfn-cream/90 transition-colors duration-200"
           >
             Explore Financial Literacy
           </Link>
           {/* Outlined white — secondary action */}
           <Link
             href="/models-frameworks"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-xl bg-transparent text-white border-2 border-white font-semibold hover:bg-white/10 transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-xl bg-transparent text-cfn-cream border-2 border-cfn-cream font-semibold hover:bg-cfn-cream/10 transition-colors duration-200"
           >
             View Models &amp; Frameworks
           </Link>
@@ -56,8 +56,8 @@ export default function HeroSection() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce">
-          <div className="w-px h-8 bg-white/30" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white/50" />
+          <div className="w-px h-8 bg-cfn-cream/30" />
+          <div className="w-1.5 h-1.5 rounded-full bg-cfn-cream/50" />
         </div>
       </div>
     </section>

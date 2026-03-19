@@ -30,7 +30,7 @@ export default function SectionHeader({
           <h2
             className={cn(
               "text-3xl sm:text-4xl font-bold tracking-tight",
-              light ? "text-white" : "text-cfn-navy"
+              light ? "text-cfn-cream" : "text-cfn-navy"
             )}
           >
             {title}
@@ -39,7 +39,7 @@ export default function SectionHeader({
             <p
               className={cn(
                 "mt-3 text-lg",
-                light ? "text-white/70" : "text-cfn-muted"
+                light ? "text-cfn-cream/70" : "text-cfn-muted"
               )}
             >
               {subtitle}

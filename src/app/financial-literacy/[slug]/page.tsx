@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getAllArticles, getArticleBySlug } from "@/lib/notion";
 import { generateArticleMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 import { CategoryBadge } from "@/components/ui/Badge";
+import ArticleCard from "@/components/articles/ArticleCard";
 import ReadingProgress from "@/components/articles/ReadingProgress";
 import { Clock, User, Calendar } from "lucide-react";
 
@@ -35,6 +37,12 @@ export default async function ArticlePage({ params }: PageProps) {
     notFound();
   }
 
+  // Fetch related articles: same category, exclude current article, take up to 3
+  const allArticles = await getAllArticles();
+  const related = allArticles
+    .filter((a) => a.category === article.category && a.slug !== article.slug)
+    .slice(0, 3);
+
   return (
     <>
       <ReadingProgress />
@@ -43,10 +51,10 @@ export default async function ArticlePage({ params }: PageProps) {
         <div className="bg-cfn-navy py-16">
           <div className="section-container max-w-article mx-auto">
             <CategoryBadge category={article.category} className="mb-4" />
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-cfn-cream leading-tight mb-6">
               {article.title}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-white/60 text-sm">
+            <div className="flex flex-wrap items-center gap-4 text-cfn-cream/60 text-sm">
               <span className="flex items-center gap-1.5">
                 <User className="w-4 h-4" />
                 {article.author}
@@ -86,14 +94,37 @@ export default async function ArticlePage({ params }: PageProps) {
 
             {/* Bottom author card */}
             <div className="mt-16 p-6 bg-cfn-navy-100 rounded-2xl flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-cfn-navy flex items-center justify-center text-cfn-gold font-black text-lg flex-shrink-0">
-                {article.author[0]}
-              </div>
+              <Link
+                href="/about#meet-the-team"
+                className="flex-shrink-0 hover:opacity-80 transition-opacity"
+                aria-label="Meet the CFN team"
+              >
+                <div className="w-12 h-12 rounded-full bg-cfn-navy flex items-center justify-center text-cfn-cream font-black font-serif text-lg">
+                  {article.author[0]}
+                </div>
+              </Link>
               <div>
-                <p className="font-bold text-cfn-navy">{article.author}</p>
+                <Link
+                  href="/about#meet-the-team"
+                  className="font-bold text-cfn-navy hover:opacity-70 transition-opacity no-underline"
+                >
+                  {article.author}
+                </Link>
                 <p className="text-sm text-cfn-muted">{article.authorRole}</p>
               </div>
             </div>
+
+            {/* Related Articles */}
+            {related.length > 0 && (
+              <div className="mt-16">
+                <h2 className="text-2xl font-black text-cfn-navy mb-6">Related Articles</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {related.map((a) => (
+                    <ArticleCard key={a.slug} article={a} variant="featured" />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </article>
