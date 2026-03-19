@@ -71,7 +71,7 @@ export default async function ArticlePage({ params }: PageProps) {
               {article.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-3 py-1 bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white rounded-full font-medium"
+                  className="text-xs px-3 py-1 bg-cfn-navy-100 text-cfn-navy rounded-full font-medium"
                 >
                   {tag}
                 </span>
@@ -85,13 +85,13 @@ export default async function ArticlePage({ params }: PageProps) {
             />
 
             {/* Bottom author card */}
-            <div className="mt-16 p-6 bg-cfn-navy-100 dark:bg-white/5 rounded-2xl flex items-start gap-4">
+            <div className="mt-16 p-6 bg-cfn-navy-100 rounded-2xl flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-cfn-navy flex items-center justify-center text-cfn-gold font-black text-lg flex-shrink-0">
                 {article.author[0]}
               </div>
               <div>
-                <p className="font-bold text-cfn-navy dark:text-white">{article.author}</p>
-                <p className="text-sm text-cfn-muted dark:text-cfn-dark-muted">{article.authorRole}</p>
+                <p className="font-bold text-cfn-navy">{article.author}</p>
+                <p className="text-sm text-cfn-muted">{article.authorRole}</p>
               </div>
             </div>
           </div>

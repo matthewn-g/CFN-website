@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import CFNLogo from "./CFNLogo";
-import ThemeToggle from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -94,12 +93,12 @@ export default function Navbar() {
 
                   {link.dropdown && activeDropdown === link.label && (
                     <div className="absolute top-full left-0 w-52 pt-1">
-                      <div className="bg-white dark:bg-cfn-dark-bg rounded-xl shadow-card-hover border border-cfn-navy-100 dark:border-white/10 overflow-hidden animate-fade-in">
+                      <div className="bg-white rounded-xl shadow-card-hover border border-cfn-navy-100 overflow-hidden animate-fade-in">
                         {link.dropdown.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="block px-4 py-2.5 text-sm text-cfn-charcoal dark:text-white/80 hover:bg-cfn-navy-100 dark:hover:bg-white/10 hover:text-cfn-navy dark:hover:text-white transition-colors"
+                            className="block px-4 py-2.5 text-sm text-cfn-charcoal hover:bg-cfn-navy-100 hover:text-cfn-navy transition-colors"
                           >
                             {item.label}
                           </Link>
@@ -112,7 +111,6 @@ export default function Navbar() {
             </ul>
 
             <div className="hidden lg:flex items-center gap-2">
-              <ThemeToggle />
               <Link
                 href="/about#join-cfn-community"
                 className="ml-2 bg-cfn-gold text-cfn-navy font-semibold px-5 py-2 rounded-lg text-sm hover:bg-cfn-gold-light transition-colors"
@@ -123,7 +121,6 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <div className="flex lg:hidden items-center gap-2">
-              <ThemeToggle />
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Toggle menu"
@@ -147,16 +144,16 @@ export default function Navbar() {
       {/* Mobile drawer */}
       <div
         className={cn(
-          "fixed top-0 right-0 bottom-0 z-50 w-[80vw] max-w-sm bg-cfn-cream-dark dark:bg-cfn-dark-bg shadow-2xl flex flex-col transition-transform duration-300 lg:hidden",
+          "fixed top-0 right-0 bottom-0 z-50 w-[80vw] max-w-sm bg-cfn-cream-dark shadow-2xl flex flex-col transition-transform duration-300 lg:hidden",
           mobileOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
         {/* Drawer header */}
-        <div className="flex items-center justify-between p-4 border-b border-cfn-navy-100 dark:border-white/10">
+        <div className="flex items-center justify-between p-4 border-b border-cfn-navy-100">
           <CFNLogo variant="dark" showText={false} />
           <button
             onClick={() => setMobileOpen(false)}
-            className="w-9 h-9 flex items-center justify-center rounded-lg text-cfn-navy dark:text-white hover:bg-cfn-navy-100 dark:hover:bg-white/10 transition-colors"
+            className="w-9 h-9 flex items-center justify-center rounded-lg text-cfn-navy hover:bg-cfn-navy-100 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -172,7 +169,7 @@ export default function Navbar() {
                     ? setMobileExpanded(mobileExpanded === link.label ? null : link.label)
                     : setMobileOpen(false)
                 }
-                className="w-full flex items-center justify-between px-6 py-3 text-left font-semibold text-cfn-navy dark:text-white hover:bg-cfn-navy-100 dark:hover:bg-white/10 transition-colors"
+                className="w-full flex items-center justify-between px-6 py-3 text-left font-semibold text-cfn-navy hover:bg-cfn-navy-100 transition-colors"
               >
                 {link.dropdown ? (
                   <>
@@ -191,13 +188,13 @@ export default function Navbar() {
                 )}
               </button>
               {link.dropdown && mobileExpanded === link.label && (
-                <div className="bg-cfn-cream-dark dark:bg-white/5">
+                <div className="bg-cfn-cream-dark">
                   {link.dropdown.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block px-10 py-2.5 text-sm text-cfn-muted dark:text-cfn-dark-muted hover:text-cfn-navy dark:hover:text-white transition-colors"
+                      className="block px-10 py-2.5 text-sm text-cfn-muted hover:text-cfn-navy transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -209,7 +206,7 @@ export default function Navbar() {
         </div>
 
         {/* Drawer footer CTA */}
-        <div className="p-4 border-t border-cfn-navy-100 dark:border-white/10">
+        <div className="p-4 border-t border-cfn-navy-100">
           <Link
             href="/about#join-cfn-community"
             onClick={() => setMobileOpen(false)}

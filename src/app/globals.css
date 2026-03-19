@@ -15,7 +15,6 @@
 
   body {
     @apply bg-cfn-cream text-cfn-charcoal font-sans antialiased;
-    @apply dark:bg-cfn-dark-bg dark:text-cfn-dark-text;
   }
 }
 
@@ -24,24 +23,22 @@
     @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Fallback hero bg — photo slideshow renders on top of this */
+  /* Fallback hero bg - photo slideshow renders on top of this */
   .hero-bg {
     background-color: #0D2B55;
   }
 
   .prose-cfn {
     @apply prose prose-lg max-w-none;
-    @apply prose-headings:text-cfn-navy dark:prose-headings:text-white;
+    @apply prose-headings:text-cfn-navy;
     @apply prose-a:text-cfn-gold prose-a:no-underline hover:prose-a:underline;
     @apply prose-blockquote:border-l-cfn-gold;
     @apply prose-code:text-cfn-navy prose-code:bg-cfn-navy-100;
-    @apply dark:prose-code:text-cfn-gold dark:prose-code:bg-white/10;
-    @apply prose-strong:text-cfn-navy dark:prose-strong:text-white;
-    @apply dark:prose-invert;
+    @apply prose-strong:text-cfn-navy;
   }
 
   .skeleton {
-    @apply bg-cfn-navy-100 dark:bg-white/10 rounded animate-pulse;
+    @apply bg-cfn-navy-100 rounded animate-pulse;
   }
 }
 

@@ -15,13 +15,13 @@ export default function ArticleCard({ article, variant = "featured" }: ArticleCa
     <Link
       href={`/financial-literacy/${article.slug}`}
       className={cn(
-        "group block bg-white dark:bg-white/5 rounded-card overflow-hidden transition-all duration-200",
+        "group block bg-white rounded-card overflow-hidden transition-all duration-200",
         "shadow-card hover:shadow-card-hover hover:-translate-y-1",
         variant === "compact" && "flex gap-4 p-4"
       )}
     >
       {variant === "featured" && (
-        <div className="relative aspect-video overflow-hidden bg-cfn-navy-100 dark:bg-white/10">
+        <div className="relative aspect-video overflow-hidden bg-cfn-navy-100">
           {article.coverImage && !article.coverImage.includes("placeholder") ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -39,15 +39,15 @@ export default function ArticleCard({ article, variant = "featured" }: ArticleCa
 
       <div className={cn("p-5", variant === "compact" && "p-0 flex-1")}>
         <CategoryBadge category={article.category} className="mb-2" />
-        <h3 className="font-bold text-cfn-navy dark:text-white text-lg leading-snug group-hover:text-cfn-gold transition-colors line-clamp-2">
+        <h3 className="font-bold text-cfn-navy text-lg leading-snug group-hover:text-cfn-gold transition-colors line-clamp-2">
           {article.title}
         </h3>
         {variant === "featured" && (
-          <p className="mt-2 text-sm text-cfn-muted dark:text-cfn-dark-muted line-clamp-3 leading-relaxed">
+          <p className="mt-2 text-sm text-cfn-muted line-clamp-3 leading-relaxed">
             {article.excerpt}
           </p>
         )}
-        <div className="flex items-center gap-3 mt-4 text-xs text-cfn-muted dark:text-cfn-dark-muted">
+        <div className="flex items-center gap-3 mt-4 text-xs text-cfn-muted">
           <span className="flex items-center gap-1">
             <User className="w-3 h-3" />
             {article.author}

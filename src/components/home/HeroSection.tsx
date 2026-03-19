@@ -28,7 +28,7 @@ export default function HeroSection() {
         <p className="mt-6 text-lg sm:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed animate-slide-up">
           Finance is for everyone. Whether you&apos;re opening your first TFSA or building
           your first DCF model, CFN gives you the tools, the knowledge, and the community
-          to grow — no gatekeeping required.
+          to grow. No gatekeeping required.
         </p>
 
         {/* CTAs */}

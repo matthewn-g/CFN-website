@@ -15,7 +15,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Models & Frameworks",
   description:
-    "Build the technical skills to land your first finance role. DCF, LBO, comps, financial statements — step-by-step tutorials built for Canadian students.",
+    "Build the technical skills to land your first finance role. DCF, LBO, comps, financial statements: step-by-step tutorials built for Canadian students.",
 };
 
 interface PageProps {
@@ -75,13 +75,13 @@ export default function ModelsPage({ searchParams }: PageProps) {
             Models &amp; Frameworks
           </h1>
           <p className="text-white/70 text-lg max-w-xl">
-            The technical toolkit for breaking into finance. Build DCF models, LBO analyses, and more — all explained from first principles.
+            The technical toolkit for breaking into finance. Build DCF models, LBO analyses, and more, all explained from first principles.
           </p>
         </div>
       </div>
 
       {/* Filters */}
-      <div className="border-b border-cfn-navy-100 dark:border-white/10 py-4">
+      <div className="border-b border-cfn-navy-100 py-4">
         <div className="section-container">
           <Suspense>
             <DifficultyFilter />

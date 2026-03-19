@@ -14,11 +14,11 @@ export default function ContentEmptyState({
 }: ContentEmptyStateProps) {
   return (
     <div className="flex flex-col items-center justify-center py-24 text-center px-4">
-      <div className="w-16 h-16 rounded-full bg-cfn-navy-100 dark:bg-white/10 flex items-center justify-center mb-4">
-        <FileText className="w-8 h-8 text-cfn-navy/40 dark:text-white/40" />
+      <div className="w-16 h-16 rounded-full bg-cfn-navy-100 flex items-center justify-center mb-4">
+        <FileText className="w-8 h-8 text-cfn-navy/40" />
       </div>
-      <h3 className="text-xl font-semibold text-cfn-navy dark:text-white mb-2">{title}</h3>
-      <p className="text-cfn-muted dark:text-cfn-dark-muted max-w-md mb-6">{description}</p>
+      <h3 className="text-xl font-semibold text-cfn-navy mb-2">{title}</h3>
+      <p className="text-cfn-muted max-w-md mb-6">{description}</p>
       {cta && (
         <Button href={cta.href} variant="secondary" size="sm">
           {cta.label}

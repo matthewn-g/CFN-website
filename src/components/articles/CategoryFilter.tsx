@@ -23,7 +23,7 @@ export default function CategoryFilter({ basePath = "/financial-literacy" }: Cat
   };
 
   return (
-    <div className="sticky top-16 z-10 bg-cfn-cream/95 dark:bg-cfn-dark-bg/95 backdrop-blur-sm border-b border-cfn-navy-100 dark:border-white/10 py-3">
+    <div className="sticky top-16 z-10 bg-cfn-cream/95 backdrop-blur-sm border-b border-cfn-navy-100 py-3">
       <div className="section-container">
         <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-1">
           <button
@@ -32,7 +32,7 @@ export default function CategoryFilter({ basePath = "/financial-literacy" }: Cat
               "flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors",
               !active
                 ? "bg-cfn-navy text-white"
-                : "bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white hover:bg-cfn-navy/20"
+                : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
             )}
           >
             All
@@ -45,7 +45,7 @@ export default function CategoryFilter({ basePath = "/financial-literacy" }: Cat
                 "flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors whitespace-nowrap",
                 active === cat.slug
                   ? "text-white"
-                  : "bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white hover:bg-cfn-navy/20"
+                  : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
               )}
               style={
                 active === cat.slug

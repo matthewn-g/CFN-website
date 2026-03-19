@@ -58,7 +58,7 @@ export default function SearchBar({ articles, models }: SearchBarProps) {
   return (
     <div ref={containerRef} className="relative w-full max-w-md">
       <div className="relative">
-        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-cfn-muted dark:text-cfn-dark-muted" />
+        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-cfn-muted" />
         <input
           ref={inputRef}
           type="text"
@@ -66,12 +66,12 @@ export default function SearchBar({ articles, models }: SearchBarProps) {
           onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
           onFocus={() => setOpen(true)}
           placeholder="Search articles and models..."
-          className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-cfn-navy-100 dark:border-white/10 bg-white dark:bg-white/5 text-cfn-charcoal dark:text-white placeholder:text-cfn-muted dark:placeholder:text-cfn-dark-muted focus:outline-none focus:border-cfn-gold focus:ring-1 focus:ring-cfn-gold transition-colors text-sm"
+          className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-cfn-navy-100 bg-white text-cfn-charcoal placeholder:text-cfn-muted focus:outline-none focus:border-cfn-gold focus:ring-1 focus:ring-cfn-gold transition-colors text-sm"
         />
         {query && (
           <button
             onClick={() => { setQuery(""); setResults([]); }}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-cfn-muted hover:text-cfn-charcoal dark:text-cfn-dark-muted dark:hover:text-white transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-cfn-muted hover:text-cfn-charcoal transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -79,9 +79,9 @@ export default function SearchBar({ articles, models }: SearchBarProps) {
       </div>
 
       {open && query && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-cfn-dark-bg border border-cfn-navy-100 dark:border-white/10 rounded-xl shadow-card-hover z-20 overflow-hidden">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-cfn-navy-100 rounded-xl shadow-card-hover z-20 overflow-hidden">
           <div className="p-2">
-            <p className="text-xs text-cfn-muted dark:text-cfn-dark-muted px-2 py-1 mb-1">
+            <p className="text-xs text-cfn-muted px-2 py-1 mb-1">
               {results.length} result{results.length !== 1 ? "s" : ""} for &quot;{query}&quot;
             </p>
             {results.map((result) => (
@@ -92,16 +92,16 @@ export default function SearchBar({ articles, models }: SearchBarProps) {
                   setQuery("");
                   setOpen(false);
                 }}
-                className="w-full text-left flex items-start gap-3 p-2.5 rounded-lg hover:bg-cfn-navy-100 dark:hover:bg-white/10 transition-colors group"
+                className="w-full text-left flex items-start gap-3 p-2.5 rounded-lg hover:bg-cfn-navy-100 transition-colors group"
               >
-                <span className="flex-shrink-0 text-xs font-bold uppercase px-2 py-0.5 rounded mt-0.5 bg-cfn-navy-100 dark:bg-white/10 text-cfn-muted dark:text-cfn-dark-muted">
+                <span className="flex-shrink-0 text-xs font-bold uppercase px-2 py-0.5 rounded mt-0.5 bg-cfn-navy-100 text-cfn-muted">
                   {result.type === "article" ? "Article" : "Model"}
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-cfn-charcoal dark:text-white group-hover:text-cfn-navy dark:group-hover:text-white line-clamp-1">
+                  <p className="text-sm font-semibold text-cfn-charcoal group-hover:text-cfn-navy line-clamp-1">
                     {result.title}
                   </p>
-                  <p className="text-xs text-cfn-muted dark:text-cfn-dark-muted line-clamp-1 mt-0.5">
+                  <p className="text-xs text-cfn-muted line-clamp-1 mt-0.5">
                     {result.excerpt}
                   </p>
                 </div>
@@ -112,8 +112,8 @@ export default function SearchBar({ articles, models }: SearchBarProps) {
       )}
 
       {open && query && results.length === 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-cfn-dark-bg border border-cfn-navy-100 dark:border-white/10 rounded-xl shadow-card-hover z-20 p-4 text-center">
-          <p className="text-sm text-cfn-muted dark:text-cfn-dark-muted">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-cfn-navy-100 rounded-xl shadow-card-hover z-20 p-4 text-center">
+          <p className="text-sm text-cfn-muted">
             No results for &quot;{query}&quot;
           </p>
         </div>

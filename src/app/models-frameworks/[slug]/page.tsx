@@ -80,14 +80,14 @@ export default async function ModelPage({ params }: PageProps) {
 
         {/* Prerequisites */}
         {model.prerequisites.length > 0 && (
-          <div className="border-b border-cfn-navy-100 dark:border-white/10 bg-cfn-cream-dark dark:bg-white/5">
+          <div className="border-b border-cfn-navy-100 bg-cfn-cream-dark">
             <div className="section-container max-w-[900px] mx-auto py-4">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="text-sm font-bold text-cfn-navy dark:text-white uppercase tracking-wide">
+                <span className="text-sm font-bold text-cfn-navy uppercase tracking-wide">
                   Prerequisites:
                 </span>
                 {model.prerequisites.map((p) => (
-                  <span key={p} className="flex items-center gap-1 text-sm text-cfn-muted dark:text-cfn-dark-muted">
+                  <span key={p} className="flex items-center gap-1 text-sm text-cfn-muted">
                     <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
                     {p}
                   </span>
@@ -99,7 +99,7 @@ export default async function ModelPage({ params }: PageProps) {
 
         {/* Step progress */}
         <div className="section-container max-w-[900px] mx-auto pt-8">
-          <p className="text-sm font-bold text-cfn-muted dark:text-cfn-dark-muted uppercase tracking-wide mb-2">
+          <p className="text-sm font-bold text-cfn-muted uppercase tracking-wide mb-2">
             Tutorial Progress
           </p>
           <StepProgress current={0} total={model.steps} />
@@ -112,7 +112,7 @@ export default async function ModelPage({ params }: PageProps) {
             {model.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs px-3 py-1 bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white rounded-full font-medium"
+                className="text-xs px-3 py-1 bg-cfn-navy-100 text-cfn-navy rounded-full font-medium"
               >
                 {tag}
               </span>
@@ -131,10 +131,10 @@ export default async function ModelPage({ params }: PageProps) {
                 <Download className="w-5 h-5 text-cfn-gold" />
               </div>
               <div>
-                <p className="font-bold text-cfn-navy dark:text-white mb-1">
+                <p className="font-bold text-cfn-navy mb-1">
                   Ready to practice? Download the Excel template.
                 </p>
-                <p className="text-sm text-cfn-muted dark:text-cfn-dark-muted mb-3">
+                <p className="text-sm text-cfn-muted mb-3">
                   Apply what you&apos;ve learned with a pre-built template that follows along with this tutorial.
                 </p>
                 <Button

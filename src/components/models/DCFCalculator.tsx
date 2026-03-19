@@ -65,11 +65,11 @@ const G_ROWS    = [1, 1.5, 2, 2.5, 3];
 const WACC_COLS = [6, 7, 8, 9, 10];
 
 const HEAT = [
-  "bg-red-100    dark:bg-red-900/25    text-red-800    dark:text-red-300",
-  "bg-orange-50  dark:bg-orange-900/20 text-orange-800 dark:text-orange-300",
-  "bg-amber-50   dark:bg-amber-900/10  text-amber-800  dark:text-amber-300",
-  "bg-emerald-50 dark:bg-emerald-900/15 text-emerald-800 dark:text-emerald-300",
-  "bg-emerald-100 dark:bg-emerald-900/25 text-emerald-800 dark:text-emerald-200",
+  "bg-red-100       text-red-800   ",
+  "bg-orange-50  text-orange-800",
+  "bg-amber-50    text-amber-800 ",
+  "bg-emerald-50 text-emerald-800",
+  "bg-emerald-100 text-emerald-800",
 ];
 
 /* ─── Calculation helpers ────────────────────────────────────────────────── */
@@ -118,7 +118,7 @@ function scenarioPPS(inp: Inputs, g: number, wacc: number): number {
 }
 
 function heatClass(val: number, min: number, max: number): string {
-  if (isNaN(val)) return "bg-gray-100 dark:bg-white/5 text-gray-400";
+  if (isNaN(val)) return "bg-gray-100 text-gray-400";
   const range = max - min;
   if (range === 0) return HEAT[2];
   const idx = Math.min(4, Math.floor(((val - min) / range) * 5));
@@ -137,7 +137,7 @@ const INPUT_GROUPS = [
   {
     title: "Revenue Build",
     fields: [
-      { label: "Sales — Year 0 ($M)",  key: "sales"      as const, step: 10,   hint: "Current annual revenue"      },
+      { label: "Sales, Year 0 ($M)",    key: "sales"      as const, step: 10,   hint: "Current annual revenue"      },
       { label: "Revenue Growth (%)",   key: "growth"     as const, step: 0.5,  hint: "Annual growth rate"           },
       { label: "EBIT Margin (%)",      key: "ebitMargin" as const, step: 0.5,  hint: "EBIT ÷ Revenue"               },
       { label: "Tax Rate (%)",         key: "tax"        as const, step: 1,    hint: "Corporate tax rate"           },
@@ -209,20 +209,20 @@ export default function DCFCalculator() {
 
   const verdict = results
     ? results.upside > 5
-      ? { label: "BUY SIGNAL",    dot: "bg-emerald-500", bg: "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-400", text: "text-emerald-700 dark:text-emerald-300", head: "text-emerald-700 dark:text-emerald-400" }
+      ? { label: "BUY SIGNAL",    dot: "bg-emerald-500", bg: "bg-emerald-50 border-emerald-400", text: "text-emerald-700", head: "text-emerald-700" }
       : results.upside < -5
-      ? { label: "SELL SIGNAL",   dot: "bg-red-500",     bg: "bg-red-50 dark:bg-red-900/20 border-red-400",            text: "text-red-700 dark:text-red-300",         head: "text-red-700 dark:text-red-400"         }
-      : { label: "FAIRLY VALUED", dot: "bg-amber-500",   bg: "bg-cfn-gold/10 border-cfn-gold",                         text: "text-cfn-navy/80 dark:text-white/70",    head: "text-cfn-navy dark:text-cfn-gold"       }
+      ? { label: "SELL SIGNAL",   dot: "bg-red-500",     bg: "bg-red-50 border-red-400",            text: "text-red-700",         head: "text-red-700"         }
+      : { label: "FAIRLY VALUED", dot: "bg-amber-500",   bg: "bg-cfn-gold/10 border-cfn-gold",                         text: "text-cfn-navy/80",    head: "text-cfn-navy"       }
     : null;
 
   return (
     <div className="space-y-6" id="calculator">
 
       {/* ── Inputs ── */}
-      <div className="bg-white dark:bg-white/5 rounded-2xl border border-cfn-navy-100 dark:border-white/10 shadow-card overflow-hidden">
+      <div className="bg-white rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden">
         <div className="bg-cfn-navy px-6 py-4">
           <h3 className="text-white font-bold text-lg">Enter Your Assumptions</h3>
-          <p className="text-white/60 text-sm mt-0.5">Change any value and hit Calculate — the model does the rest.</p>
+          <p className="text-white/60 text-sm mt-0.5">Change any value and hit Calculate. The model does the rest.</p>
         </div>
 
         <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -233,15 +233,15 @@ export default function DCFCalculator() {
               </p>
               {group.fields.map(({ label, key, step, hint }) => (
                 <div key={key}>
-                  <label className="block text-xs font-semibold text-cfn-navy dark:text-white mb-1">{label}</label>
+                  <label className="block text-xs font-semibold text-cfn-navy mb-1">{label}</label>
                   <input
                     type="number"
                     value={rawInp[key]}
                     onChange={handleChange(key)}
                     step={step}
-                    className="w-full px-3 py-2 text-sm font-mono bg-cfn-cream-dark dark:bg-white/5 border border-cfn-navy-100 dark:border-white/10 rounded-lg text-cfn-navy dark:text-white focus:outline-none focus:ring-2 focus:ring-cfn-gold/50"
+                    className="w-full px-3 py-2 text-sm font-mono bg-cfn-cream-dark border border-cfn-navy-100 rounded-lg text-cfn-navy focus:outline-none focus:ring-2 focus:ring-cfn-gold/50"
                   />
-                  <p className="text-[10px] text-cfn-muted dark:text-cfn-dark-muted mt-1">{hint}</p>
+                  <p className="text-[10px] text-cfn-muted mt-1">{hint}</p>
                 </div>
               ))}
             </div>
@@ -249,7 +249,7 @@ export default function DCFCalculator() {
         </div>
 
         {error && (
-          <div className="mx-6 mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300 text-sm">
+          <div className="mx-6 mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
             ⚠️ {error}
           </div>
         )}
@@ -271,8 +271,8 @@ export default function DCFCalculator() {
           {/* Output summary cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {[
-              { label: "FCF — Year 1",        value: fM(results.years[0].fcf)   },
-              { label: "FCF — Year 3",        value: fM(results.years[2].fcf)   },
+              { label: "FCF, Year 1",          value: fM(results.years[0].fcf)   },
+              { label: "FCF, Year 3",          value: fM(results.years[2].fcf)   },
               { label: "Terminal Value",       value: fM(results.tv)             },
               { label: "PV of Terminal Value", value: fM(results.pvTv)           },
               { label: "Enterprise Value",     value: fM(results.ev)             },
@@ -283,13 +283,13 @@ export default function DCFCalculator() {
                 className={`rounded-xl p-4 text-center ${
                   highlight
                     ? "bg-cfn-navy col-span-2 sm:col-span-1"
-                    : "bg-cfn-cream-dark dark:bg-white/5 border border-cfn-navy-100 dark:border-white/10"
+                    : "bg-cfn-cream-dark border border-cfn-navy-100"
                 }`}
               >
-                <p className={`text-[10px] font-bold uppercase tracking-wider mb-1 ${highlight ? "text-cfn-gold" : "text-cfn-muted dark:text-cfn-dark-muted"}`}>
+                <p className={`text-[10px] font-bold uppercase tracking-wider mb-1 ${highlight ? "text-cfn-gold" : "text-cfn-muted"}`}>
                   {label}
                 </p>
-                <p className={`text-2xl font-black font-mono ${highlight ? "text-cfn-gold" : "text-cfn-navy dark:text-white"}`}>
+                <p className={`text-2xl font-black font-mono ${highlight ? "text-cfn-gold" : "text-cfn-navy"}`}>
                   {value}
                 </p>
               </div>
@@ -313,7 +313,7 @@ export default function DCFCalculator() {
           </div>
 
           {/* Step-by-step breakdown table */}
-          <div className="bg-white dark:bg-white/5 rounded-2xl border border-cfn-navy-100 dark:border-white/10 shadow-card overflow-hidden">
+          <div className="bg-white rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden">
             <div className="bg-cfn-navy px-6 py-4">
               <h3 className="text-white font-bold">Step-by-Step Breakdown</h3>
               <p className="text-white/60 text-sm">All figures in $M unless noted</p>
@@ -321,34 +321,34 @@ export default function DCFCalculator() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-cfn-cream-dark dark:bg-white/5 border-b border-cfn-navy-100 dark:border-white/10">
-                    <th className="text-left px-4 py-3 font-semibold text-cfn-navy dark:text-white">Line Item</th>
-                    <th className="text-right px-4 py-3 font-semibold text-cfn-muted dark:text-cfn-dark-muted">Base Y0</th>
+                  <tr className="bg-cfn-cream-dark border-b border-cfn-navy-100">
+                    <th className="text-left px-4 py-3 font-semibold text-cfn-navy">Line Item</th>
+                    <th className="text-right px-4 py-3 font-semibold text-cfn-muted">Base Y0</th>
                     {results.years.map(y => (
-                      <th key={y.year} className="text-right px-4 py-3 font-semibold text-cfn-navy dark:text-white">Year {y.year}</th>
+                      <th key={y.year} className="text-right px-4 py-3 font-semibold text-cfn-navy">Year {y.year}</th>
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-cfn-navy-100 dark:divide-white/10">
+                <tbody className="divide-y divide-cfn-navy-100">
 
                   {/* Section header */}
                   <tr className="bg-cfn-gold/5">
                     <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-gold">Revenue Build</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-cfn-navy dark:text-white">Sales</td>
-                    <td className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">{f2(inp.sales)}</td>
-                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy dark:text-white">{f2(y.sales)}</td>)}
+                    <td className="px-4 py-3 text-cfn-navy">Sales</td>
+                    <td className="px-4 py-3 text-right font-mono text-cfn-muted">{f2(inp.sales)}</td>
+                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy">{f2(y.sales)}</td>)}
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-cfn-navy dark:text-white">EBIT</td>
-                    <td className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">—</td>
-                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy dark:text-white">{f2(y.ebit)}</td>)}
+                    <td className="px-4 py-3 text-cfn-navy">EBIT</td>
+                    <td className="px-4 py-3 text-right font-mono text-cfn-muted">—</td>
+                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy">{f2(y.ebit)}</td>)}
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-cfn-muted dark:text-cfn-dark-muted pl-7 text-xs">NOPAT = EBIT × (1 − Tax)</td>
-                    <td className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">—</td>
-                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">{f2(y.nopat)}</td>)}
+                    <td className="px-4 py-3 text-cfn-muted pl-7 text-xs">NOPAT = EBIT × (1 − Tax)</td>
+                    <td className="px-4 py-3 text-right font-mono text-cfn-muted">—</td>
+                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-muted">{f2(y.nopat)}</td>)}
                   </tr>
 
                   {/* FCF Build */}
@@ -356,19 +356,19 @@ export default function DCFCalculator() {
                     <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-gold">FCF Build</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 pl-7 text-cfn-navy dark:text-white">+ D&amp;A</td>
-                    <td className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">—</td>
-                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy dark:text-white">{f2(y.da)}</td>)}
+                    <td className="px-4 py-3 pl-7 text-cfn-navy">+ D&amp;A</td>
+                    <td className="px-4 py-3 text-right font-mono text-cfn-muted">—</td>
+                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy">{f2(y.da)}</td>)}
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 pl-7 text-cfn-navy dark:text-white">− CAPEX</td>
-                    <td className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">—</td>
-                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy dark:text-white">({f2(y.capex)})</td>)}
+                    <td className="px-4 py-3 pl-7 text-cfn-navy">− CAPEX</td>
+                    <td className="px-4 py-3 text-right font-mono text-cfn-muted">—</td>
+                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy">({f2(y.capex)})</td>)}
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 pl-7 text-cfn-navy dark:text-white">− ΔNWC</td>
-                    <td className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">—</td>
-                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy dark:text-white">({f2(y.dnwc)})</td>)}
+                    <td className="px-4 py-3 pl-7 text-cfn-navy">− ΔNWC</td>
+                    <td className="px-4 py-3 text-right font-mono text-cfn-muted">—</td>
+                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy">({f2(y.dnwc)})</td>)}
                   </tr>
                   <tr className="bg-cfn-navy font-bold">
                     <td className="px-4 py-3 text-white">= Free Cash Flow</td>
@@ -376,9 +376,9 @@ export default function DCFCalculator() {
                     {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-gold">{f2(y.fcf)}</td>)}
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 pl-7 text-cfn-muted dark:text-cfn-dark-muted text-xs">PV of FCF</td>
-                    <td className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">—</td>
-                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">{f2(y.pvFcf)}</td>)}
+                    <td className="px-4 py-3 pl-7 text-cfn-muted text-xs">PV of FCF</td>
+                    <td className="px-4 py-3 text-right font-mono text-cfn-muted">—</td>
+                    {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-muted">{f2(y.pvFcf)}</td>)}
                   </tr>
 
                   {/* Valuation bridge */}
@@ -386,28 +386,28 @@ export default function DCFCalculator() {
                     <td colSpan={5} className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cfn-gold">Valuation Bridge</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-cfn-navy dark:text-white">Σ PV of FCFs</td>
-                    <td colSpan={4} className="px-4 py-3 text-right font-mono font-semibold text-cfn-navy dark:text-white">{f2(results.sumPvFcf)}</td>
+                    <td className="px-4 py-3 text-cfn-navy">Σ PV of FCFs</td>
+                    <td colSpan={4} className="px-4 py-3 text-right font-mono font-semibold text-cfn-navy">{f2(results.sumPvFcf)}</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-cfn-navy dark:text-white">Terminal Value (TV)</td>
-                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-navy dark:text-white">{f2(results.tv)}</td>
+                    <td className="px-4 py-3 text-cfn-navy">Terminal Value (TV)</td>
+                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-navy">{f2(results.tv)}</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 pl-7 text-cfn-muted dark:text-cfn-dark-muted text-xs">PV of TV</td>
-                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">{f2(results.pvTv)}</td>
+                    <td className="px-4 py-3 pl-7 text-cfn-muted text-xs">PV of TV</td>
+                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-muted">{f2(results.pvTv)}</td>
                   </tr>
-                  <tr className="bg-cfn-navy-100 dark:bg-white/10 font-semibold">
-                    <td className="px-4 py-3 text-cfn-navy dark:text-white">Enterprise Value</td>
-                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-navy dark:text-white">{f2(results.ev)}</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 pl-7 text-cfn-muted dark:text-cfn-dark-muted text-xs">− Net Debt</td>
-                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">({f2(inp.netDebt)})</td>
+                  <tr className="bg-cfn-navy-100 font-semibold">
+                    <td className="px-4 py-3 text-cfn-navy">Enterprise Value</td>
+                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-navy">{f2(results.ev)}</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 pl-7 text-cfn-muted dark:text-cfn-dark-muted text-xs">÷ Shares Outstanding</td>
-                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-muted dark:text-cfn-dark-muted">{f2(inp.shares)}M</td>
+                    <td className="px-4 py-3 pl-7 text-cfn-muted text-xs">− Net Debt</td>
+                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-muted">({f2(inp.netDebt)})</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 pl-7 text-cfn-muted text-xs">÷ Shares Outstanding</td>
+                    <td colSpan={4} className="px-4 py-3 text-right font-mono text-cfn-muted">{f2(inp.shares)}M</td>
                   </tr>
                   <tr className="bg-cfn-gold font-black">
                     <td className="px-4 py-4 text-cfn-navy">= Intrinsic Value per Share</td>
@@ -420,9 +420,9 @@ export default function DCFCalculator() {
 
           {/* Sensitivity table */}
           {sensitivityMatrix && (
-            <div className="bg-white dark:bg-white/5 rounded-2xl border border-cfn-navy-100 dark:border-white/10 shadow-card overflow-hidden" id="sensitivity">
+            <div className="bg-white rounded-2xl border border-cfn-navy-100 shadow-card overflow-hidden" id="sensitivity">
               <div className="bg-cfn-navy px-6 py-4">
-                <h3 className="text-white font-bold">Sensitivity Analysis — Price per Share</h3>
+                <h3 className="text-white font-bold">Sensitivity Analysis: Price per Share</h3>
                 <p className="text-white/60 text-sm mt-0.5">
                   Varies WACC and perpetual growth rate across your current assumptions. Base case marked ★.
                 </p>
@@ -431,18 +431,18 @@ export default function DCFCalculator() {
                 <table className="w-full text-sm font-mono">
                   <thead>
                     <tr>
-                      <th className="px-3 py-2 text-left text-xs font-semibold text-cfn-muted dark:text-cfn-dark-muted whitespace-nowrap">
+                      <th className="px-3 py-2 text-left text-xs font-semibold text-cfn-muted whitespace-nowrap">
                         g \ WACC
                       </th>
                       {WACC_COLS.map(w => (
-                        <th key={w} className="px-3 py-2 text-center text-xs font-semibold text-cfn-navy dark:text-white">{w}%</th>
+                        <th key={w} className="px-3 py-2 text-center text-xs font-semibold text-cfn-navy">{w}%</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody className="space-y-1">
                     {G_ROWS.map((g, gi) => (
                       <tr key={g}>
-                        <td className="px-3 py-2 text-xs font-semibold text-cfn-navy dark:text-white whitespace-nowrap">
+                        <td className="px-3 py-2 text-xs font-semibold text-cfn-navy whitespace-nowrap">
                           {g}%{g === inp.g ? " ★" : ""}
                         </td>
                         {WACC_COLS.map((w, wi) => {
@@ -467,12 +467,12 @@ export default function DCFCalculator() {
               </div>
 
               {/* Legend */}
-              <div className="px-6 pb-4 flex flex-wrap gap-4 text-xs text-cfn-muted dark:text-cfn-dark-muted border-t border-cfn-navy-100 dark:border-white/10 pt-3">
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-red-100 dark:bg-red-900/25 border border-red-200 inline-block" />Low</span>
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-orange-50 dark:bg-orange-900/20 border border-orange-200 inline-block" />Below base</span>
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-50 dark:bg-amber-900/10 border border-amber-200 inline-block" />Mid</span>
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-50 dark:bg-emerald-900/15 border border-emerald-200 inline-block" />Above base</span>
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-100 dark:bg-emerald-900/25 border border-emerald-200 inline-block" />High</span>
+              <div className="px-6 pb-4 flex flex-wrap gap-4 text-xs text-cfn-muted border-t border-cfn-navy-100 pt-3">
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-red-100 border border-red-200 inline-block" />Low</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-orange-50 border border-orange-200 inline-block" />Below base</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-50 border border-amber-200 inline-block" />Mid</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-50 border border-emerald-200 inline-block" />Above base</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-100 border border-emerald-200 inline-block" />High</span>
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded ring-2 ring-cfn-gold inline-block" />Base case</span>
               </div>
             </div>

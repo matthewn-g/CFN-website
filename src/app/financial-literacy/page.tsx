@@ -13,7 +13,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Financial Literacy",
   description:
-    "Real talk about money. Articles on savings, credit cards, investing, ETFs, crypto, and more — built for Canadian students.",
+    "Real talk about money. Articles on savings, credit cards, investing, ETFs, crypto, and more, built for Canadian students.",
 };
 
 interface PageProps {
@@ -62,7 +62,7 @@ export default function FinancialLiteracyPage({ searchParams }: PageProps) {
             Financial Literacy
           </h1>
           <p className="text-white/70 text-lg max-w-xl">
-            Real talk about money. No jargon, no fluff — just practical knowledge for every stage of your financial journey.
+            Real talk about money. No jargon, no fluff, just practical knowledge for every stage of your financial journey.
           </p>
         </div>
       </div>

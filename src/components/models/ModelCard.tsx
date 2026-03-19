@@ -13,7 +13,7 @@ export default function ModelCard({ model }: ModelCardProps) {
     <Link
       href={`/models-frameworks/${model.slug}`}
       className={cn(
-        "group block bg-white dark:bg-white/5 rounded-card overflow-hidden transition-all duration-200",
+        "group block bg-white rounded-card overflow-hidden transition-all duration-200",
         "shadow-card hover:shadow-card-hover hover:-translate-y-1"
       )}
     >
@@ -43,10 +43,10 @@ export default function ModelCard({ model }: ModelCardProps) {
 
       <div className="p-5">
         <DifficultyBadge level={model.difficulty} />
-        <h3 className="font-bold text-cfn-navy dark:text-white text-lg leading-snug group-hover:text-cfn-gold transition-colors line-clamp-2 mt-2 mb-2">
+        <h3 className="font-bold text-cfn-navy text-lg leading-snug group-hover:text-cfn-gold transition-colors line-clamp-2 mt-2 mb-2">
           {model.title}
         </h3>
-        <p className="text-sm text-cfn-muted dark:text-cfn-dark-muted line-clamp-2 leading-relaxed mb-4">
+        <p className="text-sm text-cfn-muted line-clamp-2 leading-relaxed mb-4">
           {model.excerpt}
         </p>
 
@@ -55,14 +55,14 @@ export default function ModelCard({ model }: ModelCardProps) {
           {model.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="text-xs px-2 py-0.5 bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white/70 rounded-full"
+              className="text-xs px-2 py-0.5 bg-cfn-navy-100 text-cfn-navy rounded-full"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center justify-between text-xs text-cfn-muted dark:text-cfn-dark-muted">
+        <div className="flex items-center justify-between text-xs text-cfn-muted">
           <span className="flex items-center gap-1">
             <Clock className="w-3 h-3" />
             {model.readingTime} min · {model.steps} steps

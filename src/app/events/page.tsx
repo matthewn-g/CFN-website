@@ -53,7 +53,7 @@ export default async function EventsPage() {
       <div className="section-container py-16 space-y-16">
         {/* Upcoming Events */}
         <section>
-          <h2 className="text-3xl font-black text-cfn-navy dark:text-white mb-8">
+          <h2 className="text-3xl font-black text-cfn-navy mb-8">
             Upcoming Events
           </h2>
           {upcoming.length === 0 ? (
@@ -69,7 +69,7 @@ export default async function EventsPage() {
                 return (
                   <div
                     key={event.id}
-                    className="bg-white dark:bg-white/5 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow"
+                    className="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow"
                   >
                     <div className="bg-cfn-navy p-6">
                       <div className="flex items-start justify-between gap-4">
@@ -90,10 +90,10 @@ export default async function EventsPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <p className="text-cfn-muted dark:text-cfn-dark-muted text-sm leading-relaxed mb-4">
+                      <p className="text-cfn-muted text-sm leading-relaxed mb-4">
                         {event.description}
                       </p>
-                      <div className="flex flex-wrap gap-4 text-sm text-cfn-muted dark:text-cfn-dark-muted mb-6">
+                      <div className="flex flex-wrap gap-4 text-sm text-cfn-muted mb-6">
                         <span className="flex items-center gap-1.5">
                           <Calendar className="w-4 h-4" />
                           {formatDate(event.date)}
@@ -107,8 +107,8 @@ export default async function EventsPage() {
                         <div className="mb-4">
                           {event.speakers.map((s) => (
                             <p key={s.name} className="text-sm">
-                              <span className="font-semibold text-cfn-navy dark:text-white">{s.name}</span>
-                              <span className="text-cfn-muted dark:text-cfn-dark-muted"> · {s.role}</span>
+                              <span className="font-semibold text-cfn-navy">{s.name}</span>
+                              <span className="text-cfn-muted"> · {s.role}</span>
                             </p>
                           ))}
                         </div>
@@ -135,7 +135,7 @@ export default async function EventsPage() {
         {/* Past Events */}
         {past.length > 0 && (
           <section>
-            <h2 className="text-3xl font-black text-cfn-navy dark:text-white mb-8">
+            <h2 className="text-3xl font-black text-cfn-navy mb-8">
               Past Events
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -144,16 +144,16 @@ export default async function EventsPage() {
                 return (
                   <div
                     key={event.id}
-                    className="bg-white dark:bg-white/5 rounded-2xl p-5 shadow-card"
+                    className="bg-white rounded-2xl p-5 shadow-card"
                   >
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full flex items-center gap-1">
+                      <span className="bg-cfn-navy-100 text-cfn-navy text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full flex items-center gap-1">
                         <Icon className="w-3 h-3" />
                         {event.format}
                       </span>
                     </div>
-                    <h3 className="font-bold text-cfn-navy dark:text-white mb-2 line-clamp-2">{event.title}</h3>
-                    <p className="text-xs text-cfn-muted dark:text-cfn-dark-muted mb-4">
+                    <h3 className="font-bold text-cfn-navy mb-2 line-clamp-2">{event.title}</h3>
+                    <p className="text-xs text-cfn-muted mb-4">
                       {formatDate(event.date)}
                     </p>
                     {event.recordingUrl && event.recordingUrl !== "#" && (

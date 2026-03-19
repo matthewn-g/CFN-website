@@ -30,7 +30,7 @@ export default function DifficultyFilter() {
     <div className="space-y-3">
       {/* Difficulty */}
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-xs font-bold uppercase tracking-wide text-cfn-muted dark:text-cfn-dark-muted">
+        <span className="text-xs font-bold uppercase tracking-wide text-cfn-muted">
           Difficulty:
         </span>
         <button
@@ -39,7 +39,7 @@ export default function DifficultyFilter() {
             "px-3 py-1 rounded-full text-sm font-semibold transition-colors",
             !activeDiff
               ? "bg-cfn-navy text-white"
-              : "bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white hover:bg-cfn-navy/20"
+              : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
           )}
         >
           All
@@ -52,7 +52,7 @@ export default function DifficultyFilter() {
               "px-3 py-1 rounded-full text-sm font-semibold transition-colors",
               activeDiff === d
                 ? difficultyColors[d]
-                : "bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white hover:bg-cfn-navy/20"
+                : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
             )}
           >
             {d}
@@ -62,7 +62,7 @@ export default function DifficultyFilter() {
 
       {/* Category */}
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-xs font-bold uppercase tracking-wide text-cfn-muted dark:text-cfn-dark-muted">
+        <span className="text-xs font-bold uppercase tracking-wide text-cfn-muted">
           Category:
         </span>
         <button
@@ -71,7 +71,7 @@ export default function DifficultyFilter() {
             "px-3 py-1 rounded-full text-sm font-semibold transition-colors",
             !activeCat
               ? "bg-cfn-navy text-white"
-              : "bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white hover:bg-cfn-navy/20"
+              : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
           )}
         >
           All
@@ -84,7 +84,7 @@ export default function DifficultyFilter() {
               "px-3 py-1 rounded-full text-sm font-semibold transition-colors",
               activeCat === c.slug
                 ? "bg-cfn-navy text-white"
-                : "bg-cfn-navy-100 dark:bg-white/10 text-cfn-navy dark:text-white hover:bg-cfn-navy/20"
+                : "bg-cfn-navy-100 text-cfn-navy hover:bg-cfn-navy/20"
             )}
           >
             {c.label}

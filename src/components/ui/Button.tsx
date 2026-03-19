@@ -21,7 +21,7 @@ const variants: Record<Variant, string> = {
   primary:
     "bg-cfn-gold text-cfn-navy font-semibold hover:bg-cfn-gold-light transition-colors duration-200",
   secondary:
-    "bg-transparent text-cfn-navy border-2 border-cfn-navy font-semibold hover:bg-cfn-navy hover:text-white transition-colors duration-200 dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-cfn-navy",
+    "bg-transparent text-cfn-navy border-2 border-cfn-navy font-semibold hover:bg-cfn-navy hover:text-white transition-colors duration-200",
   ghost:
     "bg-transparent text-cfn-gold font-semibold hover:text-cfn-gold-light underline-offset-4 hover:underline transition-colors duration-200",
   "outline-white":

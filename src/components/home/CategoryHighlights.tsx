@@ -12,7 +12,7 @@ const categories = [
 
 export default function CategoryHighlights() {
   return (
-    <section className="py-16 bg-cfn-cream-dark dark:bg-cfn-dark-bg border-y border-cfn-navy-100 dark:border-white/5">
+    <section className="py-16 bg-cfn-cream-dark border-y border-cfn-navy-100">
       <div className="section-container">
         <SectionHeader
           title="What Are You Learning Today?"
@@ -24,7 +24,7 @@ export default function CategoryHighlights() {
             <Link
               key={slug}
               href={`/financial-literacy?category=${slug}`}
-              className="group flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-transparent hover:border-cfn-navy dark:hover:border-white font-semibold text-sm transition-all duration-200 hover:shadow-card"
+              className="group flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-transparent hover:border-cfn-navy font-semibold text-sm transition-all duration-200 hover:shadow-card"
               style={{
                 backgroundColor: `${color}15`,
                 color,

@@ -8,37 +8,37 @@ import Button from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Built by students, for every student. The story behind the Canadian Financial Network — who we are, why we started, and what we're building.",
+    "Built by students, for every student. The story behind the Canadian Financial Network: who we are, why we started, and what we're building.",
 };
 
 const values = [
   {
     Icon: Shield,
     title: "Accessibility",
-    desc: "We believe great financial education belongs to every student. Every concept, model, and resource we create is open to anyone ready to learn — wherever you're starting from.",
+    desc: "We believe great financial education belongs to every student. Every concept, model, and resource we create is open to anyone ready to learn, wherever you're starting from.",
     color: "text-emerald-500",
-    bg:   "bg-emerald-50 dark:bg-emerald-900/20",
+    bg:   "bg-emerald-50",
   },
   {
     Icon: Heart,
     title: "Authenticity",
-    desc: "We're students sharing what we're genuinely passionate about. Our content reflects real curiosity and honest learning — because authenticity builds more trust than polish alone.",
+    desc: "We're students sharing what we're genuinely passionate about. Our content reflects real curiosity and honest learning, because authenticity builds more trust than polish alone.",
     color: "text-rose-500",
-    bg:   "bg-rose-50 dark:bg-rose-900/20",
+    bg:   "bg-rose-50",
   },
   {
     Icon: Users,
     title: "Community",
-    desc: "Finance is better together. We bring students from across Canada into one community — to share ideas, ask questions, and build connections that last well beyond graduation.",
+    desc: "Finance is better together. We bring students from across Canada into one community, sharing ideas, asking questions, and building connections that last well beyond graduation.",
     color: "text-blue-500",
-    bg:   "bg-blue-50 dark:bg-blue-900/20",
+    bg:   "bg-blue-50",
   },
   {
     Icon: Star,
     title: "Excellence",
-    desc: "Everything we publish is crafted with care — because we want CFN to be a resource students can genuinely rely on as they take their next steps in finance.",
+    desc: "Everything we publish is crafted with care, because we want CFN to be a resource students can genuinely rely on as they take their next steps in finance.",
     color: "text-cfn-gold",
-    bg:   "bg-amber-50 dark:bg-amber-900/20",
+    bg:   "bg-amber-50",
   },
 ];
 
@@ -68,15 +68,15 @@ export default function AboutPage() {
       </div>
 
       {/* Our Story */}
-      <section className="py-20 bg-cfn-cream dark:bg-cfn-dark-bg">
+      <section className="py-20 bg-cfn-cream">
         <div className="section-container max-w-[800px] mx-auto">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-1 h-10 bg-cfn-gold rounded-full" />
-            <h2 className="text-3xl font-black text-cfn-navy dark:text-white">Our Story</h2>
+            <h2 className="text-3xl font-black text-cfn-navy">Our Story</h2>
           </div>
-          <div className="space-y-6 text-lg text-cfn-charcoal dark:text-cfn-dark-text leading-relaxed">
+          <div className="space-y-6 text-lg text-cfn-charcoal leading-relaxed">
             <p>
-              Finance clubs at Canadian universities have always had a reputation for being exclusive — a place for people who already know the jargon, already have the network, already know someone on the inside. We started CFN because we were tired of feeling like outsiders in a world we were genuinely passionate about.
+              Finance clubs at Canadian universities have always had a reputation for being exclusive, a space for people who already know the jargon, already have the network, already know someone on the inside. We started CFN because we were tired of feeling like outsiders in a world we were genuinely passionate about.
             </p>
             <p>
               CFN is the club we wish had existed when we started. We&apos;re building a platform where any student can learn to invest smarter, build technical finance skills, and connect with others who are figuring it out too. No prior knowledge required. No connections necessary. Just curiosity.
@@ -93,19 +93,19 @@ export default function AboutPage() {
             <p className="text-cfn-gold text-sm font-bold uppercase tracking-widest">Our Mission</p>
           </div>
           <p className="text-2xl sm:text-3xl font-bold text-white max-w-3xl mx-auto leading-relaxed">
-            &ldquo;To promote financial literacy, make learning technical skills more accessible, and create networking opportunities for students across Canada — regardless of background.&rdquo;
+            &ldquo;To promote financial literacy, make learning technical skills more accessible, and create networking opportunities for students across Canada, regardless of background.&rdquo;
           </p>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-cfn-cream-dark dark:bg-cfn-dark-bg">
+      <section className="py-20 bg-cfn-cream-dark">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black text-cfn-navy dark:text-white mb-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-cfn-navy mb-3">
               What We Stand For
             </h2>
-            <p className="text-cfn-muted dark:text-cfn-dark-muted text-lg">
+            <p className="text-cfn-muted text-lg">
               The values that guide everything we build.
             </p>
           </div>
@@ -113,13 +113,13 @@ export default function AboutPage() {
             {values.map(({ Icon, title, desc, color, bg }) => (
               <div
                 key={title}
-                className="bg-white dark:bg-white/5 rounded-2xl p-6 shadow-card"
+                className="bg-white rounded-2xl p-6 shadow-card"
               >
                 <div className={`w-12 h-12 rounded-xl ${bg} flex items-center justify-center mb-4`}>
                   <Icon className={`w-6 h-6 ${color}`} />
                 </div>
-                <h3 className="text-lg font-bold text-cfn-navy dark:text-white mb-2">{title}</h3>
-                <p className="text-sm text-cfn-muted dark:text-cfn-dark-muted leading-relaxed">{desc}</p>
+                <h3 className="text-lg font-bold text-cfn-navy mb-2">{title}</h3>
+                <p className="text-sm text-cfn-muted leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -127,13 +127,13 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-20 bg-cfn-cream dark:bg-cfn-dark-bg">
+      <section className="py-20 bg-cfn-cream">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black text-cfn-navy dark:text-white mb-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-cfn-navy mb-3">
               Meet the Team
             </h2>
-            <p className="text-cfn-muted dark:text-cfn-dark-muted text-lg">
+            <p className="text-cfn-muted text-lg">
               Built by students from universities across Canada.
             </p>
           </div>
@@ -141,17 +141,17 @@ export default function AboutPage() {
             {teamMembers.map((member) => (
               <div
                 key={member.id}
-                className="bg-white dark:bg-white/5 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow"
+                className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow"
               >
                 <div className="w-16 h-16 rounded-full bg-cfn-navy flex items-center justify-center text-cfn-gold font-black text-2xl mb-4">
                   {member.name[0]}
                 </div>
-                <h3 className="font-bold text-cfn-navy dark:text-white text-lg">{member.name}</h3>
+                <h3 className="font-bold text-cfn-navy text-lg">{member.name}</h3>
                 <p className="text-cfn-gold text-sm font-semibold mb-1">{member.role}</p>
                 {member.school && (
-                  <p className="text-xs text-cfn-muted dark:text-cfn-dark-muted mb-3">{member.school}</p>
+                  <p className="text-xs text-cfn-muted mb-3">{member.school}</p>
                 )}
-                <p className="text-sm text-cfn-muted dark:text-cfn-dark-muted leading-relaxed">{member.bio}</p>
+                <p className="text-sm text-cfn-muted leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>
@@ -159,13 +159,13 @@ export default function AboutPage() {
       </section>
 
       {/* Community + Join Us */}
-      <section id="join-cfn-community" className="py-20 bg-cfn-cream-dark dark:bg-cfn-dark-bg">
+      <section id="join-cfn-community" className="py-20 bg-cfn-cream-dark">
         <div className="section-container max-w-[700px] mx-auto space-y-8">
           <CommunityBanner variant="section" />
           <div id="want-to-write" className="bg-cfn-gold rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-black text-cfn-navy mb-3">Want to Write for CFN?</h3>
             <p className="text-cfn-navy/70 mb-6">
-              We&apos;re always looking for passionate students to join the team — whether you write articles, build models, or create content.
+              We&apos;re always looking for passionate students to join the team, whether you write articles, build models, or create content.
             </p>
             <Button
               href="mailto:thecanadianfinancialnetwork@gmail.com"

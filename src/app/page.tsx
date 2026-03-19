@@ -33,7 +33,7 @@ export default function HomePage() {
       <HeroSection />
       <CategoryHighlights />
       <Suspense fallback={
-        <section className="py-20 bg-cfn-cream dark:bg-cfn-dark-bg">
+        <section className="py-20 bg-cfn-cream">
           <div className="section-container">
             <div className="h-8 w-48 skeleton rounded mb-10" />
             <SkeletonGrid count={3} />
@@ -44,7 +44,7 @@ export default function HomePage() {
       </Suspense>
       <DualCTABanner />
       <Suspense fallback={
-        <section className="py-20 bg-cfn-cream-dark dark:bg-cfn-dark-bg">
+        <section className="py-20 bg-cfn-cream-dark">
           <div className="section-container">
             <div className="h-8 w-48 skeleton rounded mb-10" />
             <SkeletonGrid count={3} />

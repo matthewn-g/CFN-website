@@ -25,7 +25,7 @@ export default function DualCTABanner() {
         </div>
         <h2 className="text-3xl font-black text-white mb-3">Models &amp; Frameworks</h2>
         <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-sm">
-          Build the skills to land your first finance role. DCF, LBO, comps — start here.
+          Build the skills to land your first finance role. DCF, LBO, comps: start here.
         </p>
         <Button href="/models-frameworks" variant="outline-white" size="md" className="self-start">
           Explore Models

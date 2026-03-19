@@ -9,7 +9,7 @@ export const STATIC_MODELS: ModelFrontmatter[] = [
   {
     title:       "DCF Valuation",
     slug:        "dcf-valuation",
-    excerpt:     "Master the most foundational valuation method in finance. Project free cash flows, choose a discount rate, and calculate intrinsic value per share — then run it live with our interactive calculator.",
+    excerpt:     "Master the most foundational valuation method in finance. Project free cash flows, choose a discount rate, and calculate intrinsic value per share, then run it live with our interactive calculator.",
     category:    "dcf",
     difficulty:  "Intermediate",
     tags:        ["Valuation", "DCF", "Free Cash Flow"],

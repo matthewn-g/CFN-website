@@ -11,7 +11,7 @@ interface FeaturedModelsProps {
 
 export default function FeaturedModels({ models }: FeaturedModelsProps) {
   return (
-    <section className="py-20 bg-cfn-cream-dark dark:bg-cfn-dark-bg">
+    <section className="py-20 bg-cfn-cream-dark">
       <div className="section-container">
         <SectionHeader
           title="Latest Models &amp; Frameworks"
