@@ -19,7 +19,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id:       "tony",
-    name:     "Tony Capolongo",
+    name:     "Antonio Capolongo",
     role:     "Co-Founder & VP Queen's",
     bio:      "Leading CFN's expansion to Queen's University and building bridges between East and West Coast finance students.",
     photo:    "/images/team/placeholder.jpg",

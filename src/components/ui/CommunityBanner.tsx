@@ -1,24 +1,21 @@
-import { Users } from "lucide-react";
+import { Users, Instagram } from "lucide-react";
 import Link from "next/link";
 
 interface CommunityBannerProps {
   variant?: "chip" | "section";
 }
 
-export default function CommunityBanner({ variant = "chip" }: CommunityBannerProps) {
-  const discordUrl = process.env.NEXT_PUBLIC_DISCORD_URL ?? "#";
+const instagramUrl = "https://instagram.com/thecanadianfinancialnetwork";
 
+export default function CommunityBanner({ variant = "chip" }: CommunityBannerProps) {
   if (variant === "chip") {
     return (
       <Link
-        href={discordUrl}
+        href="/about#join-cfn-community"
         className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 text-white/80 hover:text-white hover:border-white/60 text-sm transition-colors group"
       >
         <Users className="w-4 h-4 group-hover:text-cfn-gold transition-colors" />
         <span>Join our community</span>
-        <span className="text-xs bg-cfn-gold text-cfn-navy font-semibold px-2 py-0.5 rounded-full">
-          Coming Soon
-        </span>
       </Link>
     );
   }
@@ -33,14 +30,13 @@ export default function CommunityBanner({ variant = "chip" }: CommunityBannerPro
         Connect with finance students across Canada. Ask questions, share resources, and find your people.
       </p>
       <Link
-        href={discordUrl}
+        href={instagramUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex items-center gap-2 bg-cfn-gold text-cfn-navy font-semibold px-6 py-3 rounded-lg hover:bg-cfn-gold-light transition-colors"
       >
-        <Users className="w-4 h-4" />
-        Join Discord
-        <span className="text-xs bg-cfn-navy text-cfn-gold font-bold px-2 py-0.5 rounded-full">
-          Soon
-        </span>
+        <Instagram className="w-4 h-4" />
+        Follow us on Instagram
       </Link>
     </div>
   );
