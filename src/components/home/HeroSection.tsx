@@ -21,7 +21,7 @@ export default function HeroSection() {
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-cfn-cream leading-tight tracking-tight max-w-4xl mx-auto text-balance animate-slide-up">
           Built by Students.
           <br />
-          <span className="text-cfn-cream">For Every Student.</span>
+          For <span style={{ color: "#4A6080" }}>Every Student.</span>
         </h1>
 
         {/* Subheading */}
