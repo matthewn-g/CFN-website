@@ -194,7 +194,7 @@ export default function DCFValuationPage() {
                 ].map(({ Icon, title, body }) => (
                   <div key={title} className="bg-cfn-cream rounded-2xl p-5 border border-cfn-navy-100 shadow-card">
                     <div className="w-10 h-10 rounded-xl bg-cfn-cream/10 flex items-center justify-center mb-3">
-                      <Icon className="w-5 h-5 text-cfn-blue-text" />
+                      <Icon className="w-5 h-5 text-cfn-mid" />
                     </div>
                     <h3 className="font-bold text-cfn-navy mb-1">{title}</h3>
                     <p className="text-sm text-cfn-muted leading-relaxed">{body}</p>
@@ -217,7 +217,7 @@ export default function DCFValuationPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {KEY_TERMS.map(({ term, def }) => (
                   <div key={term} className="bg-cfn-cream rounded-xl p-5 border border-cfn-navy-100 shadow-card">
-                    <p className="text-xs font-bold text-cfn-blue-text font-mono uppercase tracking-wider mb-2">{term}</p>
+                    <p className="text-xs font-bold text-cfn-mid font-mono uppercase tracking-wider mb-2">{term}</p>
                     <p className="text-sm text-cfn-muted leading-relaxed">{def}</p>
                   </div>
                 ))}
@@ -530,7 +530,7 @@ export default function DCFValuationPage() {
 
             {/* Table of Contents */}
             <div className="bg-cfn-cream rounded-2xl border border-cfn-navy-100 shadow-card p-5">
-              <p className="text-xs font-bold uppercase tracking-widest text-cfn-blue-text mb-4">On This Page</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-cfn-mid mb-4">On This Page</p>
               <nav className="space-y-1">
                 {TOC.map(({ href, label }) => (
                   <a
@@ -566,7 +566,7 @@ export default function DCFValuationPage() {
 
             {/* Related Models */}
             <div className="bg-cfn-cream rounded-2xl border border-cfn-navy-100 shadow-card p-5">
-              <p className="text-xs font-bold uppercase tracking-widest text-cfn-blue-text mb-4">Related Models</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-cfn-mid mb-4">Related Models</p>
               <div className="space-y-2">
                 {[
                   { label: "Comps Analysis",    href: "/models-frameworks?category=comparable-analysis" },

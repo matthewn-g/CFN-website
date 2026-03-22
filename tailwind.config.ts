@@ -19,7 +19,7 @@ const config: Config = {
           "cream-dark": "#EEF3FB",       // subtle blue-tinted cream — alternating sections
           // ── Text & accents ───────────────────────────────────────────────
           charcoal:     "#091E3A",       // same as navy (consolidated)
-          muted:        "#4D6E95",       // muted navy-family — secondary text
+          muted:        "#4A6080",       // muted navy-family — secondary text
           "blue-text":  "#C8D8F0",       // light desaturated navy — text on dark backgrounds
         },
       },

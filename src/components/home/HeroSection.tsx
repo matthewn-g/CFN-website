@@ -1,13 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 import { TrendingUp } from "lucide-react";
-import HeroSlideshow from "./HeroSlideshow";
 import CommunityBanner from "@/components/ui/CommunityBanner";
 
 export default function HeroSection() {
   return (
     <section className="hero-bg relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* ── Photo slideshow with Ken Burns effect ── */}
-      <HeroSlideshow />
+      {/* ── Static hero image ── */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <Image
+          src="/images/hero/toronto.jpeg"
+          alt="University of Toronto"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/70" />
+      </div>
 
       {/* ── Hero content — sits above slideshow + overlay ── */}
       <div className="section-container relative z-10 py-32 text-center">
@@ -21,7 +30,7 @@ export default function HeroSection() {
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-cfn-cream leading-tight tracking-tight max-w-4xl mx-auto text-balance animate-slide-up">
           Built by Students.
           <br />
-          For <span style={{ color: "#4A6080" }}>Every Student.</span>
+          For <span style={{ color: "#C8D8F0" }}>Every Student.</span>
         </h1>
 
         {/* Subheading */}
