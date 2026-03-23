@@ -11,7 +11,7 @@ interface FeaturedArticlesProps {
 
 export default function FeaturedArticles({ articles }: FeaturedArticlesProps) {
   return (
-    <section className="py-20 bg-cfn-cream-dark">
+    <section className="py-20 bg-cfn-cream">
       <div className="section-container">
         <SectionHeader
           title="Featured Articles"

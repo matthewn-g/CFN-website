@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Mail } from "lucide-react";
+import { Instagram, Linkedin, Mail } from "lucide-react";
 import CFNLogo from "./CFNLogo";
 
 const footerLinks = {
@@ -44,6 +44,15 @@ export default function Footer() {
                 className="w-9 h-9 rounded-lg bg-cfn-cream/10 flex items-center justify-center hover:bg-cfn-cream/20 transition-colors"
               >
                 <Instagram className="w-4 h-4" />
+              </Link>
+              <Link
+                href="https://linkedin.com/company/cfn-org"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-lg bg-cfn-cream/10 flex items-center justify-center hover:bg-cfn-cream/20 transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
               </Link>
               <Link
                 href="mailto:thecanadianfinancialnetwork@gmail.com"

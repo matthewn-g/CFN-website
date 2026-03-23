@@ -4,6 +4,7 @@ import { Users, Target, Heart, Star, Shield } from "lucide-react";
 import { teamMembers } from "@/data/team";
 import CommunityBanner from "@/components/ui/CommunityBanner";
 import Button from "@/components/ui/Button";
+import TeamMemberAvatar from "@/components/ui/TeamMemberAvatar";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -143,9 +144,7 @@ export default function AboutPage() {
                 key={member.id}
                 className="bg-cfn-cream rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow"
               >
-                <div className="w-16 h-16 rounded-full bg-cfn-navy flex items-center justify-center text-cfn-cream font-black font-serif text-2xl mb-4">
-                  {member.name[0]}
-                </div>
+                <TeamMemberAvatar id={member.id} name={member.name} />
                 <h3 className="font-bold text-cfn-navy text-lg">{member.name}</h3>
                 <p className="text-cfn-navy-800 text-sm font-semibold mb-1">{member.role}</p>
                 {member.school && (

@@ -1,4 +1,4 @@
-import { Users, Instagram } from "lucide-react";
+import { Users, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 interface CommunityBannerProps {
@@ -6,6 +6,7 @@ interface CommunityBannerProps {
 }
 
 const instagramUrl = "https://instagram.com/thecanadianfinancialnetwork";
+const linkedinUrl  = "https://linkedin.com/company/cfn-org";
 
 export default function CommunityBanner({ variant = "chip" }: CommunityBannerProps) {
   if (variant === "chip") {
@@ -29,15 +30,26 @@ export default function CommunityBanner({ variant = "chip" }: CommunityBannerPro
       <p className="text-cfn-cream/70 mb-4 max-w-md mx-auto">
         Connect with finance students across Canada. Ask questions, share resources, and find your people.
       </p>
-      <Link
-        href={instagramUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 bg-cfn-cream text-cfn-navy font-semibold px-6 py-3 rounded-lg hover:bg-cfn-cream-dark transition-colors"
-      >
-        <Instagram className="w-4 h-4" />
-        Follow us on Instagram
-      </Link>
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <Link
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-cfn-cream text-cfn-navy font-semibold px-6 py-3 rounded-lg hover:bg-cfn-cream-dark transition-colors"
+        >
+          <Instagram className="w-4 h-4" />
+          Follow us on Instagram
+        </Link>
+        <Link
+          href={linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-cfn-cream text-cfn-navy font-semibold px-6 py-3 rounded-lg hover:bg-cfn-cream-dark transition-colors"
+        >
+          <Linkedin className="w-4 h-4" />
+          Connect on LinkedIn
+        </Link>
+      </div>
     </div>
   );
 }
