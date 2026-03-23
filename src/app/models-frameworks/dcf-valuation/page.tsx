@@ -29,7 +29,8 @@ const KEY_TERMS = [
   { term: "Discount Rate",             def: "Applied to convert future cash flows into present value. Usually set equal to WACC." },
   { term: "Terminal Value (TV)",        def: "Lump-sum value of all cash flows beyond the projection window. Typically 60–80% of total enterprise value." },
   { term: "Perpetual Growth Rate (g)", def: "Assumed annual FCF growth rate into infinity. Must stay below long-run GDP growth (≤ 3%)." },
-  { term: "NOPAT",                     def: "Net Operating Profit After Tax: EBIT × (1 − Tax Rate). The pre-cash starting point for FCF." },
+  { term: "EBIT",                       def: "Earnings Before Interest and Taxes. Operating profit before financing costs and tax are deducted." },
+  { term: "After-Tax Operating Income", def: "EBIT × (1 − Tax Rate). The pre-cash starting point for FCF." },
   { term: "Enterprise Value (EV)",     def: "Total value of the business (debt + equity). Sum of PV of FCFs plus PV of Terminal Value." },
   { term: "Net Present Value (NPV)",   def: "Sum of all discounted future cash flows. A positive NPV implies the asset generates value above the required return." },
   { term: "Bridge to Equity",          def: "EV minus Net Debt, divided by shares outstanding. Converts enterprise value into intrinsic value per share." },
@@ -58,9 +59,9 @@ const STEPS: Array<{
     num: "02",
     title: "Convert EBIT to Free Cash Flow",
     body: "Adjust for taxes, add back non-cash D&A, subtract capital expenditures, and account for changes in working capital. FCF is what the business can actually return to investors.",
-    formulaHtml: "FCF   = NOPAT + D&amp;A − CAPEX − ΔNWC<br>NOPAT = EBIT × (1 − Tax Rate)",
+    formulaHtml: "FCF = EBIT(1−t) + D&amp;A − CAPEX − ΔNWC",
     vars: [
-      { symHtml: "NOPAT", def: "Net Operating Profit After Tax: EBIT × (1 − Tax Rate)" },
+      { symHtml: "EBIT", def: "Earnings Before Interest and Taxes" },
       { symHtml: "D&amp;A",   def: "Depreciation & Amortization, a non-cash item added back to FCF" },
       { symHtml: "CAPEX", def: "Capital Expenditures: reinvestment spending" },
       { symHtml: "ΔNWC",  def: "Change in Net Working Capital" },
@@ -319,7 +320,7 @@ export default function DCFValuationPage() {
                         <td className="px-4 py-3 text-right text-cfn-navy">{EX.y3.ebit}</td>
                       </tr>
                       <tr>
-                        <td className="px-4 py-3 pl-8 font-sans text-cfn-muted text-xs">NOPAT</td>
+                        <td className="px-4 py-3 pl-8 font-sans text-cfn-muted text-xs">EBIT(1−t)</td>
                         <td className="px-4 py-3 text-right text-cfn-muted">—</td>
                         <td className="px-4 py-3 text-right text-cfn-muted">{EX.y1.nopat}</td>
                         <td className="px-4 py-3 text-right text-cfn-muted">{EX.y2.nopat}</td>

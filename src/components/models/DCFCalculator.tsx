@@ -346,7 +346,7 @@ export default function DCFCalculator() {
                     {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-navy">{f2(y.ebit)}</td>)}
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-cfn-muted pl-7 text-xs">NOPAT = EBIT × (1 − Tax)</td>
+                    <td className="px-4 py-3 text-cfn-muted pl-7 text-xs">EBIT(1−t)</td>
                     <td className="px-4 py-3 text-right font-mono text-cfn-muted">—</td>
                     {results.years.map(y => <td key={y.year} className="px-4 py-3 text-right font-mono text-cfn-muted">{f2(y.nopat)}</td>)}
                   </tr>
