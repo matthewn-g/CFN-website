@@ -46,7 +46,7 @@ export default function ModelCard({ model }: ModelCardProps) {
         <h3 className="font-bold text-cfn-navy text-lg leading-snug group-hover:text-cfn-navy-800 transition-colors line-clamp-2 mt-2 mb-2">
           {model.title}
         </h3>
-        <p className="text-sm text-cfn-muted line-clamp-2 leading-relaxed mb-4">
+        <p className="text-sm text-cfn-muted leading-relaxed mb-4">
           {model.excerpt}
         </p>
 

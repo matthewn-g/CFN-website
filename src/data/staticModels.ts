@@ -9,7 +9,7 @@ export const STATIC_MODELS: ModelFrontmatter[] = [
   {
     title:       "DCF Valuation",
     slug:        "dcf-valuation",
-    excerpt:     "Learn how professionals value any business from its future cash flows and with a live calculator to make it real.",
+    excerpt:     "Learn how professionals value any business, then try it yourself with a live calculator.",
     category:    "dcf",
     difficulty:  "Intermediate",
     tags:        ["Valuation", "DCF", "Live Calculator"],
