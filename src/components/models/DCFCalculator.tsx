@@ -430,9 +430,20 @@ export default function DCFCalculator() {
               <div className="p-4 overflow-x-auto">
                 <table className="w-full text-sm font-mono">
                   <thead>
+                    {/* Axis label row */}
+                    <tr className="border-b border-cfn-navy-100">
+                      <th className="px-3 py-1" />
+                      <th
+                        colSpan={WACC_COLS.length}
+                        className="px-3 py-1.5 text-center text-[10px] font-bold uppercase tracking-widest text-cfn-muted font-sans"
+                      >
+                        WACC — Discount Rate →
+                      </th>
+                    </tr>
+                    {/* Value headers */}
                     <tr>
-                      <th className="px-3 py-2 text-left text-xs font-semibold text-cfn-muted whitespace-nowrap">
-                        g \ WACC
+                      <th className="px-3 py-2 text-left text-[10px] font-bold uppercase tracking-widest text-cfn-muted font-sans whitespace-nowrap">
+                        Growth Rate (g) ↓
                       </th>
                       {WACC_COLS.map(w => (
                         <th key={w} className="px-3 py-2 text-center text-xs font-semibold text-cfn-navy">{w}%</th>
