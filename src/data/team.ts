@@ -42,17 +42,17 @@ export const teamMembers: TeamMember[] = [
     school:   "University of British Columbia",
   },
   {
-    id:       "keaton",
-    name:     "Keaton Chan",
-    role:     "Associate",
-    school:   "University of Toronto",
-  },
-  {
     id:       "yishui",
     name:     "Yishui Xu",
     role:     "VP Marketing",
     bio:      "Passionate about growing CFN's brand and bringing more students into the community. Yishui leads CFN's marketing and outreach efforts, helping students across Canada discover what we're building.",
     photo:    "/images/team/placeholder.jpg",
     school:   "University of British Columbia",
+  },
+  {
+    id:       "keaton",
+    name:     "Keaton Chan",
+    role:     "Associate",
+    school:   "University of Toronto",
   },
 ];

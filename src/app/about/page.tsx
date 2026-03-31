@@ -142,13 +142,13 @@ export default function AboutPage() {
             {teamMembers.map((member) => (
               <div
                 key={member.id}
-                className="bg-cfn-cream rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow"
+                className={`bg-cfn-cream rounded-2xl shadow-card hover:shadow-card-hover transition-shadow ${member.bio ? "p-6" : "px-6 pt-6 pb-4"}`}
               >
                 <TeamMemberAvatar id={member.id} name={member.name} />
                 <h3 className="font-bold text-cfn-navy text-lg">{member.name}</h3>
                 <p className="text-cfn-navy-800 text-sm font-semibold mb-1">{member.role}</p>
                 {member.school && (
-                  <p className="text-xs text-cfn-muted mb-3">{member.school}</p>
+                  <p className={`text-xs text-cfn-muted ${member.bio ? "mb-3" : ""}`}>{member.school}</p>
                 )}
                 {member.bio && (
                   <p className="text-sm text-cfn-muted leading-relaxed">{member.bio}</p>
