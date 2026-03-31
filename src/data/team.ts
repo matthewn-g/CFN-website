@@ -42,6 +42,12 @@ export const teamMembers: TeamMember[] = [
     school:   "University of British Columbia",
   },
   {
+    id:       "keaton",
+    name:     "Keaton Chan",
+    role:     "Associate",
+    school:   "University of Toronto",
+  },
+  {
     id:       "yishui",
     name:     "Yishui Xu",
     role:     "VP Marketing",

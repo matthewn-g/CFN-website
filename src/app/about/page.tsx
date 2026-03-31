@@ -150,7 +150,9 @@ export default function AboutPage() {
                 {member.school && (
                   <p className="text-xs text-cfn-muted mb-3">{member.school}</p>
                 )}
-                <p className="text-sm text-cfn-muted leading-relaxed">{member.bio}</p>
+                {member.bio && (
+                  <p className="text-sm text-cfn-muted leading-relaxed">{member.bio}</p>
+                )}
               </div>
             ))}
           </div>
