@@ -25,7 +25,7 @@ export const STATIC_MODELS: ModelFrontmatter[] = [
   {
     title:       "Financial Statements",
     slug:        "financial-statements",
-    excerpt:     "Master the three core financial statements — Income Statement, Balance Sheet, and Cash Flow — and learn how they connect.",
+    excerpt:     "Master the Income Statement, Balance Sheet, and Cash Flow Statement, and learn how the three connect to tell a company's full financial story.",
     category:    "financial-statements",
     difficulty:  "Beginner",
     tags:        ["Accounting", "Financial Statements", "Fundamentals"],
