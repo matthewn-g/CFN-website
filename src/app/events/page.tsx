@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Calendar, Clock, Users, Video, ExternalLink, Mail } from "lucide-react";
+import { Users, Video, ExternalLink, Mail, Download } from "lucide-react";
 import { getAllEvents } from "@/lib/notion";
 import { formatDate } from "@/lib/utils";
 import ContentEmptyState from "@/components/ui/ContentEmptyState";
@@ -56,80 +56,64 @@ export default async function EventsPage() {
           <h2 className="text-3xl font-black text-cfn-navy mb-8">
             Upcoming Events
           </h2>
-          {upcoming.length === 0 ? (
-            <ContentEmptyState
-              title="No upcoming events yet"
-              description="Follow us on Instagram @thecanadianfinancialnetwork to be the first to know when events are announced."
-              cta={{ label: "Follow on Instagram", href: "https://instagram.com/thecanadianfinancialnetwork" }}
-            />
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {upcoming.map((event) => {
-                const Icon = formatIcons[event.format] ?? Video;
-                return (
-                  <div
-                    key={event.id}
-                    className="bg-cfn-cream rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow"
-                  >
-                    <div className="bg-cfn-navy p-6">
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="bg-cfn-cream/15 text-cfn-cream text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full flex items-center gap-1">
-                              <Icon className="w-3 h-3" />
-                              {event.format}
-                            </span>
-                            {event.status === "registration-open" && (
-                              <span className="bg-emerald-400/20 text-emerald-400 text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full">
-                                Registration Open
-                              </span>
-                            )}
-                          </div>
-                          <h3 className="text-xl font-bold text-cfn-cream">{event.title}</h3>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <p className="text-cfn-muted text-sm leading-relaxed mb-4">
-                        {event.description}
-                      </p>
-                      <div className="flex flex-wrap gap-4 text-sm text-cfn-muted mb-6">
-                        <span className="flex items-center gap-1.5">
-                          <Calendar className="w-4 h-4" />
-                          {formatDate(event.date)}
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <Clock className="w-4 h-4" />
-                          {event.duration} min
-                        </span>
-                      </div>
-                      {event.speakers.length > 0 && (
-                        <div className="mb-4">
-                          {event.speakers.map((s) => (
-                            <p key={s.name} className="text-sm">
-                              <span className="font-semibold text-cfn-navy">{s.name}</span>
-                              <span className="text-cfn-muted"> · {s.role}</span>
-                            </p>
-                          ))}
-                        </div>
-                      )}
-                      {event.lumaUrl && event.lumaUrl !== "#" && (
-                        <a
-                          href={event.lumaUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 bg-cfn-cream text-cfn-navy font-semibold px-5 py-2.5 rounded-lg text-sm hover:bg-cfn-cream-dark transition-colors"
-                        >
-                          Register on Luma
-                          <ExternalLink className="w-3.5 h-3.5" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Static: RBC Financial Literacy Summer Program */}
+            <div className="bg-cfn-cream rounded-2xl p-5 shadow-card">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="bg-cfn-navy-100 text-cfn-navy text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full flex items-center gap-1">
+                  <Users className="w-3 h-3" />
+                  Workshop
+                </span>
+              </div>
+              <h3 className="font-bold text-cfn-navy mb-1 line-clamp-2">
+                RBC Financial Literacy Summer Program
+              </h3>
+              <p className="text-xs text-cfn-muted mb-4">July 2026</p>
+              <a
+                href="/rbc-financial-literacy-summer-program.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-cfn-blue-text font-semibold text-sm hover:text-cfn-navy transition-colors"
+              >
+                <Download className="w-3.5 h-3.5" />
+                View Invitation
+              </a>
             </div>
-          )}
+            {upcoming.map((event) => {
+              const Icon = formatIcons[event.format] ?? Video;
+              return (
+                <div
+                  key={event.id}
+                  className="bg-cfn-cream rounded-2xl p-5 shadow-card"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="bg-cfn-navy-100 text-cfn-navy text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full flex items-center gap-1">
+                      <Icon className="w-3 h-3" />
+                      {event.format}
+                    </span>
+                    {event.status === "registration-open" && (
+                      <span className="bg-emerald-400/20 text-emerald-300 text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full">
+                        Open
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="font-bold text-cfn-navy mb-1 line-clamp-2">{event.title}</h3>
+                  <p className="text-xs text-cfn-muted mb-4">{formatDate(event.date)}</p>
+                  {event.lumaUrl && event.lumaUrl !== "#" && (
+                    <a
+                      href={event.lumaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-cfn-blue-text font-semibold text-sm hover:text-cfn-navy transition-colors"
+                    >
+                      Register
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </section>
 
         {/* Past Events */}
