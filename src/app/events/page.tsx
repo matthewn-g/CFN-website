@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Users, Video, ExternalLink, Mail, Download } from "lucide-react";
 import { getAllEvents } from "@/lib/notion";
 import { formatDate } from "@/lib/utils";
-import ContentEmptyState from "@/components/ui/ContentEmptyState";
 
 export const revalidate = 3600;
 
