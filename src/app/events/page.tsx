@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Users, Video, ExternalLink, Mail, Download } from "lucide-react";
+import { Users, Video, ExternalLink, Mail, Download, MapPin, Calendar } from "lucide-react";
 import { getAllEvents } from "@/lib/notion";
 import { formatDate } from "@/lib/utils";
 
@@ -64,10 +64,24 @@ export default async function EventsPage() {
                   Workshop
                 </span>
               </div>
-              <h3 className="font-bold text-cfn-navy mb-1 line-clamp-2">
+              <h3 className="font-bold text-cfn-navy mb-0.5">
                 RBC Financial Literacy Summer Program
               </h3>
-              <p className="text-xs text-cfn-muted mb-4">July 2026</p>
+              <p className="text-xs font-black text-cfn-navy mb-3">Featured Event</p>
+              <div className="space-y-2 mb-4">
+                <p className="text-xs text-cfn-muted flex items-start gap-1.5">
+                  <Calendar className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                  <span>July 13, 17, 20 &amp; 24 &nbsp;·&nbsp; 1:00–2:30 PM</span>
+                </p>
+                <p className="text-xs text-cfn-muted flex items-start gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                  <span>
+                    RBC Dominion Securities<br />
+                    450 SW Marine Drive, 16th Floor<br />
+                    Vancouver, BC V5X 0C3
+                  </span>
+                </p>
+              </div>
               <a
                 href="/rbc-financial-literacy-summer-program.pdf"
                 target="_blank"
@@ -75,7 +89,7 @@ export default async function EventsPage() {
                 className="inline-flex items-center gap-1.5 text-cfn-blue-text font-semibold text-sm hover:text-cfn-navy transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
-                View Invitation
+                For more information, download invitation
               </a>
             </div>
             {upcoming.map((event) => {
