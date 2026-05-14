@@ -76,7 +76,7 @@ export default async function EventsPage() {
                 <p className="text-xs text-cfn-muted flex items-start gap-1.5">
                   <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
                   <span>
-                    RBC Dominion Securities<br />
+                    RBC Dominion Securities Inc.<br />
                     450 SW Marine Drive, 16th Floor<br />
                     Vancouver, BC V5X 0C3
                   </span>
