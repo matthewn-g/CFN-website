@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { TrendingUp } from "lucide-react";
 import CommunityBanner from "@/components/ui/CommunityBanner";
 
 export default function HeroSection() {
@@ -20,12 +19,6 @@ export default function HeroSection() {
 
       {/* ── Hero content — sits above slideshow + overlay ── */}
       <div className="section-container relative z-10 py-32 text-center">
-        {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cfn-cream/15 border border-cfn-cream/30 text-cfn-cream text-sm font-semibold mb-8 animate-fade-in">
-          <TrendingUp className="w-4 h-4" />
-          <span className="font-serif">Canadian Financial Network</span>
-        </div>
-
         {/* Headline */}
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-cfn-cream leading-tight tracking-tight max-w-4xl mx-auto text-balance animate-slide-up">
           Built by Students.
